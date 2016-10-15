@@ -1,8 +1,9 @@
 {
-  "name": "ionic-hello-world",
-  "author": "Ionic Framework",
+  "name": "test-center",
+  "author": "Prashant Kurlekar",
+  "description": "Create your own test",
   "version": "0.1.0",
-  "homepage": "http://ionicframework.com/",
+  "homepage": "http://testcenter.prashantkurlekar.com/",
   "private": true,
   "scripts": {
     "start": "ionic serve",
@@ -54,7 +55,7 @@
     "protractor": "4.0.9",
     "ts-node": "1.2.1",
     "tslint": "3.13.0",
-    "typescript": "2.0.2",
+    "typescript": "^2.0.2",
     "karma-phantomjs-launcher": "^1.0.2",
     "phantomjs-prebuilt": "^2.1.13"
   },
@@ -73,6 +74,5 @@
       "version": "",
       "locator": "ios"
     }
-  ],
-  "description": "onemore: An Ionic project"
+  ]
 }
