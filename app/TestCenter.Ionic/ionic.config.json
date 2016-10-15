@@ -1,7 +1,6 @@
 {
-  "name": "ionic2-boilerplate",
+  "name": "onemore",
   "app_id": "",
   "v2": true,
-  "typescript": true,
-  "defaultBrowser": "Chrome"
+  "typescript": true
 }

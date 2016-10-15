@@ -1,29 +1,30 @@
 import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
-import { TestCenterApp } from './app.component';
+import { SampleApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import { LoginPage } from '../pages/authentication/login/login';
 
 @NgModule({
   declarations: [
-    TestCenterApp,
-    AboutPage, ContactPage, HomePage,
-    TabsPage,
-    LoginPage,
+    SampleApp,
+    AboutPage,
+    ContactPage,
+    HomePage,
+    TabsPage
   ],
   imports: [
-    IonicModule.forRoot(TestCenterApp),
+    IonicModule.forRoot(SampleApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    TestCenterApp,
-    AboutPage, ContactPage, HomePage,
-    TabsPage,
-    LoginPage,
+    SampleApp,
+    AboutPage,
+    ContactPage,
+    HomePage,
+    TabsPage
   ],
-  providers: [],
+  providers: []
 })
 export class AppModule {}
