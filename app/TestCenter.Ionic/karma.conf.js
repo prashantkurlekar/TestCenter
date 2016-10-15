@@ -31,8 +31,8 @@ module.exports = function (config) {
     },
     reporters: [
       'mocha',
-      'progress',
-      'karma-remap-istanbul'
+      // 'progress',
+      // 'karma-remap-istanbul'
     ],
     port: 9876,
     colors: true,
