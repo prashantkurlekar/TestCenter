@@ -9,8 +9,8 @@ describe('Pages: HomePage', () => {
   beforeEach((done) => {
 
     TestBed.configureTestingModule({
-      declarations: [HomePage],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      declarations: [ HomePage ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
       providers: [
         { provide: NavController, useValue: mockNavController },
       ],

@@ -22,7 +22,7 @@ TestBed.initTestEnvironment(
     platformBrowserDynamicTesting()
 );
 
-// import '../src/app/app.component.spec';
+import '../src/app/app.component.spec';
 import '../src/pages/home/home.spec';
 import '../src/pages/tabs/tabs.spec';
 import '../src/pages/about/about.spec';

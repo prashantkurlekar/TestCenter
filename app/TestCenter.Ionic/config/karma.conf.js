@@ -54,7 +54,7 @@ module.exports = function karmaConfig(config) {
         logLevel: config.LOG_INFO,
         autoWatch: true,
         browsers: ['PhantomJS'],
-        singleRun: true,
+        singleRun: false,
         // coverageReporter: {
         //     dir : 'coverage/',
         //     subdir: 'istanbul',
