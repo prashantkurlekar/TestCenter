@@ -6,21 +6,21 @@ import { NavController } from 'ionic-angular';
 
 describe('Page: AboutPage', () => {
 
-    beforeEach((done) => {
-        TestBed.configureTestingModule({
-            declarations: [AboutPage],
-            schemas: [CUSTOM_ELEMENTS_SCHEMA],
-            providers: [
-                {provide: NavController, useValue: mockNavController},
-            ],
-        });
-        TestBed.compileComponents();
-        done();
+  beforeEach((done) => {
+    TestBed.configureTestingModule({
+      declarations: [AboutPage],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      providers: [
+        { provide: NavController, useValue: mockNavController },
+      ],
     });
+    TestBed.compileComponents();
+    done();
+  });
 
-    it('should load component', async(() => {
-        const fixture = TestBed.createComponent(AboutPage);
-        fixture.detectChanges();
-        expect(fixture).toBeDefined();
-    }));
+  it('should load component', async(() => {
+    const fixture = TestBed.createComponent(AboutPage);
+    fixture.detectChanges();
+    expect(fixture).toBeDefined();
+  }));
 });
