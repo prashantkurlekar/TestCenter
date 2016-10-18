@@ -1,10 +1,21 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import 'rxjs';
+
+import { Configuration } from '../configuration';
+import { LoggerService } from '../logger/logger.service';
 
 @Injectable()
 export class TestService {
-  constructor() { }
+  constructor(public http: Http, private loggerService: LoggerService) { }
 
   public getTopTests(): Promise<any> {
-    return 
+    return this.http.get(`${Configuration.topTests}`).toPromise()
+      .then(response => {
+        return response.json();
+      })
+      .catch(error => {
+        LoggerService.error(error);
+      });
   }
 }
