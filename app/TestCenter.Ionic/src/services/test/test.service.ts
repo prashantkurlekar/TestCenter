@@ -7,7 +7,7 @@ import { LoggerService } from '../logger/logger.service';
 
 @Injectable()
 export class TestService {
-  constructor(public http: Http, private loggerService: LoggerService) { }
+  constructor(public http: Http) { }
 
   public getTopTests(): Promise<any> {
     return this.http.get(`${Configuration.topTests}`).toPromise()
