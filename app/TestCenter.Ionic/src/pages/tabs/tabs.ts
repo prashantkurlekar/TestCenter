@@ -5,12 +5,12 @@ import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 
 @Component({
-  templateUrl: 'tabs.html'
+  templateUrl: 'tabs.html',
 })
 export class TabsPage {
-  tab1Root: any = HomePage;
-  tab2Root: any = AboutPage;
-  tab3Root: any = ContactPage;
+  public tab1Root: any = HomePage;
+  public tab2Root: any = AboutPage;
+  public tab3Root: any = ContactPage;
 
-  constructor() { }
+  constructor() { ; }
 }

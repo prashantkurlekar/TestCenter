@@ -9,8 +9,11 @@ import { BasePage } from '../base';
 })
 export class ContactPage extends BasePage {
 
-  constructor(public navCtrl: NavController) {
+  public navCtrl: NavController;
+
+  constructor(navCtrl: NavController) {
     super('Contacts');
+    this.navCtrl = navCtrl;
   }
 
 }

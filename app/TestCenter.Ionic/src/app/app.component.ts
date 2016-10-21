@@ -9,7 +9,7 @@ import { TabsPage } from '../pages/tabs/tabs';
   template: `<ion-nav [root]="rootPage"></ion-nav>`
 })
 export class TestCenterApp {
-  rootPage = TabsPage;
+  public rootPage: any = TabsPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {

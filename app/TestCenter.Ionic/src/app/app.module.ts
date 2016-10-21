@@ -9,10 +9,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 @NgModule({
   declarations: [
     TestCenterApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage
+    AboutPage, ContactPage, HomePage,
+    TabsPage,
   ],
   imports: [
     IonicModule.forRoot(TestCenterApp)
@@ -20,10 +18,8 @@ import { TabsPage } from '../pages/tabs/tabs';
   bootstrap: [IonicApp],
   entryComponents: [
     TestCenterApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage
+    AboutPage, ContactPage, HomePage,
+    TabsPage,
   ],
   providers: []
 })

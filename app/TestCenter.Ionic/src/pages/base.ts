@@ -1,3 +1,6 @@
 export class BasePage {
-  constructor(public title: string) {}
+  public title: string;
+  constructor(title: string) {
+    this.title = title;
+  }
 }

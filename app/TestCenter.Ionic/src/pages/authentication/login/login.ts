@@ -7,9 +7,13 @@ import { NavController } from 'ionic-angular';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController) {}
+  public navCtrl: NavController;
 
-  ionViewDidLoad() {
+  constructor(navCtrl: NavController) {
+    this.navCtrl = navCtrl;
+  }
+
+  public ionViewDidLoad() {
     console.log('Hello Login Page');
   }
 
