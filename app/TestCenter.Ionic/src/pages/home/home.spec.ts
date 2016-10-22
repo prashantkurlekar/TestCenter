@@ -1,39 +1,30 @@
-// import { HomePage } from './home';
-// import { async, TestBed } from '@angular/core/testing';
-// import { By } from '@angular/platform-browser';
-// import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-// import { mockNavController } from 'ionic-angular/util/mock-providers';
-// import { NavController } from 'ionic-angular';
+/* tslint:disable:no-unused-variable */
 
-// describe('Page: HomePage', () => {
+import { HomePage } from './home';
+import { async, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { mockNavController } from 'ionic-angular/util/mock-providers';
+import { NavController } from 'ionic-angular';
 
-//   beforeEach((done) => {
-//     TestBed.configureTestingModule({
-//       declarations: [HomePage],
-//       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-//       providers: [
-//         { provide: NavController, useValue: mockNavController },
-//       ],
-//     });
-//     TestBed.compileComponents();
-//     done();
-//   });
+describe('Pages: HomePage', () => {
 
-//   it('should load component', async(() => {
-//     const fixture: any = TestBed.createComponent(HomePage);
-//     fixture.detectChanges();
+  beforeEach((done) => {
+    TestBed.configureTestingModule({
+      declarations: [HomePage],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      providers: [
+        { provide: NavController, useValue: mockNavController },
+      ],
+    });
+    TestBed.compileComponents();
+    done();
+  });
 
-//     expect(fixture).toBeDefined();
-//   }));
+  it('should load component', async(() => {
+    const fixture: any = TestBed.createComponent(HomePage);
+    fixture.detectChanges();
+    let component: any = fixture.debugElement.componentInstance;
 
-//   it('should have title defined', async(() => {
-//     const fixture = TestBed.createComponent(HomePage);
-//     fixture.detectChanges();
-
-//     const debugElement: any = fixture.debugElement.query(By.css('ion-title'));
-//     const element: any = debugElement.nativeElement;
-
-//     expect(element.textContent).toEqual('Home');
-//   }));
-
-// });
+    expect(component).toBeTruthy();
+  }));
+});

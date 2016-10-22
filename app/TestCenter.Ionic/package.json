@@ -1,10 +1,11 @@
 {
-  "name": "test-center",
-  "author": "Prashant Kurlekar",
-  "description": "Create your own test",
+  "name": "testcenter",
+  "description": "Create Your Own Test",
   "version": "0.1.0",
-  "homepage": "http://testcenter.prashantkurlekar.com/",
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prashantkurlekar/test-center.git"
+  },
   "scripts": {
     "build": "ionic-app-scripts build",
     "watch": "ionic-app-scripts watch",
@@ -13,8 +14,6 @@
     "deploy:before": "build",
     "build:before": "build",
     "run:before": "build",
-    "e2e": "gulp --gulpfile test/gulpfile.ts --cwd ./ build-e2e && protractor test/protractor.conf.js",
-    "postinstall": "ionic state restore && webdriver-manager update",
     "start": "ionic serve",
     "test": "ng test"
   },
@@ -32,11 +31,12 @@
     "ionic-angular": "2.0.0-rc.1",
     "ionic-native": "2.2.3",
     "ionicons": "3.0.0",
+    "moment": "2.15.1",
     "rxjs": "5.0.0-beta.12",
     "zone.js": "0.6.21"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "0.0.36",
+    "@ionic/app-scripts": "^0.0.36",
     "@types/jasmine": "^2.2.30",
     "angular-cli": "1.0.0-beta.17",
     "codelyzer": "~0.0.26",
@@ -53,21 +53,24 @@
     "ts-node": "1.3.0",
     "tslint": "3.15.1",
     "tslint-eslint-rules": "1.5.0",
-    "typescript": "2.0.3",
+    "typescript": "^2.0.3",
     "karma-phantomjs-launcher": "^1.0.2",
     "phantomjs-prebuilt": "^2.1.13"
   },
   "cordovaPlugins": [
-    "cordova-plugin-device",
-    "cordova-plugin-console",
     "cordova-plugin-whitelist",
-    "cordova-plugin-splashscreen",
-    "cordova-plugin-statusbar",
-    "ionic-plugin-keyboard"
+    {
+      "locator": "https://github.com/VersoSolutions/CordovaClipboard",
+      "id": "com.verso.cordova.clipboard"
+    },
+    {
+      "locator": "https://github.com/apache/cordova-plugin-splashscreen.git",
+      "id": "cordova-plugin-splashscreen"
+    },
+    "cordova-plugin-crosswalk-webview"
   ],
-  "cordovaPlatforms": [],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/prashantkurlekar/test-center.git"
-  }
+  "cordovaPlatforms": [
+    "ios",
+    "android"
+  ]
 }

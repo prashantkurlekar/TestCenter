@@ -1,6 +1,6 @@
 {
-  "name": "onemore",
-  "app_id": "",
-  "v2": true,
-  "typescript": true
+  "name": "ionic-conference-app",
+  "app_id": "ee89095b",
+  "typescript": true,
+  "v2": true
 }

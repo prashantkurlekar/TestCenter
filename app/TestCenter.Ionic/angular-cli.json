@@ -1,7 +1,7 @@
 {
   "project": {
-    "version": "1.0.0-beta.17",
-    "name": "onemore"
+    "version": "1.0.0-beta.16",
+    "name": "testcenter"
   },
   "apps": [
     {
@@ -11,7 +11,7 @@
       "index": "index.html",
       "main": "main.ts",
       "test": "test.ts",
-      "tsconfig": "tsconfig.json",
+      "tsconfig": "../tsconfig.json",
       "prefix": "app",
       "mobile": false,
       "styles": [
@@ -38,7 +38,7 @@
     }
   },
   "defaults": {
-    "styleExt": "scss",
+    "styleExt": "css",
     "prefixInterfaces": false
   }
 }

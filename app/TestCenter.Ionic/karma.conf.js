@@ -11,7 +11,7 @@ module.exports = function (config) {
       require('karma-remap-istanbul'),
       require('karma-mocha-reporter'),
       require('angular-cli/plugins/karma'),
-      require('karma-phantomjs-launcher'),
+      require('karma-phantomjs-launcher')
     ],
     files: [
       { pattern: './src/test.ts', watched: false }
