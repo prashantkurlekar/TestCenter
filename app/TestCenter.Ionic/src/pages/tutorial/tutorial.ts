@@ -13,7 +13,7 @@ export interface Slide {
 
 @Component({
   selector: 'page-tutorial',
-  templateUrl: 'tutorial.html'
+  templateUrl: 'tutorial.html',
 })
 export class TutorialPage {
   slides: Slide[];
@@ -28,12 +28,13 @@ export class TutorialPage {
       },
       {
         title: 'What is Ionic?',
-        description: '<b>Ionic Framework</b> is an open source SDK that enables developers to build high quality mobile apps with web technologies like HTML, CSS, and JavaScript.',
+        description: `<b>Ionic Framework</b> is an open source SDK that enables developers to build high quality mobile apps with web technologies like HTML, CSS, and JavaScript.`,
         image: 'assets/img/ica-slidebox-img-2.png',
       },
       {
         title: 'What is Ionic Platform?',
-        description: 'The <b>Ionic Platform</b> is a cloud platform for managing and scaling Ionic apps with integrated services like push notifications, native builds, user auth, and live updating.',
+        description: `The <b>Ionic Platform</b> is a cloud platform for managing and scaling Ionic apps with integrated services like push notifications, 
+                      native builds, user auth, and live updating.`,
         image: 'assets/img/ica-slidebox-img-3.png',
       }
     ];

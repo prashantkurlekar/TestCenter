@@ -7,7 +7,7 @@ import { AccountPage } from '../pages/confapp/account/account';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { TabsPage } from '../pages/tabs/tabs';
-import { TutorialPage } from '../pages/tutorial/tutorial';
+// import { TutorialPage } from '../pages/tutorial/tutorial';
 
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
@@ -45,15 +45,13 @@ export class ConferenceApp {
     { title: 'Login', component: LoginPage, icon: 'log-in' },
     { title: 'Signup', component: SignupPage, icon: 'person-add' }
   ];
-  public rootPage: any = TutorialPage;
+  public rootPage: any = TabsPage;
 
-  constructor(
-    public events: Events,
-    public userData: UserData,
-    public menu: MenuController,
-    platform: Platform,
-    confData: ConferenceData
-  ) {
+  constructor(public events: Events,
+              public userData: UserData,
+              public menu: MenuController,
+              platform: Platform,
+              confData: ConferenceData) {
     // Call any initial plugins when ready
     platform.ready().then(() => {
       // StatusBar.styleDefault();

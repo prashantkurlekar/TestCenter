@@ -1,6 +1,9 @@
 {
   "projects": [
-    "src",
-    "test"
+    "src/TestCenter.Api",
+    "src/TestCenter.Services",
+    "src/TestCenter.Web",
+    "mock/TestCenter.Services.Mock",
+    "test/TestCenter.Api.Tests"
   ]
 }

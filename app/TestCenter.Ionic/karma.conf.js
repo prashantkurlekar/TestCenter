@@ -9,9 +9,7 @@ module.exports = function (config) {
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-remap-istanbul'),
-      require('karma-mocha-reporter'),
-      require('angular-cli/plugins/karma'),
-      require('karma-phantomjs-launcher')
+      require('angular-cli/plugins/karma')
     ],
     files: [
       { pattern: './src/test.ts', watched: false }
@@ -29,17 +27,12 @@ module.exports = function (config) {
       config: './angular-cli.json',
       environment: 'dev'
     },
-    reporters: [
-      'mocha', 'karma-remap-istanbul'
-    ],
+    reporters: ['progress', 'karma-remap-istanbul'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: [
-      // 'Chrome',
-      'PhantomJS',
-    ],
+    browsers: ['Chrome'],
     singleRun: false
   });
 };
