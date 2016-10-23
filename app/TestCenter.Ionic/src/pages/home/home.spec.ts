@@ -3,8 +3,8 @@
 import { HomePage } from './home';
 import { async, TestBed } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { mockNavController } from 'ionic-angular/util/mock-providers';
-import { NavController } from 'ionic-angular';
+import { mockNavController, mockPlatform } from 'ionic-angular/util/mock-providers';
+import { NavController, Platform } from 'ionic-angular';
 
 describe('Pages: HomePage', () => {
 
@@ -14,6 +14,7 @@ describe('Pages: HomePage', () => {
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [
         { provide: NavController, useValue: mockNavController },
+        { provide: Platform, useValue: mockPlatform },
       ],
     });
     TestBed.compileComponents();

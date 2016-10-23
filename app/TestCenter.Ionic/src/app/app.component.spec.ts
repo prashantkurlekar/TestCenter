@@ -1,34 +1,30 @@
-// /* tslint:disable:no-unused-variable */
+/* tslint:disable:no-unused-variable */
 
-// import { TestBed, async } from '@angular/core/testing';
-// import { ConferenceApp } from './app.component';
-// import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { TestCenterApp } from './app.component';
+import { async, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { mockPlatform } from 'ionic-angular/util/mock-providers';
+import { Platform } from 'ionic-angular';
 
-// import { Events, MenuController, Nav, Platform } from 'ionic-angular';
-// import { mockPlatform } from 'ionic-angular/util/mock-providers';
-// import { UserData } from '../providers/user-data';
+describe('Pages: TestCenterApp', () => {
 
-// describe('App: ConferenceApp', () => {
+  beforeEach((done) => {
+    TestBed.configureTestingModule({
+      declarations: [TestCenterApp],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      providers: [
+        { provide: Platform, useValue: (<any> new Platform) },
+      ],
+    });
+    TestBed.compileComponents();
+    done();
+  });
 
-//   beforeEach((done) => {
-//     TestBed.configureTestingModule({
-//       declarations: [ConferenceApp],
-//       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-//       providers: [
-//         { provide: Platform, useValue: mockPlatform },
-//         Events, MenuController, Nav, UserData,
-//       ],
-//     });
-//     TestBed.compileComponents();
-//     done();
-//   });
+  it('should load component', async(() => {
+    const fixture: any = TestBed.createComponent(TestCenterApp);
+    fixture.detectChanges();
+    let component: any = fixture.debugElement.componentInstance;
 
-//   it('should create the app', async(() => {
-//     let fixture: any = TestBed.createComponent(ConferenceApp);
-//     fixture.detectChanges();
-//     let app: any = fixture.debugElement.componentInstance;
-
-//     expect(app).toBeTruthy();
-//   }));
-
-// });
+    expect(component).toBeTruthy();
+  }));
+});
