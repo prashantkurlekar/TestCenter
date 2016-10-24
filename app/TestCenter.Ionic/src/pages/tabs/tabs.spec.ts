@@ -1,4 +1,5 @@
 /* tslint:disable:no-unused-variable */
+/* tslint:disable */
 
 import { TabsPage } from './tabs';
 import { async, TestBed } from '@angular/core/testing';
@@ -6,7 +7,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { mockNavController, mockPlatform } from 'ionic-angular/util/mock-providers';
 import { NavController, Platform } from 'ionic-angular';
 
-describe('Pages: TabsPage', () => {
+describe('Page: TabsPage', () => {
 
   beforeEach((done) => {
     TestBed.configureTestingModule({

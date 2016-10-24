@@ -1,4 +1,5 @@
 /* tslint:disable:no-unused-variable */
+/* tslint:disable */
 
 import { TestCenterApp } from './app.component';
 import { async, TestBed } from '@angular/core/testing';
