@@ -1,3 +1,5 @@
+/* tslint:disable:no-unused-variable */
+
 import { browser, element, by } from 'protractor';
 
 export class NgTestSamplePage {

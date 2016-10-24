@@ -1,3 +1,5 @@
+/* tslint:disable:no-unused-variable */
+
 import { NgTestSamplePage } from './app.po';
 
 describe('ng-test-sample App', function() {
