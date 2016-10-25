@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
 import 'rxjs';
-import { SafeHttp } from '../safe-http/safe-http';
+// import { SafeHttp } from '../safe-http/safe-http';
 
 @Injectable()
 export class TestService {
-  constructor(private http: SafeHttp) { }
+  constructor(private http: Http) { }
 
-  public getTop(): void {
-    this.http.get('')
+  public getTopTests(): Promise<any> {
+    return this.http.get('http://localhost:5000/api/test/top')
       .toPromise().then(response => {
         console.log(response);
       })

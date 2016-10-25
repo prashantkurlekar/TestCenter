@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-
 import { NavController } from 'ionic-angular';
+
+import { TestService } from '../../services';
 
 @Component({
   selector: 'page-home',
@@ -8,8 +9,12 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  public navCtrl: NavController;
+  public tests: any;
 
-  constructor(navCtrl: NavController) { ; }
+  constructor(public navController: NavController, public testService: TestService) {
+    this.testService.getTopTests().then(tests => {
+      this.tests = tests;
+    });
+  }
 
 }

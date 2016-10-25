@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Request, Response, RequestOptionsArgs } from '@angular/http';
+import { Http, Request, RequestOptionsArgs } from '@angular/http';
 import { NavController } from 'ionic-angular';
 import { Network, Diagnostic } from 'ionic-native';
 
