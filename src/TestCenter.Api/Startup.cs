@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -28,6 +24,7 @@ namespace api.testcenter
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            services.AddCors();
             services.AddMvc();
         }
 
@@ -37,7 +34,12 @@ namespace api.testcenter
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            app.UseCors(policy =>
+            {
+                policy.AllowAnyOrigin();
+            });
             app.UseMvc();
+            // app.UseCors("AllowCors");
         }
     }
 }

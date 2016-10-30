@@ -28,4 +28,5 @@ describe('Pages: TestCenterApp', () => {
 
     expect(component).toBeTruthy();
   }));
+
 });

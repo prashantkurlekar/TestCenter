@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Request, RequestOptionsArgs } from '@angular/http';
-import { NavController } from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
 import { Network, Diagnostic } from 'ionic-native';
 
 @Injectable()
@@ -8,31 +8,31 @@ export class NetworkService {
 
   public networkAlert: any;
 
-  constructor(private nav: NavController, ) { }
+  constructor(public alertController: AlertController) { }
 
   public noConnection(): any {
     return (Network.connection === 'none');
   }
 
   public showNetworkAlert(): void {
-    // let networkAlert: any = Alert.create({
-    //   title: 'No Internet Connection',
-    //   message: 'Please check your internet connection.',
-    //   buttons: [
-    //     {
-    //       text: 'Cancel',
-    //       handler: () => { }
-    //     }, {
-    //       text: 'Open Settings',
-    //       handler: () => {
-    //         networkAlert.dismiss().then(() => {
-    //           this.showSettings();
-    //         })
-    //       },
-    //     },
-    //   ],
-    // });
-    // this.nav.present(networkAlert);
+    let networkAlert: any = this.alertController.create({
+      title: 'No internet connection',
+      subTitle: 'Please check your internet connection.',
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: () => { ; },
+        }, {
+          text: 'Open Settings',
+          handler: () => {
+            networkAlert.dismiss().then(() => {
+              this.showSettings();
+            });
+          },
+        },
+      ],
+    });
+    this.networkAlert.present();
   }
 
   private showSettings(): void {
