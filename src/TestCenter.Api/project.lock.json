@@ -3389,6 +3389,13 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "TestCenter.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0"
+        }
       }
     }
   },
@@ -9267,6 +9274,10 @@
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
       ]
+    },
+    "TestCenter.Services/1.0.0": {
+      "type": "project",
+      "path": "../TestCenter.Services/project.json"
     }
   },
   "projectFileDependencyGroups": {
@@ -9284,7 +9295,8 @@
       "Microsoft.Extensions.Logging.Console >= 1.1.0-preview1-final",
       "Microsoft.Extensions.Logging.Debug >= 1.1.0-preview1-final",
       "Microsoft.Extensions.Options.ConfigurationExtensions >= 1.1.0-preview1-final",
-      "Microsoft.NETCore.App >= 1.0.0"
+      "Microsoft.NETCore.App >= 1.0.0",
+      "TestCenter.Services"
     ],
     ".NETCoreApp,Version=v1.1": []
   },

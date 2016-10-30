@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TestCenter.Services
+namespace TestCenter.Models
 {
-    public interface TestService
+    public class Assessment
     {
-        IList<Test> GetTop();
+        public Assessment()
+        {
+        }
     }
 }
