@@ -7,6 +7,6 @@ namespace TestCenter.Services
 {
     public interface AssessmentService
     {
-        IList<object> GetTop();
+        List<object> GetTop();
     }
 }

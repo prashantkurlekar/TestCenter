@@ -7,12 +7,17 @@ namespace TestCenter.Models
 {
     public class Assessment
     {
-        public Assessment()
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public List<string> Labels { get; set; }
+
+        public Assessment(Guid id, string name, string description, List<string> labels) 
         {
-            public Guid Id { get; set; }
-            public string Name { get; set; }
-            public string Description { get; set; }
-            public List<string> Labels { get; set; }
+            this.Id = id;
+            this.Name = name;
+            this.Description = description;
+            this.Labels = labels;
         }
     }
 }
