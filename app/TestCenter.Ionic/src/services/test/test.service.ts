@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-// import { Http } from '@angular/http';
 import 'rxjs';
 import { SafeHttp } from '../safe-http/safe-http';
 
@@ -13,7 +12,8 @@ export class TestService {
         return response.json();
       })
       .catch(error => {
-        console.error(error);
+        // console.log(`Error`);
+        // console.error(error);
       });
   }
 }

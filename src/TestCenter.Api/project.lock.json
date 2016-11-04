@@ -3390,6 +3390,13 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
+      "TestCenter.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0"
+        }
+      },
       "TestCenter.Services/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.6",
@@ -9275,6 +9282,10 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
+    "TestCenter.Models/1.0.0": {
+      "type": "project",
+      "path": "../TestCenter.Models/project.json"
+    },
     "TestCenter.Services/1.0.0": {
       "type": "project",
       "path": "../TestCenter.Services/project.json"
@@ -9296,6 +9307,7 @@
       "Microsoft.Extensions.Logging.Debug >= 1.1.0-preview1-final",
       "Microsoft.Extensions.Options.ConfigurationExtensions >= 1.1.0-preview1-final",
       "Microsoft.NETCore.App >= 1.0.0",
+      "TestCenter.Models",
       "TestCenter.Services"
     ],
     ".NETCoreApp,Version=v1.1": []
