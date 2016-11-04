@@ -3,7 +3,7 @@ import 'rxjs';
 import { SafeHttp } from '../safe-http/safe-http';
 
 @Injectable()
-export class TestService {
+export class AssessmentService {
   constructor(private http: SafeHttp) { }
 
   public getTopTests(): Promise<any> {

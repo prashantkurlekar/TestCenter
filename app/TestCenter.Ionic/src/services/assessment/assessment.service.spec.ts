@@ -2,7 +2,7 @@
 /* tslint:disable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { TestService } from './test.service';
+import { AssessmentService } from './assessment.service';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions, Http, Response, ResponseOptions } from '@angular/http';
 import { SafeHttp, NetworkService } from '../safe-http/safe-http';
@@ -13,7 +13,7 @@ describe('Service: Test', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        TestService,
+        AssessmentService,
         MockBackend, BaseRequestOptions,
         {
           provide: Http, useFactory: (mockBackend: MockBackend, options: BaseRequestOptions) => {
@@ -24,12 +24,12 @@ describe('Service: Test', () => {
     });
   });
 
-  it('should initialize', inject([TestService], (service: TestService) => {
+  it('should initialize', inject([AssessmentService], (service: AssessmentService) => {
     expect(service).toBeTruthy();
   }));
 
-  it('should return top rated tests', async(inject([TestService, MockBackend],
-    (service: TestService, backend: MockBackend) => {
+  it('should return top rated tests', async(inject([AssessmentService, MockBackend],
+    (service: AssessmentService, backend: MockBackend) => {
       expect(service).toBeTruthy();
     }))
   );
