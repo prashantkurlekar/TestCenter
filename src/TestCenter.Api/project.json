@@ -59,6 +59,6 @@
     ]
   },
   "tooling": {
-    "defaultNamespace": "api.testcenter"
+    "defaultNamespace": "TestCenter.Api"
   }
 }

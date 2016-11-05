@@ -1,3 +1,7 @@
-<p>
-  {{ assessment }}
+<h3 [hidden]="!assessment.name">
+  {{ assessment.name }}
+</h3>
+<p [hidden]="!assessment.description">
+  {{ assessment.description }}
 </p>
+<!--{{ assessment.name }}-->

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using TestCenter.Models;
 
 namespace TestCenter.Api.Controllers
 {
@@ -8,9 +9,14 @@ namespace TestCenter.Api.Controllers
     {
         [HttpGet]
         // [RouteAttribute("top")]
-        public IEnumerable<string> Get()
+        public IEnumerable<Assessment> Get()
         {
-            return new string[] { "value1", "value2", "value3" };
+            return new Assessment[]
+            {
+                new Assessment(System.Guid.NewGuid(), "One", "qwerpoiuytasdflkjhgzxcvbmn"),
+                new Assessment(System.Guid.NewGuid(), "Two", "qwerpoiuytasdflkjhgzxcvbmn"),
+                new Assessment(System.Guid.NewGuid(), "Three", "qwerpoiuytasdflkjhgzxcvbmn")
+            };
         }
     }
 }

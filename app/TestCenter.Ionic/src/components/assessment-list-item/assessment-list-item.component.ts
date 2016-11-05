@@ -6,7 +6,8 @@ import { Component, Input } from '@angular/core';
 })
 export class AssessmentListItemComponent {
 
-  @Input() public assessment?: any;
+  @Input() public assessment: any;
 
-  constructor() { ; }
+  constructor() {
+  }
 }

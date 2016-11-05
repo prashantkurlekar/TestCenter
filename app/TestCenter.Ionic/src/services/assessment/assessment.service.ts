@@ -10,6 +10,7 @@ export class AssessmentService {
   public getAssessments(): Promise<any> {
     return this.http.get('http://localhost:5000/api/assessment').toPromise()
       .then(response => {
+        LoggerService.debug(response.json());
         return response.json();
       })
       .catch(error => {

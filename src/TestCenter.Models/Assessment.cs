@@ -12,12 +12,11 @@ namespace TestCenter.Models
         public string Description { get; set; }
         public List<string> Labels { get; set; }
 
-        public Assessment(Guid id, string name, string description, List<string> labels) 
+        public Assessment(Guid id, string name = "", string description = "")
         {
             this.Id = id;
             this.Name = name;
             this.Description = description;
-            this.Labels = labels;
         }
     }
 }

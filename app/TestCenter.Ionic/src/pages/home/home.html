@@ -6,8 +6,8 @@
 
 <ion-content>
 	<ion-list>
-		<ion-item *ngFor="let assessment of assessments">
+		<button ion-item *ngFor="let assessment of assessments" (click)="onAssessment(assessment)">
 			<assessment-list-item [assessment]="assessment"></assessment-list-item>
-		</ion-item>
+		</button>
 	</ion-list>
 </ion-content>
