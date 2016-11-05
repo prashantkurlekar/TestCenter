@@ -3401,7 +3401,17 @@
         "type": "project",
         "framework": ".NETStandard,Version=v1.6",
         "dependencies": {
-          "NETStandard.Library": "1.6.0"
+          "NETStandard.Library": "1.6.0",
+          "TestCenter.Models": "(, )"
+        }
+      },
+      "TestCenter.Services.Mock/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "TestCenter.Models": "(, )",
+          "TestCenter.Services": "(, )"
         }
       }
     }
@@ -9289,6 +9299,10 @@
     "TestCenter.Services/1.0.0": {
       "type": "project",
       "path": "../TestCenter.Services/project.json"
+    },
+    "TestCenter.Services.Mock/1.0.0": {
+      "type": "project",
+      "path": "../../mock/TestCenter.Services.Mock/project.json"
     }
   },
   "projectFileDependencyGroups": {
@@ -9308,7 +9322,8 @@
       "Microsoft.Extensions.Options.ConfigurationExtensions >= 1.1.0-preview1-final",
       "Microsoft.NETCore.App >= 1.0.0",
       "TestCenter.Models",
-      "TestCenter.Services"
+      "TestCenter.Services",
+      "TestCenter.Services.Mock"
     ],
     ".NETCoreApp,Version=v1.1": []
   },

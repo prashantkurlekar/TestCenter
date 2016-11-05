@@ -22,6 +22,9 @@
     },
     "TestCenter.Models": {
       "target": "project"
+    },
+    "TestCenter.Services.Mock": {
+      "target": "project"
     }
   },
   "tools": {

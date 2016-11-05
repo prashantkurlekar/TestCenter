@@ -5,17 +5,17 @@ import { AssessmentModule } from './assessment/assessment.module';
 
 import { TabsPage } from './tabs/tabs';
 import { AboutPage } from './about/about';
-import { HomePage } from './home/home';
+import { PublicHomePage } from './public/home/home';
 import { ContactPage } from './contact/contact';
 
 @NgModule({
   declarations: [
-    TabsPage, HomePage, AboutPage, ContactPage,
+    TabsPage, PublicHomePage, AboutPage, ContactPage,
   ],
   imports: [ IonicModule, ComponentsModule, AssessmentModule ],
   exports: [],
   entryComponents: [
-    TabsPage, HomePage, AboutPage, ContactPage,
+    TabsPage, PublicHomePage, AboutPage, ContactPage,
   ],
   providers: [ ],
 })

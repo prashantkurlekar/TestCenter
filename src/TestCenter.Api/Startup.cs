@@ -4,6 +4,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
+using TestCenter.Services;
+using TestCenter.Services.Mock;
+
 namespace api.testcenter
 {
     public class Startup
@@ -23,9 +26,19 @@ namespace api.testcenter
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
+            ConfigureFrameworkServices(services);
+            ConfigureApplicationServices(services);
+        }
+
+        private void ConfigureFrameworkServices(IServiceCollection services)
+        {
             services.AddCors();
             services.AddMvc();
+        }
+
+        private void ConfigureApplicationServices(IServiceCollection services)
+        {
+            services.AddTransient<AssessmentService, AssessmentServiceMock>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,7 +52,6 @@ namespace api.testcenter
                 policy.AllowAnyOrigin();
             });
             app.UseMvc();
-            // app.UseCors("AllowCors");
         }
     }
 }

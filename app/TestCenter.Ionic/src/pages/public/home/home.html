@@ -1,0 +1,17 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>{{ title }}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+	<ion-list>
+		<ion-list-header *ngIf="!filteredAssessments?.length > 0">
+			No assessments found.
+		</ion-list-header>
+		<button ion-item *ngFor="let assessment of filteredAssessments" (click)="onAssessment(assessment)">
+			<assessment-list-item [assessment]="assessment"></assessment-list-item>
+		</button>
+	</ion-list>
+</ion-content>

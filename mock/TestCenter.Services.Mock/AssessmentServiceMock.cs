@@ -14,7 +14,9 @@ namespace TestCenter.Services.Mock
             {
                 new Assessment(System.Guid.NewGuid(), "One", "qwerpoiuytasdflkjhgzxcvbmn"),
                 new Assessment(System.Guid.NewGuid(), "Two", "qwerpoiuytasdflkjhgzxcvbmn"),
-                new Assessment(System.Guid.NewGuid(), "Three", "qwerpoiuytasdflkjhgzxcvbmn")
+                new Assessment(System.Guid.NewGuid(), "Three", "qwerpoiuytasdflkjhgzxcvbmn"),
+                new Assessment(System.Guid.NewGuid(), "Four", "qwerpoiuytasdflkjhgzxcvbmn"),
+                new Assessment(System.Guid.NewGuid(), "Five", "qwerpoiuytasdflkjhgzxcvbmn")
             }.ToList();
         }
     }
