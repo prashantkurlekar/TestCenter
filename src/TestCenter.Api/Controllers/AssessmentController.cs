@@ -1,14 +1,14 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
-namespace api.testcenter.Controllers
+namespace TestCenter.Api.Controllers
 {
     [Route("api/[controller]")]
-    public class TestController : Controller
+    public class AssessmentController : Controller
     {
         [HttpGet]
-        [RouteAttribute("top")]
-        public IEnumerable<string> Top()
+        // [RouteAttribute("top")]
+        public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2", "value3" };
         }

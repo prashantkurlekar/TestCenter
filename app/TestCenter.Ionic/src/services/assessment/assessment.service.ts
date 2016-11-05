@@ -8,7 +8,7 @@ export class AssessmentService {
   constructor(private http: SafeHttp) { }
 
   public getAssessments(): Promise<any> {
-    return this.http.get('http://localhost:5000/api/values').toPromise()
+    return this.http.get('http://localhost:5000/api/assessment').toPromise()
       .then(response => {
         return response.json();
       })

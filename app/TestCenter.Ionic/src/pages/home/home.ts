@@ -12,13 +12,13 @@ import { BasePage } from '../base';
 export class HomePage implements BasePage {
 
   public title: string;
-  public tests: any;
+  public assessments: Array<any>;
 
   constructor(public navController: NavController, public assessmentService: AssessmentService) {
     this.title = 'Home';
-    // this.assessmentService.getAssessments().then(tests => {
-    //   this.tests = tests;
-    // });
+    this.assessmentService.getAssessments().then(assessments => {
+      this.assessments = assessments;
+    });
   }
 
 }
