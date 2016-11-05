@@ -8,7 +8,7 @@ import { BaseRequestOptions, Http, Response, ResponseOptions } from '@angular/ht
 import { SafeHttp, NetworkService } from '../safe-http/safe-http';
 import { NavController } from 'ionic-angular';
 
-describe('Service: Test', () => {
+describe('Service: Assessment', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -16,10 +16,10 @@ describe('Service: Test', () => {
         AssessmentService,
         MockBackend, BaseRequestOptions,
         {
-          provide: Http, useFactory: (mockBackend: MockBackend, options: BaseRequestOptions) => {
+          provide: SafeHttp, useFactory: (mockBackend: MockBackend, options: BaseRequestOptions) => {
             return new Http(mockBackend, options);
           }, deps: [MockBackend, BaseRequestOptions],
-        }, SafeHttp, NetworkService, NavController,
+        }, NetworkService, NavController,
       ],
     });
   });

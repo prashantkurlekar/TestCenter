@@ -5,6 +5,6 @@ import { NavController } from 'ionic-angular';
   selector: 'page-assessment',
   templateUrl: 'assessment.html',
 })
-export class Assessment {
+export class AssessmentPage {
   constructor(public navCtrl: NavController) { }
 }

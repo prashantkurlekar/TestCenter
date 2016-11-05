@@ -5,7 +5,7 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import { SafeHttp, NetworkService, AssessmentService } from '../services';
+import { SafeHttp, NetworkService, AssessmentService, LoggerService, StorageService } from '../services';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,7 @@ import { SafeHttp, NetworkService, AssessmentService } from '../services';
     TabsPage,
   ],
   providers: [
-    SafeHttp, NetworkService, AssessmentService,
+    SafeHttp, NetworkService, AssessmentService, LoggerService, StorageService,
   ],
 })
 export class AppModule {}

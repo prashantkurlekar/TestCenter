@@ -13,10 +13,12 @@ export class StorageMock {
         rtn = `{"id":"${StorageMock.CLICKER_IDS[0]}","name":"test1","clicks":[{"time":1450410168819,"location":"TODO"}]}`;
         break;
       case StorageMock.CLICKER_IDS[1]:
-        rtn = `{"id":"${StorageMock.CLICKER_IDS[1]}","name":"test2","clicks":[{"time":1450410168819,"location":"TODO"},{"time":1450410168945,"location":"TODO"}]}`;
+        rtn = `{"id":"${StorageMock.CLICKER_IDS[1]}","name":"test2","clicks":[{"time":1450410168819,"location":"TODO"},
+          {"time":1450410168945,"location":"TODO"}]}`;
         break;
       case StorageMock.CLICKER_IDS[2]:
-        rtn = `{"id":"${StorageMock.CLICKER_IDS[2]}","name":"test3", "clicks":[{ "time": 1450410168819, "location": "TODO" }, { "time": 1450410168945, "location": "TODO" }] }`;
+        rtn = `{"id":"${StorageMock.CLICKER_IDS[2]}","name":"test3", "clicks":[{ "time": 1450410168819, "location": "TODO" }, 
+          { "time": 1450410168945, "location": "TODO" }] }`;
         break;
       default:
         rtn = 'SHOULD NOT BE HERE!';

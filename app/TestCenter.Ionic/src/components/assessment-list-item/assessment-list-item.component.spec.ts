@@ -5,7 +5,7 @@ import { DebugElement } from '@angular/core';
 
 import { AssessmentListItemComponent } from './assessment-list-item.component';
 
-describe('AssessmentListItemComponent', () => {
+describe('Component: AssessmentListItem', () => {
   let component: AssessmentListItemComponent;
   let fixture: ComponentFixture<AssessmentListItemComponent>;
 

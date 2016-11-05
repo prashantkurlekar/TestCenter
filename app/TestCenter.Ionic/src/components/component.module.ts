@@ -18,5 +18,4 @@ import { AssessmentListItemComponent } from './assessment-list-item/assessment-l
   entryComponents: [],
   providers: [],
 })
-
 export class ComponentsModule { }

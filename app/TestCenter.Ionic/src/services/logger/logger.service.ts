@@ -14,9 +14,9 @@ export class LoggerService {
     console.error(message);
   }
 
-  // public static info(message: any): void {
-  //   console.log(message);
-  // }
+  public static info(message: any): void {
+    console.info(message);
+  }
 
   public static warn(message: any): void {
     console.warn(message);

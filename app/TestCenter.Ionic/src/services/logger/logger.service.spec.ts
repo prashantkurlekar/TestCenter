@@ -7,11 +7,19 @@ describe('Service: Logger', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [LoggerService]
+      providers: [ LoggerService ]
     });
   });
 
-  it('should ...', inject([LoggerService], (service: LoggerService) => {
+  // beforeEach(() => {
+  //   spyOn(StorageService, 'initStorage').and.returnValue(new StorageMock());
+  //   storage = new StorageService();
+  //   spyOn(storage['storage'], 'get').and.callThrough();
+  //   spyOn(storage['storage'], 'set').and.callThrough();
+  //   spyOn(storage['storage'], 'remove').and.callThrough();
+  // });
+
+  it('should initialize', inject([LoggerService], (service: LoggerService) => {
     expect(service).toBeTruthy();
   }));
 

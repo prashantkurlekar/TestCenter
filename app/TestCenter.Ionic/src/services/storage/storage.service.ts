@@ -6,12 +6,12 @@ export class StorageService {
 
   private storage: Storage;
 
-  constructor() {
-    this.storage = StorageService.initStorage();
-  }
-
   public static initStorage(): Storage {
     return new Storage();
+  }
+
+  constructor() {
+    this.storage = StorageService.initStorage();
   }
 
   public get(key: string): Promise<{}> {

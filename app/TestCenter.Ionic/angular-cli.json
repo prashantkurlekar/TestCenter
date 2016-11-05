@@ -1,7 +1,7 @@
 {
   "project": {
-    "version": "1.0.0-beta.18",
-    "name": "ng-test-sample"
+    "version": "1.0.0-beta.19-3",
+    "name": "test-center-angular"
   },
   "apps": [
     {
@@ -14,11 +14,11 @@
       "index": "index.html",
       "main": "main.ts",
       "test": "test.ts",
-      "tsconfig": "tsconfig.json",
+      "tsconfig": "tsconfig.test.json",
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "styles.sass"
+        "styles.css"
       ],
       "scripts": [],
       "environments": {
@@ -41,7 +41,7 @@
     }
   },
   "defaults": {
-    "styleExt": "sass",
+    "styleExt": "css",
     "prefixInterfaces": false,
     "inline": {
       "style": false,

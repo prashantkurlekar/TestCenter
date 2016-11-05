@@ -7,7 +7,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { mockPlatform } from 'ionic-angular/util/mock-providers';
 import { Platform } from 'ionic-angular';
 
-describe('Pages: TestCenterApp', () => {
+describe('App: TestCenterApp', () => {
 
   beforeEach((done) => {
     TestBed.configureTestingModule({
