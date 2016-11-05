@@ -1067,6 +1067,13 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "TestCenter.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0"
+        }
       }
     }
   },
@@ -4013,11 +4020,16 @@
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
       ]
+    },
+    "TestCenter.Models/1.0.0": {
+      "type": "project",
+      "path": "../TestCenter.Models/project.json"
     }
   },
   "projectFileDependencyGroups": {
     "": [
-      "NETStandard.Library >= 1.6.0"
+      "NETStandard.Library >= 1.6.0",
+      "TestCenter.Models"
     ],
     ".NETStandard,Version=v1.6": []
   },

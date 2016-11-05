@@ -5,6 +5,9 @@
     "NETStandard.Library": "1.6.0",
     "TestCenter.Services": {
       "target": "project"
+    },
+    "TestCenter.Models": {
+      "target": "project"
     }
   },
 
