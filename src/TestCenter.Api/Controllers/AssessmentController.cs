@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using TestCenter.Models;
@@ -16,10 +17,15 @@ namespace TestCenter.Api.Controllers
         }
         
         [HttpGet]
-        // [RouteAttribute("top")]
         public IEnumerable<Assessment> Get()
         {
             return AssessmentService.Get();
+        }
+
+        [HttpGet("{id}")]
+        public Assessment Get(Guid id)
+        {
+            return AssessmentService.Get(id);
         }
     }
 }
