@@ -3,16 +3,15 @@ import { IonicApp, IonicModule } from 'ionic-angular';
 import { TestCenterApp } from './app.component';
 import { PagesModule } from '../pages/pages.module';
 import { ComponentsModule } from '../components/components.module';
-import {
-  SafeHttp, NetworkService, AssessmentService,
-  LoggerService, StorageService } from '../services';
+import { ServicesModule } from '../services/services.module';
+
 
 @NgModule({
   declarations: [
     TestCenterApp,
   ],
   imports: [
-    PagesModule, ComponentsModule,
+    PagesModule, ComponentsModule, ServicesModule,
     IonicModule.forRoot(TestCenterApp),
   ],
   bootstrap: [IonicApp],
@@ -20,7 +19,7 @@ import {
     TestCenterApp,
   ],
   providers: [
-    SafeHttp, NetworkService, AssessmentService, LoggerService, StorageService,
+    // SafeHttp, NetworkService, AssessmentService, LoggerService, StorageService,
   ],
 })
 export class AppModule {}

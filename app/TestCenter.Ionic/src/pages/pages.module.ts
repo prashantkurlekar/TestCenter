@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
 import { ComponentsModule } from '../components';
 import { AssessmentModule } from './assessment/assessment.module';
+import { PublicSectionModule } from './public/public-section.module';
+import { MemberSectionModule } from './member/member-section.module';
 
 import { TabsPage } from './tabs/tabs';
 import { AboutPage } from './about/about';
@@ -12,11 +14,14 @@ import { ContactPage } from './contact/contact';
   declarations: [
     TabsPage, PublicHomePage, AboutPage, ContactPage,
   ],
-  imports: [ IonicModule, ComponentsModule, AssessmentModule ],
+  imports: [
+    IonicModule, ComponentsModule,
+    AssessmentModule, PublicSectionModule, MemberSectionModule,
+  ],
   exports: [],
   entryComponents: [
     TabsPage, PublicHomePage, AboutPage, ContactPage,
   ],
-  providers: [ ],
+  providers: [],
 })
-export class PagesModule {}
+export class PagesModule { }

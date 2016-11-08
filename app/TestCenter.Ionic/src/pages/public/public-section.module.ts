@@ -1,17 +1,12 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
 import { ComponentsModule } from '../../components';
-import { AssessmentPage } from './assessment/assessment';
 
 @NgModule({
-  declarations: [
-    AssessmentPage,
-  ],
+  declarations: [],
   imports: [IonicModule, ComponentsModule],
-  exports: [
-    AssessmentPage,
-  ],
+  exports: [],
   entryComponents: [],
   providers: [],
 })
-export class AssessmentModule { }
+export class PublicSectionModule { }
