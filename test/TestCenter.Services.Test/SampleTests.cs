@@ -4,7 +4,7 @@ namespace TestCenter.Services.Test
 {
     // see example explanation on xUnit.net website:
     // https://xunit.github.io/docs/getting-started-dotnet-core.html
-    public class Class1
+    public class SampleTests
     {
         [Fact]
         public void PassingTest()
@@ -12,11 +12,11 @@ namespace TestCenter.Services.Test
             Assert.Equal(4, Add(2, 2));
         }
 
-        [Fact]
-        public void FailingTest()
-        {
-            Assert.Equal(5, Add(2, 2));
-        }
+        // [Fact]
+        // public void FailingTest()
+        // {
+        //     Assert.Equal(5, Add(2, 2));
+        // }
 
         int Add(int x, int y)
         {

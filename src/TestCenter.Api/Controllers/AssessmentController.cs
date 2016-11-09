@@ -27,5 +27,11 @@ namespace TestCenter.Api.Controllers
         {
             return AssessmentService.Get(id);
         }
+
+        [HttpGet]
+        public IEnumerable<Assessment> Top()
+        {
+            return AssessmentService.Get();
+        }
     }
 }

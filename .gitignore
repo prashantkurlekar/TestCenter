@@ -1,2 +1,11 @@
+src/TestCenter.Api/bin/
+src/TestCenter.Api/obj/
+
+src/TestCenter.Models/bin/
+src/TestCenter.Models/obj/
+
 src/TestCenter.Services/bin/
 src/TestCenter.Services/obj/
+
+src/TestCenter.Web/bin/
+src/TestCenter.Web/obj/
