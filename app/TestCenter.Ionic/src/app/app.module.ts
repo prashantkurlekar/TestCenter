@@ -18,8 +18,6 @@ import { ServicesModule } from '../services/services.module';
   entryComponents: [
     TestCenterApp,
   ],
-  providers: [
-    // SafeHttp, NetworkService, AssessmentService, LoggerService, StorageService,
-  ],
+  providers: [],
 })
 export class AppModule {}
