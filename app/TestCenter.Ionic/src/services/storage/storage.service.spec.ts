@@ -1,50 +1,38 @@
-// import { TestBed, inject } from '@angular/core/testing';
-// // import { MockBackend, MockConnection } from '@angular/http/testing';
-// import { StorageService } from './storage.service';
-// // import { StorageMock } from './storage.service.mocks';
+import { TestBed, inject } from '@angular/core/testing';
+import { StorageService } from './storage.service';
+// import { StorageMock } from './storage.service.mocks';
+import { Storage }    from '@ionic/storage';
 
-// describe('StorageService', () => {
+describe('StorageService', () => {
 
-//   let storage: StorageService = null;
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [
+        StorageService, Storage,
+      ],
+    });
+  });
 
-//   // beforeEach(() => {
-//   //   spyOn(StorageService, 'initStorage').and.returnValue(new StorageMock());
-//   //   storage = new StorageService();
-//   //   spyOn(storage['storage'], 'get').and.callThrough();
-//   //   spyOn(storage['storage'], 'set').and.callThrough();
-//   //   spyOn(storage['storage'], 'remove').and.callThrough();
-//   // });
+  it('should initialize', inject([StorageService, Storage], (storageService: StorageService) => {
+    expect(storageService).toBeTruthy();
+  }));
 
-//   beforeEach(() => {
-//     TestBed.configureTestingModule({
-//       providers: [ StorageService ],
-//     });
+  // it('should get value by key', inject([StorageService, Storage], (storageService: StorageService) => {
+  //   spyOn(StorageService, 'get').and.callThrough();
 
-//     spyOn(storage['storage'], 'get').and.callThrough();
-//     spyOn(storage['storage'], 'set').and.callThrough();
-//     spyOn(storage['storage'], 'remove').and.callThrough();
-//   });
+  //   storageService.get('storageKey');
 
-//   it('initialises', () => {
-//     expect(storage).not.toBeNull();
-//   });
+  //   expect(storageService.get).toHaveBeenCalledWith('storageKey');
+  // }));
 
-//   it('should initialize service', inject([StorageService], (service: StorageService) => {
-//     expect(service).toBeTruthy();
-//   }));
+  // it('sets', () => {
+  //   storage.set('dave', 'test');
+  //   expect(storage['storage'].set).toHaveBeenCalledWith('dave', 'test');
+  // });
 
-//   it('gets', () => {
-//     storage.get('dave');
-//     expect(storage['storage'].get).toHaveBeenCalledWith('dave');
-//   });
+  // it('removes', () => {
+  //   storage.remove('dave');
+  //   expect(storage['storage'].remove).toHaveBeenCalledWith('dave');
+  // });
 
-//   it('sets', () => {
-//     storage.set('dave', 'test');
-//     expect(storage['storage'].set).toHaveBeenCalledWith('dave', 'test');
-//   });
-
-//   it('removes', () => {
-//     storage.remove('dave');
-//     expect(storage['storage'].remove).toHaveBeenCalledWith('dave');
-//   });
-// });
+});
