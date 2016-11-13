@@ -13,7 +13,7 @@ export class PublicHomePage implements BasePage {
 
   public title: string;
   public assessments: any;
-  public filteredAssessments: any;
+  public filteredAssessments: any = [];
 
   constructor(public navController: NavController, public assessmentService: AssessmentService) {
     this.title = 'Home';
@@ -25,7 +25,7 @@ export class PublicHomePage implements BasePage {
   public getItems(searchKeyword: any) {
     this.filteredAssessments = this.assessments;
 
-    let keyword = searchKeyword.target.value;
+    const keyword = searchKeyword.target.value;
 
     if (keyword && keyword.trim() !== '') {
       this.filteredAssessments = this.assessments.filter(assessment => {
