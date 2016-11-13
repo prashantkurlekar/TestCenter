@@ -7,20 +7,36 @@ describe('Service: Logger', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ LoggerService ]
+      providers: [LoggerService]
     });
   });
 
-  // beforeEach(() => {
-  //   spyOn(StorageService, 'initStorage').and.returnValue(new StorageMock());
-  //   storage = new StorageService();
-  //   spyOn(storage['storage'], 'get').and.callThrough();
-  //   spyOn(storage['storage'], 'set').and.callThrough();
-  //   spyOn(storage['storage'], 'remove').and.callThrough();
-  // });
+  it('should initialize', inject([LoggerService], (loggerService: LoggerService) => {
+    expect(loggerService).toBeTruthy();
+  }));
 
-  it('should initialize', inject([LoggerService], (service: LoggerService) => {
-    expect(service).toBeTruthy();
+  it('should call log', inject([LoggerService], () => {
+    spyOn(console, 'log').and.callThrough();
+
+    LoggerService.log('message to log');
+
+    expect(console.log).toHaveBeenCalled();
+  }));
+
+  it('should call error', inject([LoggerService], () => {
+    spyOn(console, 'error').and.callThrough();
+
+    LoggerService.error('message to error');
+
+    expect(console.error).toHaveBeenCalled();
+  }));
+
+  it('should call info', inject([LoggerService], () => {
+    spyOn(console, 'info').and.callThrough();
+
+    LoggerService.info('message to info');
+
+    expect(console.info).toHaveBeenCalled();
   }));
 
 });
