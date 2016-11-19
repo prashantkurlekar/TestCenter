@@ -9,3 +9,5 @@ src/TestCenter.Services/obj/
 
 src/TestCenter.Web/bin/
 src/TestCenter.Web/obj/
+
+packages/
