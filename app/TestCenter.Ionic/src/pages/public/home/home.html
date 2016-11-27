@@ -7,7 +7,7 @@
 <ion-content>
 	<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
 	<ion-list>
-		<ion-list-header [hidden]="filteredAssessments.length > 0">
+		<ion-list-header [hidden]="filteredAssessments?.length > 0">
 			No assessments found.
 		</ion-list-header>
 		<button ion-item *ngFor="let assessment of filteredAssessments" (click)="onAssessment(assessment)">

@@ -15,7 +15,7 @@ export class NetworkService {
   }
 
   public showNetworkAlert(): void {
-    let networkAlert: any = this.alertController.create({
+    this.networkAlert = this.alertController.create({
       title: 'No internet connection',
       subTitle: 'Please check your internet connection.',
       buttons: [
@@ -25,7 +25,7 @@ export class NetworkService {
         }, {
           text: 'Open Settings',
           handler: () => {
-            networkAlert.dismiss().then(() => {
+            this.networkAlert.dismiss().then(() => {
               this.showSettings();
             });
           },

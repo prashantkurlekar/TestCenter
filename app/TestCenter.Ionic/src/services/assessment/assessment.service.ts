@@ -6,16 +6,16 @@ import { LoggerService } from '../logger/logger.service';
 
 @Injectable()
 export class AssessmentService {
-  constructor(private http: SafeHttp) { }
+  constructor(private http: SafeHttp, private loggerService: LoggerService) { }
 
   public getTop(): Promise<any> {
     return this.http.get('http://localhost:5000/api/assessment').toPromise()
       .then(response => {
-        LoggerService.debug(response.json());
+        this.loggerService.debug(response.json());
         return response.json();
       })
       .catch(error => {
-        LoggerService.error(error);
+        this.loggerService.error(error);
       });
   }
 }

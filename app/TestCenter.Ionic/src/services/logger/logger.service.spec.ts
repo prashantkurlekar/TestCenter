@@ -15,26 +15,26 @@ describe('Service: Logger', () => {
     expect(loggerService).toBeTruthy();
   }));
 
-  it('should call log', inject([LoggerService], () => {
+  it('should call log', inject([LoggerService], (loggerService: LoggerService) => {
     spyOn(console, 'log').and.callThrough();
 
-    LoggerService.log('message to log');
+    loggerService.log('message to log');
 
     expect(console.log).toHaveBeenCalled();
   }));
 
-  it('should call error', inject([LoggerService], () => {
+  it('should call error', inject([LoggerService], (loggerService: LoggerService) => {
     spyOn(console, 'error').and.callThrough();
 
-    LoggerService.error('message to error');
+    loggerService.error('message to error');
 
     expect(console.error).toHaveBeenCalled();
   }));
 
-  it('should call info', inject([LoggerService], () => {
+  it('should call info', inject([LoggerService], (loggerService: LoggerService) => {
     spyOn(console, 'info').and.callThrough();
 
-    LoggerService.info('message to info');
+    loggerService.info('message to info');
 
     expect(console.info).toHaveBeenCalled();
   }));

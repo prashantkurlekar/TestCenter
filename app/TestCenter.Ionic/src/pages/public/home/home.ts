@@ -15,7 +15,8 @@ export class PublicHomePage implements BasePage {
   public assessments: any;
   public filteredAssessments: any = [];
 
-  constructor(public navController: NavController, public assessmentService: AssessmentService) {
+  constructor(private navController: NavController, private assessmentService: AssessmentService,
+    private loggerService: LoggerService) {
     this.title = 'Home';
     this.assessmentService.getTop().then(assessments => {
       this.filteredAssessments = this.assessments = assessments;
@@ -35,7 +36,7 @@ export class PublicHomePage implements BasePage {
   }
 
   public onAssessment(assessment): void {
-    LoggerService.log(`HomePage.onAssessment id:${assessment.id}`);
+    this.loggerService.log(`HomePage.onAssessment id:${assessment.id}`);
   }
 
 }

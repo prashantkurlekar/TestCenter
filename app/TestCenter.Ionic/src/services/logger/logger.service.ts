@@ -1,41 +1,65 @@
 import { Injectable } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Platform, AlertController } from 'ionic-angular';
 import { GoogleAnalytics } from 'ionic-native';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class LoggerService {
 
-  public static log(message: any): void {
+  constructor(public alertController?: AlertController) { }
+
+  public log(message: any): void {
     console.log(message);
   }
 
-  public static error(message: any): void {
+  public error(message: any): void {
     console.error(message);
+    this.showMessage(message);
   }
 
-  public static info(message: any): void {
+  public info(message: any): void {
     console.info(message);
   }
 
-  public static warn(message: any): void {
+  public warn(message: any): void {
     console.warn(message);
   }
 
-  public static debug(message: any): void {
+  public debug(message: any): void {
     console.debug(message);
   }
 
-  public static trackView(platform: Platform, title: string): void {
+  public trackView(platform: Platform, title: string): void {
     platform.ready().then(() => {
       GoogleAnalytics.trackView(title);
     });
   }
 
-  public static trackEvent(platform: Platform, category: any, action: any, label: any, value: any): void {
+  public trackEvent(platform: Platform, category: any, action: any, label: any, value: any): void {
     platform.ready().then(() => {
       GoogleAnalytics.trackEvent(category, action, label, value);
     });
+  }
+
+  public showMessage(message): void {
+    let messageAlert: any = this.alertController.create({
+      title: 'Test Center',
+      subTitle: message,
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: () => { ; },
+        }, {
+          text: 'Ok',
+          handler: () => {
+            // networkAlert.dismiss().then(() => {
+            //   this.showSettings();
+            // });
+          },
+        },
+      ],
+    });
+    messageAlert.present();
   }
 
 }

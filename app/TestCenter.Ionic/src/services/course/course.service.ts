@@ -6,7 +6,7 @@ import { LoggerService } from '../logger/logger.service';
 @Injectable()
 export class CourseService {
 
-  constructor(private http: Http) { }
+  constructor(private http: Http, private loggerService: LoggerService) { }
 
   public createCourse(course: Course): any {
     return this.http.post(``, course).toPromise()
@@ -14,7 +14,7 @@ export class CourseService {
         return <Course>response.json();
       })
       .catch(error => {
-        LoggerService.error(error);
+        this.loggerService.error(error);
       });
   }
 
@@ -24,7 +24,7 @@ export class CourseService {
         return response.json();
       })
       .catch(error => {
-        LoggerService.error(error);
+        this.loggerService.error(error);
       });
   }
 }
