@@ -3,20 +3,23 @@
 import { TestBed, async, inject } from '@angular/core/testing';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions, Http, Response, ResponseOptions } from '@angular/http';
+import { AlertController } from 'ionic-angular';
 
 import { CourseService } from './course.service';
+import { LoggerService } from '../logger/logger.service';
 import { Course } from '../../models';
 
 describe('Service: Course', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        CourseService, MockBackend, BaseRequestOptions,
+        CourseService,
+        MockBackend, BaseRequestOptions,
         {
           provide: Http, useFactory: (mockBackend: MockBackend, options: BaseRequestOptions) => {
             return new Http(mockBackend, options);
           }, deps: [MockBackend, BaseRequestOptions],
-        }
+        },  LoggerService, AlertController,
       ]
     });
   });

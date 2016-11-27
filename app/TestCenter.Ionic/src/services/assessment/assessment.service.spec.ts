@@ -3,10 +3,11 @@
 
 import { TestBed, async, inject } from '@angular/core/testing';
 import { AssessmentService } from './assessment.service';
+import { LoggerService } from '../logger/logger.service';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions, Http, Response, ResponseOptions } from '@angular/http';
 import { SafeHttp, NetworkService } from '../safe-http/safe-http';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 
 describe('Service: Assessment', () => {
 
@@ -19,7 +20,7 @@ describe('Service: Assessment', () => {
           provide: SafeHttp, useFactory: (mockBackend: MockBackend, options: BaseRequestOptions) => {
             return new Http(mockBackend, options);
           }, deps: [MockBackend, BaseRequestOptions],
-        }, NetworkService, NavController,
+        }, NetworkService, NavController, LoggerService, AlertController,
       ],
     });
   });
