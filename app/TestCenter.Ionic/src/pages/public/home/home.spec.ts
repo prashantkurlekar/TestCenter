@@ -5,10 +5,10 @@ import { PublicHomePage } from './home';
 import { async, TestBed } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { mockNavController, mockPlatform } from 'ionic-angular/util/mock-providers';
-import { NavController, Platform, AlertController } from 'ionic-angular';
+import { NavController, Platform, AlertController, App, Config } from 'ionic-angular';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions, Http, Response, ResponseOptions } from '@angular/http';
-import { AssessmentService, SafeHttp, LoggerService } from '../../../services';
+import { AssessmentService, LoggerService } from '../../../services';
 
 describe('Page: PublicHomePage', () => {
 
@@ -17,14 +17,13 @@ describe('Page: PublicHomePage', () => {
       declarations: [PublicHomePage],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [
+        App, Config, Platform, MockBackend, BaseRequestOptions, AssessmentService, LoggerService, AlertController,
         { provide: NavController, useValue: mockNavController },
-        MockBackend, BaseRequestOptions,
-        {
-          provide: SafeHttp, useFactory: (mockBackend: MockBackend, options: BaseRequestOptions) => {
-            return new Http(mockBackend, options);
-          }, deps: [MockBackend, BaseRequestOptions],
+        { 
+          provide: Http, useFactory: (mockBackend: MockBackend, options: BaseRequestOptions) => {
+            return new Http(mockBackend, options)
+          }, deps: [MockBackend, BaseRequestOptions], 
         },
-        AssessmentService, LoggerService, AlertController,
       ],
     });
     TestBed.compileComponents();
@@ -38,4 +37,5 @@ describe('Page: PublicHomePage', () => {
 
     expect(component).toBeTruthy();
   }));
+
 });

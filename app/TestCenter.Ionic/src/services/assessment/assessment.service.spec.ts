@@ -6,8 +6,7 @@ import { AssessmentService } from './assessment.service';
 import { LoggerService } from '../logger/logger.service';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions, Http, Response, ResponseOptions } from '@angular/http';
-import { SafeHttp, NetworkService } from '../safe-http/safe-http';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController, App, Config, Platform } from 'ionic-angular';
 
 describe('Service: Assessment', () => {
 
@@ -15,12 +14,12 @@ describe('Service: Assessment', () => {
     TestBed.configureTestingModule({
       providers: [
         AssessmentService,
-        MockBackend, BaseRequestOptions,
+        App, Config, Platform, MockBackend, BaseRequestOptions,
         {
-          provide: SafeHttp, useFactory: (mockBackend: MockBackend, options: BaseRequestOptions) => {
+          provide: Http, useFactory: (mockBackend: MockBackend, options: BaseRequestOptions) => {
             return new Http(mockBackend, options);
           }, deps: [MockBackend, BaseRequestOptions],
-        }, NetworkService, NavController, LoggerService, AlertController,
+        }, NavController, LoggerService, AlertController,
       ],
     });
   });

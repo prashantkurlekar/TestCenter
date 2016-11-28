@@ -14,7 +14,7 @@ export class LoggerService {
 
   public error(message: any): void {
     console.error(message);
-    this.showMessage(message);
+    // this.showMessage(message);
   }
 
   public info(message: any): void {
@@ -47,15 +47,7 @@ export class LoggerService {
       subTitle: message,
       buttons: [
         {
-          text: 'Cancel',
-          handler: () => { ; },
-        }, {
           text: 'Ok',
-          handler: () => {
-            // networkAlert.dismiss().then(() => {
-            //   this.showSettings();
-            // });
-          },
         },
       ],
     });

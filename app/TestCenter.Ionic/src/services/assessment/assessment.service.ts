@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
 import 'rxjs';
 
-import { SafeHttp } from '../safe-http/safe-http';
 import { LoggerService } from '../logger/logger.service';
 
 @Injectable()
 export class AssessmentService {
-  constructor(private http: SafeHttp, private loggerService: LoggerService) { }
+  constructor(private http: Http, private loggerService: LoggerService) { }
 
   public getTop(): Promise<any> {
     return this.http.get('http://localhost:5000/api/assessment').toPromise()

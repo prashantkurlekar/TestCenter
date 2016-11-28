@@ -2,14 +2,14 @@
 
 import { TestBed, inject } from '@angular/core/testing';
 import { LoggerService } from './logger.service';
-import { AlertController } from 'ionic-angular';
+import { AlertController, App, Config, Platform } from 'ionic-angular';
 
 describe('Service: Logger', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        LoggerService, AlertController,
+        LoggerService, AlertController,  App, Config, Platform,
       ]
     });
   });
