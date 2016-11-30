@@ -29,6 +29,7 @@ namespace TestCenter.Api.Controllers
         }
 
         [HttpGet]
+        [Route("top")]
         public IEnumerable<Assessment> Top()
         {
             return AssessmentService.Get();
