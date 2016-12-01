@@ -4,6 +4,7 @@
 import { PublicHomePage } from './home';
 import { async, TestBed } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { By } from '@angular/platform-browser';
 import { mockNavController, mockPlatform } from 'ionic-angular/util/mock-providers';
 import { NavController, Platform, AlertController, App, Config } from 'ionic-angular';
 import { MockBackend, MockConnection } from '@angular/http/testing';
@@ -17,12 +18,14 @@ describe('Page: PublicHomePage', () => {
       declarations: [PublicHomePage],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [
-        App, Config, Platform, MockBackend, BaseRequestOptions, AssessmentService, LoggerService, AlertController,
+        App, Config, Platform, MockBackend, BaseRequestOptions,
+        LoggerService, AlertController, AssessmentService,
+        // { provide: AssessmentService, useValue: AssessmentService },
         { provide: NavController, useValue: mockNavController },
-        { 
+        {
           provide: Http, useFactory: (mockBackend: MockBackend, options: BaseRequestOptions) => {
             return new Http(mockBackend, options)
-          }, deps: [MockBackend, BaseRequestOptions], 
+          }, deps: [MockBackend, BaseRequestOptions],
         },
       ],
     });
@@ -37,5 +40,15 @@ describe('Page: PublicHomePage', () => {
 
     expect(component).toBeTruthy();
   }));
+
+  // it('should show top assessments', async(() => {
+  //   const fixture: any = TestBed.createComponent(PublicHomePage);
+  //   fixture.detectChanges();
+  //   let component: any = fixture.debugElement.componentInstance;
+  //   let de = fixture.debugElement.query(By.css('ion-list'));
+  //   let el = de.nativeElement;
+  //   console.log(el);
+  //   expect(el.textContent).toContain('Test Title');
+  // }));
 
 });

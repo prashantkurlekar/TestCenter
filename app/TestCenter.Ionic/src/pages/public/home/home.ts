@@ -23,7 +23,7 @@ export class PublicHomePage implements BasePage {
     });
   }
 
-  public getItems(searchKeyword: any) {
+  public filterItems(searchKeyword: any) {
     this.filteredAssessments = this.assessments;
 
     const keyword = searchKeyword.target.value;

@@ -9,7 +9,7 @@ export class AssessmentService {
   constructor(private http: Http, private loggerService: LoggerService) { }
 
   public getTop(): Promise<any> {
-    return this.http.get('http://localhost:5000/api/assessment').toPromise()
+    return this.http.get('http://localhost:5000/api/assessment/top').toPromise()
       .then(response => {
         this.loggerService.debug(response.json());
         return response.json();

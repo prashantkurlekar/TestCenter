@@ -10,7 +10,14 @@ import { NavController, AlertController, App, Config, Platform } from 'ionic-ang
 
 describe('Service: Assessment', () => {
 
+  let assessmentServiceStub: any;
+
   beforeEach(() => {
+
+    assessmentServiceStub = {
+      getTop: { name: 'Test User' },
+    };
+
     TestBed.configureTestingModule({
       providers: [
         AssessmentService,
@@ -22,6 +29,7 @@ describe('Service: Assessment', () => {
         }, NavController, LoggerService, AlertController,
       ],
     });
+
   });
 
   it('should initialize', inject([AssessmentService], (service: AssessmentService) => {
