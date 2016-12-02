@@ -17,7 +17,7 @@
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve",
     "ios:emulate": "ionic emulate ios --target=\"iPhone-6s\" --livereload --consolelogs --prod",
-    "ios:dev": "ionic run ios --livereload",
+    "ios:dev": "ionic run ios --livereload --target=\"iPhone-6s\"",
     "release": "standard-version --no-verify",
     "outdated": "npm outdated --depth 0"
   },
@@ -59,7 +59,7 @@
     "standard-version": "^3.0.0",
     "ts-node": "1.2.1",
     "tslint": "3.15.1",
-    "typescript": "2.1.1",
+    "typescript": "2.0.10",
     "webdriver-manager": "10.2.5"
   },
   "cordovaPlugins": [
