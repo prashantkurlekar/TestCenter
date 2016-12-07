@@ -23,9 +23,11 @@ describe('Service: Assessment', () => {
         AssessmentService,
         App, Config, Platform, MockBackend, BaseRequestOptions,
         {
-          provide: Http, useFactory: (mockBackend: MockBackend, options: BaseRequestOptions) => {
+          provide: Http,
+          deps: [MockBackend, BaseRequestOptions], 
+          useFactory: (mockBackend: MockBackend, options: BaseRequestOptions) => {
             return new Http(mockBackend, options);
-          }, deps: [MockBackend, BaseRequestOptions],
+          },
         }, NavController, LoggerService, AlertController,
       ],
     });
@@ -43,3 +45,5 @@ describe('Service: Assessment', () => {
   );
 
 });
+
+/* tslint:enable */

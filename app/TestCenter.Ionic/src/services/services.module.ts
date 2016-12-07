@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
+import { Http } from '@angular/http';
 import { SafeHttp, NetworkService, AssessmentService, LoggerService, StorageService } from './';
+import { AssessmentServiceProd } from './assessment/assessment.service.prod';
+import { AssessmentServiceMock } from './assessment/assessment.service.mock';
+import { AppConfig } from '../app/app.config';
 
 @NgModule({
   declarations: [],
@@ -7,7 +11,21 @@ import { SafeHttp, NetworkService, AssessmentService, LoggerService, StorageServ
   exports: [],
   entryComponents: [],
   providers: [
-    SafeHttp, NetworkService, AssessmentService, LoggerService, StorageService,
+    SafeHttp, NetworkService,
+    {
+      provide: AssessmentService, 
+      deps: [ Http, LoggerService ],
+      useValue: (http: Http, loggerService: LoggerService) => {
+        if (AppConfig.production) {
+          loggerService.debug('prod');
+          return new AssessmentServiceProd(http, loggerService);
+        } else {
+          loggerService.debug('mock');
+          return new AssessmentServiceMock(http, loggerService);
+        }
+      },
+    },
+    LoggerService, StorageService,
   ],
 })
 export class ServicesModule { }

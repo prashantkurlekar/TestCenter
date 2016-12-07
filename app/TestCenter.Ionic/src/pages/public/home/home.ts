@@ -15,7 +15,8 @@ export class PublicHomePage implements BasePage {
   public assessments: any;
   public filteredAssessments: any = [];
 
-  constructor(private navController: NavController, private assessmentService: AssessmentService,
+  constructor(private navController: NavController,
+    private assessmentService: AssessmentService,
     private loggerService: LoggerService) {
     this.title = 'Home';
     this.assessmentService.getTop().then(assessments => {
