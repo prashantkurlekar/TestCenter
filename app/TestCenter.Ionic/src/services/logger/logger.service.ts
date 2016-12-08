@@ -41,7 +41,7 @@ export class LoggerService {
     });
   }
 
-  public showMessage(message): void {
+  public showMessage(message: any): void {
     let messageAlert: any = this.alertController.create({
       title: 'Test Center',
       subTitle: message,

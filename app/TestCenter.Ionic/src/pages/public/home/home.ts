@@ -30,13 +30,13 @@ export class PublicHomePage implements BasePage {
     const keyword = searchKeyword.target.value;
 
     if (keyword && keyword.trim() !== '') {
-      this.filteredAssessments = this.assessments.filter(assessment => {
+      this.filteredAssessments = this.assessments.filter((assessment: any) => {
         return (assessment.name.toLowerCase().indexOf(keyword.toLowerCase()) > -1);
       });
     }
   }
 
-  public onAssessment(assessment): void {
+  public onAssessment(assessment: any): void {
     this.loggerService.log(`HomePage.onAssessment id:${assessment.id}`);
   }
 

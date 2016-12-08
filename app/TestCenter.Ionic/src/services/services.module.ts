@@ -15,14 +15,8 @@ import { AppConfig } from '../app/app.config';
     {
       provide: AssessmentService, 
       deps: [ Http, LoggerService ],
-      useValue: (http: Http, loggerService: LoggerService) => {
-        if (AppConfig.production) {
-          loggerService.debug('prod');
-          return new AssessmentServiceProd(http, loggerService);
-        } else {
-          loggerService.debug('mock');
-          return new AssessmentServiceMock(http, loggerService);
-        }
+      useFactory: (http: Http, loggerService: LoggerService) => {
+        return AppConfig.production ? new AssessmentServiceProd(http, loggerService) : new AssessmentServiceMock(http, loggerService);
       },
     },
     LoggerService, StorageService,

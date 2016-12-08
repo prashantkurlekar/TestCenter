@@ -49,7 +49,7 @@ describe('Service: Course', () => {
         categories: ['dummy1', 'dummy2']
       };
 
-      courseService.createCourse(mockCourse).then(newCourse => {
+      courseService.createCourse(mockCourse).then((newCourse: any) => {
         expect(newCourse.id).toBeTruthy();
       });
     }
@@ -66,7 +66,7 @@ describe('Service: Course', () => {
         connection.mockRespond(new Response(response));
       });
 
-      courseService.getTopCourses().then(topCourses => {
+      courseService.getTopCourses().then((topCourses: any) => {
         expect(topCourses.length).toBeGreaterThan(0);
       });
     }
