@@ -10,6 +10,7 @@ import { NavController, Platform, AlertController, App, Config } from 'ionic-ang
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions, Http, Response, ResponseOptions } from '@angular/http';
 import { AssessmentService, LoggerService } from '../../../services';
+import { AssessmentServiceMock } from '../../../services/mocks';
 
 describe('Page: PublicHomePage', () => {
 
@@ -19,8 +20,8 @@ describe('Page: PublicHomePage', () => {
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [
         App, Config, Platform, MockBackend, BaseRequestOptions,
-        LoggerService, AlertController, AssessmentService,
-        // { provide: AssessmentService, useValue: AssessmentService },
+        LoggerService, AlertController,
+        { provide: AssessmentService, useClass: AssessmentServiceMock },
         { provide: NavController, useValue: mockNavController },
         {
           provide: Http, useFactory: (mockBackend: MockBackend, options: BaseRequestOptions) => {
@@ -31,6 +32,7 @@ describe('Page: PublicHomePage', () => {
     });
     TestBed.compileComponents();
     done();
+
   });
 
   it('should load component', async(() => {
@@ -41,14 +43,14 @@ describe('Page: PublicHomePage', () => {
     expect(component).toBeTruthy();
   }));
 
-  // it('should show top assessments', async(() => {
-  //   const fixture: any = TestBed.createComponent(PublicHomePage);
-  //   fixture.detectChanges();
-  //   let component: any = fixture.debugElement.componentInstance;
-  //   let de = fixture.debugElement.query(By.css('ion-list'));
-  //   let el = de.nativeElement;
-  //   console.log(el);
-  //   expect(el.textContent).toContain('Test Title');
-  // }));
+  it('should show top assessments', async(() => {
+    const fixture: any = TestBed.createComponent(PublicHomePage);
+    fixture.detectChanges();
+    let component: any = fixture.debugElement.componentInstance;
+    let de = fixture.debugElement.query(By.css('ion-list'));
+    let el = de.nativeElement;
+    console.log(el);
+    expect(el.textContent).toContain('No assessments found');
+  }));
 
 });
