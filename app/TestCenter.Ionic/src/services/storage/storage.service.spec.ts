@@ -3,7 +3,7 @@ import { StorageService } from './storage.service';
 // import { StorageMock } from './storage.service.mocks';
 import { Storage }    from '@ionic/storage';
 
-describe('StorageService', () => {
+describe('Service: StorageService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
