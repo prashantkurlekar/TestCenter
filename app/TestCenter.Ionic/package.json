@@ -17,7 +17,7 @@
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve",
     "ios:emulate": "ionic emulate ios --target=\"iPhone-6s\" --livereload --consolelogs --prod",
-    "ios:dev": "ionic run ios --livereload --target=\"iPhone-6s\"",
+    "ios:dev": "ionic run ios --livereload --target=\"iPhone-6s\" --consolelogs",
     "release": "standard-version --no-verify",
     "outdated": "npm outdated --depth 0"
   },

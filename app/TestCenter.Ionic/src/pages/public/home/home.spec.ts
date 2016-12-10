@@ -11,6 +11,7 @@ import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions, Http, Response, ResponseOptions } from '@angular/http';
 import { AssessmentService, LoggerService } from '../../../services';
 import { AssessmentServiceMock } from '../../../services/mocks';
+import { TestCenterData } from '../../../mock-data/testcenter-data';
 
 describe('Page: PublicHomePage', () => {
 
@@ -20,7 +21,7 @@ describe('Page: PublicHomePage', () => {
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [
         App, Config, Platform, MockBackend, BaseRequestOptions,
-        LoggerService, AlertController,
+        LoggerService, AlertController, TestCenterData,
         { provide: AssessmentService, useClass: AssessmentServiceMock },
         { provide: NavController, useValue: mockNavController },
         {
@@ -49,7 +50,6 @@ describe('Page: PublicHomePage', () => {
     let component: any = fixture.debugElement.componentInstance;
     let de = fixture.debugElement.query(By.css('ion-list'));
     let el = de.nativeElement;
-    console.log(el);
     expect(el.textContent).toContain('No assessments found');
   }));
 

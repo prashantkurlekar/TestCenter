@@ -7,6 +7,7 @@ import { LoggerService } from '../logger/logger.service';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions, Http, Response, ResponseOptions } from '@angular/http';
 import { NavController, AlertController, App, Config, Platform } from 'ionic-angular';
+import { TestCenterData } from '../../mock-data/testcenter-data';
 
 describe('Service: Assessment', () => {
 
@@ -20,7 +21,7 @@ describe('Service: Assessment', () => {
 
     TestBed.configureTestingModule({
       providers: [
-        AssessmentService,
+        AssessmentService, TestCenterData,
         App, Config, Platform, MockBackend, BaseRequestOptions,
         {
           provide: Http,
