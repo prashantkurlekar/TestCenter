@@ -3,6 +3,7 @@
 
 import { TestBed, async, inject } from '@angular/core/testing';
 import { AssessmentService } from './assessment.service';
+import { AssessmentServiceMock } from './assessment.service.mock';
 import { LoggerService } from '../logger/logger.service';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions, Http, Response, ResponseOptions } from '@angular/http';
@@ -21,7 +22,7 @@ describe('Service: Assessment', () => {
 
     TestBed.configureTestingModule({
       providers: [
-        AssessmentService, TestCenterData,
+        TestCenterData, NavController, LoggerService, AlertController,
         App, Config, Platform, MockBackend, BaseRequestOptions,
         {
           provide: Http,
@@ -29,7 +30,7 @@ describe('Service: Assessment', () => {
           useFactory: (mockBackend: MockBackend, options: BaseRequestOptions) => {
             return new Http(mockBackend, options);
           },
-        }, NavController, LoggerService, AlertController,
+        }, { provide: AssessmentService, useClass: AssessmentServiceMock }
       ],
     });
 
@@ -39,9 +40,11 @@ describe('Service: Assessment', () => {
     expect(service).toBeTruthy();
   }));
 
-  it('should return top rated tests', async(inject([AssessmentService, MockBackend],
+  it('should return tests', async(inject([AssessmentService, MockBackend],
     (service: AssessmentService, backend: MockBackend) => {
-      expect(service).toBeTruthy();
+      service.getTests().then(assessments => {
+        expect(assessments.length).toBeGreaterThan(0);
+      })
     }))
   );
 

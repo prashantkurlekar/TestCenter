@@ -12,14 +12,7 @@ export class AssessmentServiceMock extends AssessmentService {
     super(http, loggerService);
   }
 
-  public getTop(): Promise<any> {
+  public getTests(): Promise<any> {
     return this.testCenterData.getTests();
-    // return new Promise(resolve => {
-    //   resolve([
-    //     { id: 1, name: 'test 1', description: 'description 1', labels: ['label 1-1', 'label 1-2'] },
-    //     { id: 2, name: 'test 2', description: 'description 2', labels: ['label 2-1', 'label 2-2'] },
-    //     { id: 3, name: 'test 3', description: 'description 3', labels: ['label 3-1', 'label 3-2'] },
-    //   ]);
-    // });
   }
 }

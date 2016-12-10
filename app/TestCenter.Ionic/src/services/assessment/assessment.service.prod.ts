@@ -11,7 +11,7 @@ export class AssessmentServiceProd extends AssessmentService {
     super(http, loggerService);
   }
 
-  public getTop(): Promise<any> {
+  public getTests(): Promise<any> {
     return this.http.get('http://localhost:5000/api/assessment/top').toPromise()
       .then(response => {
         this.loggerService.debug(response.json());

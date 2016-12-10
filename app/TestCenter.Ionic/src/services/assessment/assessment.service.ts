@@ -8,7 +8,7 @@ import { LoggerService } from '../logger/logger.service';
 export class AssessmentService {
   constructor(public http: Http, public loggerService: LoggerService) { }
 
-  public getTop(): Promise<any> {
+  public getTests(): Promise<any> {
     return this.http.get('http://localhost:5000/api/assessment/top').toPromise()
       .then(response => {
         this.loggerService.debug(response.json());

@@ -19,7 +19,7 @@ export class PublicHomePage implements BasePage {
     private assessmentService: AssessmentService,
     private loggerService: LoggerService) {
     this.title = 'Home';
-    this.assessmentService.getTop().then(assessments => {
+    this.assessmentService.getTests().then(assessments => {
       this.filteredAssessments = this.assessments = assessments;
     });
   }
