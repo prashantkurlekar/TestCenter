@@ -21,7 +21,7 @@ export class TestCenterData {
 
   public getTests(): Promise<any> {
     return this.load().then(data => {
-      return data.tests;
+      return data.assessments;
     });
   }
 

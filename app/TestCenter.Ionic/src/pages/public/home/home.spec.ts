@@ -12,6 +12,7 @@ import { BaseRequestOptions, Http, Response, ResponseOptions } from '@angular/ht
 import { AssessmentService, LoggerService } from '../../../services';
 import { AssessmentServiceMock } from '../../../services/mocks';
 import { TestCenterData } from '../../../mock-data/testcenter-data';
+import { OptionsPage } from '../../assessment/options/options';
 
 describe('Page: PublicHomePage', () => {
 
@@ -33,7 +34,6 @@ describe('Page: PublicHomePage', () => {
     });
     TestBed.compileComponents();
     done();
-
   });
 
   it('should load component', async(() => {
@@ -48,9 +48,25 @@ describe('Page: PublicHomePage', () => {
     const fixture: any = TestBed.createComponent(PublicHomePage);
     fixture.detectChanges();
     let component: any = fixture.debugElement.componentInstance;
-    let de = fixture.debugElement.query(By.css('ion-list'));
+    let de = fixture.debugElement.query(By.css('ion-list-header'));
     let el = de.nativeElement;
     expect(el.textContent).toContain('No assessments found');
+  }));
+
+  it('should redirect to options page', async(() => {
+    const fixture: any = TestBed.createComponent(PublicHomePage);
+
+    let component: any = fixture.debugElement.componentInstance;
+    spyOn(component.navController, 'push').and.callThrough();
+    // spyOn(component.navController, 'push').and.callFake((args, action) => {
+    //   // return something
+    // });
+    // console.log(component.navController);
+    // spyOn(component.navController, 'push').and.stub();
+    const assessmentId = 1;
+    component.onAssessment(assessmentId);
+    fixture.detectChanges();
+    expect(component.navController.push).toHaveBeenCalledWith(OptionsPage, { assessmentId: assessmentId });
   }));
 
 });

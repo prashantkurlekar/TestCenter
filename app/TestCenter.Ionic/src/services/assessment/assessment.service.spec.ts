@@ -1,4 +1,3 @@
-/* tslint:disable:no-unused-variable */
 /* tslint:disable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
@@ -40,14 +39,21 @@ describe('Service: Assessment', () => {
     expect(service).toBeTruthy();
   }));
 
-  it('should return tests', async(inject([AssessmentService, MockBackend],
+  it('should return assessments', async(inject([AssessmentService, MockBackend],
     (service: AssessmentService, backend: MockBackend) => {
-      service.getTests().then(assessments => {
+      service.getAssessments().then(assessments => {
         expect(assessments.length).toBeGreaterThan(0);
       })
     }))
   );
 
+  it('should return assessment with questions', async(inject([AssessmentService, MockBackend],
+    (service: AssessmentService, backend: MockBackend) => {
+      service.getAssessments().then(assessments => {
+        expect(assessments.length).toBeGreaterThan(0);
+      })
+    }))
+  );
 });
 
 /* tslint:enable */

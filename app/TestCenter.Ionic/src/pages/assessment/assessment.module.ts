@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
 import { ComponentsModule } from '../../components';
-import { AssessmentPage } from './assessment/assessment';
+import { AssessmentPage, OptionsPage } from './';
 
 @NgModule({
   declarations: [
-    AssessmentPage,
+    AssessmentPage, OptionsPage,
   ],
   imports: [IonicModule, ComponentsModule],
   exports: [
-    AssessmentPage,
+    AssessmentPage, OptionsPage,
   ],
   entryComponents: [],
   providers: [],

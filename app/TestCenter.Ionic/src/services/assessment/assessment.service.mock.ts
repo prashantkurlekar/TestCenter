@@ -12,7 +12,7 @@ export class AssessmentServiceMock extends AssessmentService {
     super(http, loggerService);
   }
 
-  public getTests(): Promise<any> {
+  public getAssessments(): Promise<any> {
     return this.testCenterData.getTests();
   }
 }

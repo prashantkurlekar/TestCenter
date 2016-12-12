@@ -1,11 +1,18 @@
 {
-  "tests": [
-    { "id": "1", "name": "test 1", "description": "description 1", "labels": ["label 1-1", "label 1-2"] },
-    { "id": "2", "name": "test 2", "description": "description 2", "labels": ["label 2-1", "label 2-2"] },
-    { "id": "3", "name": "test 3", "description": "description 3", "labels": ["label 3-1", "label 3-2"] }
+  "assessments": [
+    { "id": "1", "name": "Car", "description": "Car description 1", "labels": ["Car", "label 1-1", "label 1-2"] },
+    { "id": "2", "name": "Motorcycle", "description": "Motorcycle description 2", "labels": ["Motorcycle", "label 2-1", "label 2-2"] },
+    { "id": "3", "name": "Rigid Vehicle", "description": "Rigid Vehicle description 3", "labels": ["Rigid Vehicle", "label 3-1", "label 3-2"] }
   ],
 
-  "mockTest": {
+  "options": [
+    { "name": "All Questions", "description": "Appear for all questions" },
+    { "name": "Random", "description": "Random question from question bank" },
+    { "name": "Categories", "description": "Question from selected category" },
+    { "name": "Test", "description": "Generate test based on rules defined" }
+  ],
+
+  "questions": {
     "preAssessmentQuestions": [],
     "questions": [
       {
@@ -19,8 +26,7 @@
           { "id": "3", "value": "option 3" },
           { "id": "4", "value": "option 4" }
         ]
-      },
-      {
+      }, {
         "id": "2",
         "value": "second question",
         "description": "some description if required",
@@ -31,8 +37,7 @@
           { "id": "3", "value": "option 3" },
           { "id": "4", "value": "option 4" }
         ]
-      },
-      {
+      }, {
         "id": "3",
         "value": "third question",
         "description": "some description if required",
@@ -43,8 +48,7 @@
           { "id": "3", "value": "option 3" },
           { "id": "4", "value": "option 4" }
         ]
-      },
-      {
+      }, {
         "id": "4",
         "value": "third question",
         "description": "some description if required",
