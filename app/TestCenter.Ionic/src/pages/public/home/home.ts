@@ -19,6 +19,10 @@ export class PublicHomePage implements BasePage {
               private loggerService: LoggerService) {
     this.loggerService.log('PublicHomePage.constructor');
     this.title = 'Home';
+    this.getAssessments();
+  }
+
+  private getAssessments(): void {
     this.assessmentService.getAssessments().then(assessments => {
       this.filteredAssessments = this.assessments = assessments;
     });
