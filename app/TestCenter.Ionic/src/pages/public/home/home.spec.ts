@@ -15,7 +15,7 @@ import { TestCenterData } from '../../../mock-data/testcenter-data';
 import { OptionsPage } from '../../assessment/options/options';
 
 let fixture: ComponentFixture<PublicHomePage> = null;
-let component: any = null;
+let componentInstance: any = null;
 
 describe('Page: PublicHomePage', () => {
 
@@ -38,7 +38,7 @@ describe('Page: PublicHomePage', () => {
     })
     .compileComponents().then(() => {
       fixture = TestBed.createComponent(PublicHomePage);
-      component = fixture;
+      componentInstance = fixture;
       fixture.detectChanges();
     });
   }));
@@ -48,7 +48,7 @@ describe('Page: PublicHomePage', () => {
   });
 
   it('should load component', async(() => {
-    expect(component).toBeTruthy();
+    expect(componentInstance).toBeTruthy();
   }));
 
   it('should show top assessments', async(() => {
