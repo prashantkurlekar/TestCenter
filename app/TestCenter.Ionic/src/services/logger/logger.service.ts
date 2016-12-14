@@ -12,9 +12,13 @@ export class LoggerService {
     console.log(message);
   }
 
-  public error(message: any): void {
-    console.error(message);
-    // this.showMessage(message);
+  public error(error: any): void {
+    console.error(error);
+    if (error.status === 0) {
+      console.debug('Not reachable');
+    } else {
+      console.log(error.status);
+    }
   }
 
   public info(message: any): void {
@@ -42,7 +46,7 @@ export class LoggerService {
   }
 
   public showMessage(message: any): void {
-    let messageAlert: any = this.alertController.create({
+    this.alertController.create({
       title: 'Test Center',
       subTitle: message,
       buttons: [
@@ -50,8 +54,7 @@ export class LoggerService {
           text: 'Ok',
         },
       ],
-    });
-    messageAlert.present();
+    }).present();
   }
 
 }
