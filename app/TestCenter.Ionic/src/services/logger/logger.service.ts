@@ -14,10 +14,8 @@ export class LoggerService {
 
   public error(error: any): void {
     console.error(error);
-    if (error.status === 0) {
-      console.debug('Not reachable');
-    } else {
-      console.log(error.status);
+    if (!error.ok) {
+      this.handleNetworkError(error);
     }
   }
 
@@ -55,6 +53,32 @@ export class LoggerService {
         },
       ],
     }).present();
+  }
+
+  private handleNetworkError(error: any): void {
+    switch (error.status) {
+      case 0:
+        console.error('Not reachable.');
+        break;
+      case 401:
+        console.error('Unauthorized');
+        break;
+      case 402:
+        console.error('Payment required');
+        // TODO: check wikipedia, will be useful to handle google api limit reached event
+        break;
+      case 403:
+        console.error('Forbidden');
+        break;
+      case 404:
+        console.error('Not Found');
+        break;
+      case 405:
+        console.error('Method Not Allowed');
+        break;
+      default:
+        break;
+    }
   }
 
 }
