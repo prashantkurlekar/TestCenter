@@ -35,12 +35,12 @@ describe('Page: PublicHomePage', () => {
           }, deps: [MockBackend, BaseRequestOptions],
         },
       ],
-    })
-      .compileComponents().then(() => {
-        fixture = TestBed.createComponent(PublicHomePage);
-        componentInstance = fixture;
-        fixture.detectChanges();
-      });
+    }).compileComponents().then(() => {
+      fixture = TestBed.createComponent(PublicHomePage);
+      componentInstance = fixture;
+      fixture.detectChanges();
+    });
+    spyOn(console, 'log').and.stub();
   }));
 
   afterEach(() => {
