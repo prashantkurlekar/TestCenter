@@ -20,6 +20,7 @@ let componentInstance: any = null;
 describe('Page: PublicHomePage', () => {
 
   beforeEach(async(() => {
+
     TestBed.configureTestingModule({
       declarations: [PublicHomePage],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -40,6 +41,7 @@ describe('Page: PublicHomePage', () => {
       componentInstance = fixture;
       fixture.detectChanges();
     });
+
     spyOn(console, 'log').and.stub();
   }));
 
@@ -57,6 +59,9 @@ describe('Page: PublicHomePage', () => {
     expect(el.textContent).toContain('No assessments found');
   }));
 
+  it('should show available assessment list', async(() => {
+    expect(true).toBeTruthy();
+  }));
   // it('should redirect to options page', async(() => {
   //   const fixture: any = TestBed.createComponent(PublicHomePage);
 
