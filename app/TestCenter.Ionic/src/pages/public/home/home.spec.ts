@@ -36,11 +36,11 @@ describe('Page: PublicHomePage', () => {
         },
       ],
     })
-    .compileComponents().then(() => {
-      fixture = TestBed.createComponent(PublicHomePage);
-      componentInstance = fixture;
-      fixture.detectChanges();
-    });
+      .compileComponents().then(() => {
+        fixture = TestBed.createComponent(PublicHomePage);
+        componentInstance = fixture;
+        fixture.detectChanges();
+      });
   }));
 
   afterEach(() => {
@@ -51,7 +51,7 @@ describe('Page: PublicHomePage', () => {
     expect(componentInstance).toBeTruthy();
   }));
 
-  it('should show top assessments', async(() => {
+  it('should show message if no assessments found', async(() => {
     let de = fixture.debugElement.query(By.css('ion-list-header'));
     let el = de.nativeElement;
     expect(el.textContent).toContain('No assessments found');

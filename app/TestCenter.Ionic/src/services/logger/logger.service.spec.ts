@@ -8,9 +8,7 @@ describe('Service: Logger', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [
-        LoggerService, AlertController,  App, Config, Platform,
-      ]
+      providers: [LoggerService, AlertController, App, Config, Platform]
     });
   });
 
@@ -19,7 +17,7 @@ describe('Service: Logger', () => {
   }));
 
   it('should call log', inject([LoggerService], (loggerService: LoggerService) => {
-    spyOn(console, 'log').and.callThrough();
+    spyOn(console, 'log').and.stub();
 
     loggerService.log('message to log');
 
@@ -27,7 +25,7 @@ describe('Service: Logger', () => {
   }));
 
   it('should call error', inject([LoggerService], (loggerService: LoggerService) => {
-    spyOn(console, 'error').and.callThrough();
+    spyOn(console, 'error').and.stub();
 
     loggerService.error('message to error');
 
@@ -35,7 +33,7 @@ describe('Service: Logger', () => {
   }));
 
   it('should call info', inject([LoggerService], (loggerService: LoggerService) => {
-    spyOn(console, 'info').and.callThrough();
+    spyOn(console, 'info').and.stub();
 
     loggerService.info('message to info');
 

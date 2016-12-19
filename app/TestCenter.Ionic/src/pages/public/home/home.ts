@@ -16,7 +16,7 @@ export class PublicHomePage implements BasePage {
   public filteredAssessments: any = [];
 
   constructor(public navController: NavController, public assessmentService: AssessmentService,
-              private loggerService: LoggerService) {
+    private loggerService: LoggerService) {
     this.loggerService.log('PublicHomePage.constructor');
     this.title = 'Home';
     this.getAssessments();
