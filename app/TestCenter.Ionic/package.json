@@ -41,7 +41,7 @@
     "zone.js": "0.6.26"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "0.0.47",
+    "@ionic/app-scripts": "0.0.48",
     "@types/jasmine": "^2.1.10",
     "@types/node": "^6.0.42",
     "angular-cli": "1.0.0-beta.19-3",
