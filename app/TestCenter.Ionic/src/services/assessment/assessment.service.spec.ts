@@ -33,6 +33,9 @@ describe('Service: Assessment', () => {
       ],
     });
 
+    spyOn(console, 'log').and.stub();
+    spyOn(console, 'debug').and.stub();
+
   });
 
   it('should initialize', inject([AssessmentService], (service: AssessmentService) => {

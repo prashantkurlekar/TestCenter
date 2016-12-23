@@ -13,3 +13,4 @@
 */
 declare module '*';
 declare var System: any;
+declare module 'lodash';

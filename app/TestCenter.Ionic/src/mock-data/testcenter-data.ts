@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { LoggerService } from '../services/logger/logger.service';
+import * as _ from 'lodash';
 
 @Injectable()
 export class TestCenterData {
@@ -22,6 +23,12 @@ export class TestCenterData {
   public getTests(): Promise<any> {
     return this.load().then(data => {
       return data.assessments;
+    });
+  }
+
+  public getTest(id): Promise<any> {
+    return this.load().then(data => {
+      return _.filter(data.assessments, { id: id })[0];
     });
   }
 
