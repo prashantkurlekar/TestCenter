@@ -1,8 +1,8 @@
 {
   "assessments": [
-    { "id": "1", "name": "Car", "description": "Car description 1", "labels": ["Car", "label 1-1", "label 1-2"] },
-    { "id": "2", "name": "Motorcycle", "description": "Motorcycle description 2", "labels": ["Motorcycle", "label 2-1", "label 2-2"] },
-    { "id": "3", "name": "Rigid Vehicle", "description": "Rigid Vehicle description 3", "labels": ["Rigid Vehicle", "label 3-1", "label 3-2"] }
+    { "id": "1", "name": "Car", "shortName": "Car", "description": "Car description 1", "labels": ["Car", "label 1-1", "label 1-2"] },
+    { "id": "2", "name": "Motorcycle", "shortName": "Motorcycle", "description": "Motorcycle description 2", "labels": ["Motorcycle", "label 2-1", "label 2-2"] },
+    { "id": "3", "name": "Rigid Vehicle", "shortName": "Rigid Vehicle", "description": "Rigid Vehicle description 3", "labels": ["Rigid Vehicle", "label 3-1", "label 3-2"] }
   ],
 
   "options": [

@@ -12,9 +12,12 @@ import { BaseRequestOptions, Http, Response, ResponseOptions } from '@angular/ht
 import { AssessmentService, LoggerService } from '../../../services';
 import { AssessmentServiceMock } from '../../../services/mocks';
 import { TestCenterData } from '../../../mock-data/testcenter-data';
+import { Assessment } from '../../../models';
+import { TestUtils } from '../../../test';
 
 let fixture: ComponentFixture<OptionsPage> = null;
 let componentInstance: any = null;
+let mockAssessment: Assessment = { "id": "1", "name": "Car", "shortName": "Car", "description": "Car description 1", "labels": ["Car", "label 1-1", "label 1-2"] };
 
 describe('Page: OptionsPage', () => {
 
@@ -27,7 +30,7 @@ describe('Page: OptionsPage', () => {
         // MockBackend, BaseRequestOptions,
         // TestCenterData,
         // { provide: AssessmentService, useClass: AssessmentServiceMock },
-        { provide: NavParams, useValue: {} },
+        { provide: NavParams, useValue: new NavParams({ assessment: mockAssessment }) },
         { provide: LoggerService, useClass: LoggerService },
         { provide: NavController, useValue: mockNavController },
         // {
@@ -36,12 +39,13 @@ describe('Page: OptionsPage', () => {
         //   }, deps: [MockBackend, BaseRequestOptions],
         // },
       ],
-    })
-    .compileComponents().then(() => {
+    }).compileComponents().then(() => {
       fixture = TestBed.createComponent(OptionsPage);
-      componentInstance = fixture;
+      componentInstance = fixture.componentInstance;
       fixture.detectChanges();
     });
+
+    spyOn(console, 'log').and.stub();
   }));
 
   afterEach(() => {
@@ -49,7 +53,14 @@ describe('Page: OptionsPage', () => {
   });
 
   it('should load component', async(() => {
+    expect(fixture).toBeTruthy();
     expect(componentInstance).toBeTruthy();
+  }));
+
+  it('should extract assessment from NavParams', async(() => {
+    componentInstance.ionViewDidEnter();
+    const assessment = componentInstance.assessment;
+    expect(assessment).toBeTruthy();
   }));
 
 });

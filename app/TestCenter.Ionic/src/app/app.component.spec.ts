@@ -14,7 +14,7 @@ describe('App: TestCenterApp', () => {
       declarations: [TestCenterApp],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [
-        { provide: Platform, useValue: (<any> new Platform) },
+        { provide: Platform, useValue: (<any>new Platform) },
       ],
     });
     TestBed.compileComponents();

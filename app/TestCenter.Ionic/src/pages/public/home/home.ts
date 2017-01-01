@@ -7,7 +7,7 @@ import { OptionsPage } from '../../assessment';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html',
+  templateUrl: './home.html',
 })
 export class PublicHomePage implements BasePage {
 
@@ -40,7 +40,7 @@ export class PublicHomePage implements BasePage {
 
   public onAssessment(assessment: any): void {
     this.loggerService.log(`HomePage.onAssessment id:${assessment.id}`);
-    this.navController.push(OptionsPage, { assessmentId: assessment.id });
+    this.navController.push(OptionsPage, { assessment: assessment });
   }
 
 }

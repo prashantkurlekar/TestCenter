@@ -4,10 +4,13 @@ import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'page-about',
-  templateUrl: 'about.html',
+  templateUrl: './about.html',
 })
 export class AboutPage {
-  public navCtrl: NavController;
 
-  constructor(navCtrl: NavController) { ; }
+  public title: string;
+
+  constructor(public navCtrl: NavController) {
+    this.title = 'About';
+  }
 }
