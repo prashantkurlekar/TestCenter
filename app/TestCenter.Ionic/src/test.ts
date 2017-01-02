@@ -46,11 +46,11 @@ __karma__.start();
 
 export class TestUtils {
 
-  public static beforeEachCompiler(components: Array<any>, otherProviders?: Array<any>): Promise<{ fixture: any, instance: any }> {
+  public static beforeEachCompiler(components: Array<any>): Promise<{ fixture: any, instance: any }> {
     spyOn(console, 'log').and.stub();
     spyOn(console, 'debug').and.stub();
 
-    return TestUtils.configureIonicTestingModule(components, otherProviders)
+    return TestUtils.configureIonicTestingModule(components)
       .compileComponents().then(() => {
         console.log('TestUtils.beforeEachCompiler');
         let fixture: any = TestBed.createComponent(components[0]);
@@ -61,7 +61,7 @@ export class TestUtils {
       });
   }
 
-  public static configureIonicTestingModule(components: Array<any>, otherProviders?: Array<any>): typeof TestBed {
+  public static configureIonicTestingModule(components: Array<any>): typeof TestBed {
     return TestBed.configureTestingModule({
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       declarations: [
@@ -80,7 +80,6 @@ export class TestUtils {
             return new Http(mockBackend, options)
           }, deps: [MockBackend, BaseRequestOptions],
         },
-        ...otherProviders,
       ],
       imports: [
         FormsModule,

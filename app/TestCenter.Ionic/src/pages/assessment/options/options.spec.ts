@@ -27,17 +27,9 @@ describe('Page: OptionsPage', () => {
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [
         App, Config, Platform, AlertController,
-        // MockBackend, BaseRequestOptions,
-        // TestCenterData,
-        // { provide: AssessmentService, useClass: AssessmentServiceMock },
         { provide: NavParams, useValue: new NavParams({ assessment: mockAssessment }) },
         { provide: LoggerService, useClass: LoggerService },
         { provide: NavController, useValue: mockNavController },
-        // {
-        //   provide: Http, useFactory: (mockBackend: MockBackend, options: BaseRequestOptions) => {
-        //     return new Http(mockBackend, options)
-        //   }, deps: [MockBackend, BaseRequestOptions],
-        // },
       ],
     }).compileComponents().then(() => {
       fixture = TestBed.createComponent(OptionsPage);

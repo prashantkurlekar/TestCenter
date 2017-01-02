@@ -62,6 +62,7 @@ describe('Page: PublicHomePage', () => {
   it('should show available assessment list', async(() => {
     expect(true).toBeTruthy();
   }));
+
   // it('should redirect to options page', async(() => {
   //   const fixture: any = TestBed.createComponent(PublicHomePage);
 
