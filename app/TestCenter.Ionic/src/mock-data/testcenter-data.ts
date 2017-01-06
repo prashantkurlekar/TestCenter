@@ -10,6 +10,7 @@ export class TestCenterData {
   constructor(public http: Http, public loggerService: LoggerService) { }
 
   private load(): Promise<any> {
+    this.loggerService.log(`TestCenterData.load`);
     if (this.data) {
       return new Promise(resolve => { resolve(this.data); });
     } else {
@@ -21,6 +22,7 @@ export class TestCenterData {
   }
 
   public getTests(): Promise<any> {
+    this.loggerService.log(`TestCenterData.getTests`);
     return this.load().then(data => {
       return data.assessments;
     });

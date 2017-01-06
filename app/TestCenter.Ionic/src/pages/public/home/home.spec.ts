@@ -2,7 +2,7 @@
 /* tslint:disable */
 
 import { PublicHomePage } from './home';
-import { async, TestBed, ComponentFixture } from '@angular/core/testing';
+import { async, fakeAsync, TestBed, ComponentFixture, tick } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { mockNavController, mockPlatform } from 'ionic-angular/util/mock-providers';
@@ -49,34 +49,46 @@ describe('Page: PublicHomePage', () => {
     fixture.destroy();
   });
 
-  it('should load component', async(() => {
-    expect(componentInstance).toBeTruthy();
-  }));
+  it('should load component',
+    async(() => {
+      expect(componentInstance).toBeTruthy();
+    })
+  );
 
-  it('should show message if no assessments found', async(() => {
-    let de = fixture.debugElement.query(By.css('ion-list-header'));
-    let el = de.nativeElement;
-    expect(el.textContent).toContain('No assessments found');
-  }));
+  it('should show message if no assessments found',
+    async(() => {
+      let de = fixture.debugElement.query(By.css('ion-list-header'));
+      let el = de.nativeElement;
+      expect(el.textContent).toContain('No assessments found');
+    })
+  );
 
-  it('should show available assessment list', async(() => {
-    expect(true).toBeTruthy();
-  }));
+  it('should show available assessment list',
+    fakeAsync(() => {
+      // fixture.whenStable().then(() => {
+      //   fixture.detectChanges();
+      //   console.warn(componentInstance.filteredAssessments);
+      //   expect(componentInstance.filteredAssessments.length).toBeGreaterThan(0);
+      // });
+    })
+  );
 
-  // it('should redirect to options page', async(() => {
-  //   const fixture: any = TestBed.createComponent(PublicHomePage);
+  it('should redirect to options page',
+    async(() => {
+      //   const fixture: any = TestBed.createComponent(PublicHomePage);
 
-  //   let component: any = fixture.debugElement.componentInstance;
-  //   spyOn(component.navController, 'push').and.returnValue(mockNavController)
-  //   // spyOn(component.navController, 'push').and.callFake((args, action) => {
-  //   //   // return something
-  //   // });
-  //   // console.log(component.navController);
-  //   // spyOn(component.navController, 'push').and.stub();
-  //   const assessmentId = 1;
-  //   component.onAssessment(assessmentId);
-  //   fixture.detectChanges();
-  //   expect(component.navController.push).toHaveBeenCalledWith(OptionsPage, { assessmentId: assessmentId });
-  // }));
+      //   let component: any = fixture.debugElement.componentInstance;
+      //   spyOn(component.navController, 'push').and.returnValue(mockNavController)
+      //   // spyOn(component.navController, 'push').and.callFake((args, action) => {
+      //   //   // return something
+      //   // });
+      //   // console.log(component.navController);
+      //   // spyOn(component.navController, 'push').and.stub();
+      //   const assessmentId = 1;
+      //   component.onAssessment(assessmentId);
+      //   fixture.detectChanges();
+      //   expect(component.navController.push).toHaveBeenCalledWith(OptionsPage, { assessmentId: assessmentId });
+    })
+  );
 
 });

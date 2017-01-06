@@ -10,7 +10,7 @@
 		<ion-list-header [hidden]="filteredAssessments?.length > 0">
 			No assessments found.
 		</ion-list-header>
-		<button ion-item *ngFor="let assessment of filteredAssessments" (click)="onAssessment(assessment)">
+		<button ion-item *ngFor="let assessment of filteredAssessments" (click)="onAssessment(assessment)" class="assessmentList">
 			<assessment-list-item [assessment]="assessment"></assessment-list-item>
 		</button>
 	</ion-list>
