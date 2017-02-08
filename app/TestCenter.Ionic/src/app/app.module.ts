@@ -1,28 +1,35 @@
+import { ServicesModule } from './../services/services.module';
+import { ProviderModules } from './../providers/providers.module';
+import { AssessmentModule } from './../pages/assessment/assessment.module';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { CustomFormsModule } from 'ng2-validation'
 import { TestCenterApp } from './app.component';
-import { PagesModule } from '../pages/pages.module';
+import { AboutPage } from '../pages/about/about';
+import { ContactPage } from '../pages/contact/contact';
+import { HomePage } from '../pages/home/home';
+import { TabsPage } from '../pages/tabs/tabs';
+import { Storage } from '@ionic/storage';
+// import { Autosize } from 'angular2-autosize';
 import { ComponentsModule } from '../components/components.module';
-import { ServicesModule } from '../services/services.module';
-import { TestCenterData } from '../mock-data/testcenter-data';
+
+const components = [
+  // Autosize,
+  TestCenterApp,
+  ComponentsModule,
+  AboutPage, ContactPage, HomePage, TabsPage,
+];
 
 @NgModule({
-  declarations: [
-    TestCenterApp,
-  ],
+  declarations: components,
   imports: [
-    PagesModule, ComponentsModule, ServicesModule,
-    CustomFormsModule,
     IonicModule.forRoot(TestCenterApp),
+    AssessmentModule, ProviderModules, ServicesModule,
   ],
   bootstrap: [IonicApp],
-  entryComponents: [
-    TestCenterApp,
-  ],
+  entryComponents: components,
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    TestCenterData,
+    Storage,
   ]
 })
 export class AppModule { }

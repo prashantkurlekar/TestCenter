@@ -1,9 +1,5 @@
 ﻿<Properties StartupConfiguration="{D8AF4243-4601-44CE-B940-780325B3382F}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="app/TestCenter.Xamarin/TestCenter.Xamarin/MainPage.xaml.cs">
-    <Files>
-      <File FileName="app/TestCenter.Xamarin/TestCenter.Xamarin/MainPage.xaml.cs" Line="18" Column="1" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

@@ -1,33 +1,44 @@
+import { Assessment } from './../../models/assessment';
+import { Logger, SafeHttp, Utils } from './../../providers';
+import { AppConfig } from './../../app/app.config';
+import { Storage } from '@ionic/storage';
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs';
-
-import { LoggerService } from '../logger/logger.service';
+import 'rxjs/Rx';
 
 @Injectable()
 export class AssessmentService {
-  constructor(public http: Http, public loggerService: LoggerService) { }
+  private ASSESSMENT_KEY: string = 'ASSESSMENT';
+  constructor(public http: SafeHttp, public logger: Logger, public storage: Storage) { }
 
-  public getAssessments(): Promise<any> {
-    this.loggerService.log(`AssessmentService.getAssessments`);
-    return this.http.get('http://localhost:5000/api/assessment/top').toPromise()
-      .then(response => {
-        return response.json();
-      })
-      .catch(error => {
-        this.loggerService.error(error);
-      });
+  public getAssessment(assessmentId: string): Promise<any> {
+    return this.storage.get(this.ASSESSMENT_KEY);
   }
 
-  public getAssessment(id): Promise<any> {
-    this.loggerService.log(`AssessmentService.getAssessment id: ${id}`);
-    return this.http.get(`http://localhost:5000/api/assessment/${id}`).toPromise()
-      .then(response => {
-        this.loggerService.debug(response.json());
-        return response.json();
-      })
-      .catch(error => {
-        this.loggerService.error(error);
-      });
+  public createAssessment(assessment: Assessment): Promise<any> {
+    this.logger.log(`AssessmentService.createAssessment`);
+    this.logger.debug(assessment);
+    const isTrue = true;
+    if (isTrue) {
+      this.storage.set(this.ASSESSMENT_KEY, assessment);
+      console.info(assessment);
+      assessment.id = Utils.newGuid();
+      return Promise.resolve(assessment);
+      // return new Promise(resolve => { resolve(assessment) });
+    } else {
+      return this.http.post(AppConfig.apiAssessment, JSON.stringify({ assessment: assessment }), Utils.requestOptions).toPromise()
+        .then(response => {
+          return response;
+        })
+        .catch(() => this.logger.handleError);
+    }
   }
+
+  public updateAssessment(assessment: any): Promise<any> {
+    return this.storage.set(this.ASSESSMENT_KEY, assessment);
+  }
+
+  public deleteAssessment(): Promise<any> {
+    return this.storage.remove(this.ASSESSMENT_KEY);
+  }
+
 }

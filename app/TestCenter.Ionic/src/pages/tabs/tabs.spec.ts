@@ -1,28 +1,45 @@
-/* tslint:disable:no-unused-variable */
-/* tslint:disable */
-
-import { TabsPage } from './tabs';
-import { async, TestBed } from '@angular/core/testing';
+import { ManageAssessmentPage } from './../assessment/manage/manage';
+import { ContactPage } from './../contact/contact';
+import { AboutPage } from './../about/about';
+import { HomePage } from './../home/home';
+import { TestBed, ComponentFixture, async } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { mockNavController, mockPlatform } from 'ionic-angular/util/mock-providers';
-import { NavController, Platform } from 'ionic-angular';
+import { TabsPage } from './tabs';
+
+let fixture: ComponentFixture<TabsPage>;
+let componentInstance: TabsPage;
 
 describe('Page: TabsPage', () => {
 
-  beforeEach((done) => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TabsPage],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    });
-    TestBed.compileComponents();
-    done();
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA,
+      ]
+    }).compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(TabsPage);
+    componentInstance = fixture.componentInstance;
   });
 
-  it('should load component', async(() => {
-    const fixture: any = TestBed.createComponent(TabsPage);
-    fixture.detectChanges();
-    let component: any = fixture.debugElement.componentInstance;
+  afterEach(() => {
+    fixture.destroy();
+    componentInstance = null;
+  });
 
-    expect(component).toBeTruthy();
-  }));
+  it('should be initialized', () => {
+    expect(fixture).toBeTruthy();
+    expect(componentInstance).toBeTruthy();
+  });
+
+  it('should have tab roots defined', () => {
+    expect(componentInstance.tab1Root === HomePage).toBeTruthy();
+    expect(componentInstance.tab2Root === AboutPage).toBeTruthy();
+    expect(componentInstance.tab3Root === ContactPage).toBeTruthy();
+    expect(componentInstance.tab4Root === ManageAssessmentPage).toBeTruthy();
+  });
+
 });

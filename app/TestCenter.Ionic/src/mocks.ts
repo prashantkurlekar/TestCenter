@@ -19,7 +19,7 @@ export class FormMock {
   }
 }
 
-export class NavMock {
+export class NavControllerMock {
 
   public pop(): any {
     return new Promise(function (resolve: Function): void {
@@ -61,3 +61,12 @@ export class MenuMock {
     });
   }
 }
+
+export const mockAssessment = {
+  id: 'some-id',
+  name: 'prashant kurlekar',
+  shortName: 'pk',
+  description: 'this is description on test center',
+  categories: ['cat 1', 'cat 2'],
+  questions: [],
+};

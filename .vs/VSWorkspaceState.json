@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\TestCenter.Api"
   ],
-  "SelectedNode": "\\global.json"
+  "SelectedNode": "\\src\\TestCenter.Api\\project.json",
+  "PreviewInSolutionExplorer": false
 }

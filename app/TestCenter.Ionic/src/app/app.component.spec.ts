@@ -1,32 +1,42 @@
-/* tslint:disable:no-unused-variable */
-/* tslint:disable */
+// import { TestBed, ComponentFixture, async } from '@angular/core/testing';
+// import { IonicModule } from 'ionic-angular';
+// import { TestCenterApp } from './app.component';
+// import { TabsPage } from './../pages/tabs/tabs';
 
-import { TestCenterApp } from './app.component';
-import { async, TestBed } from '@angular/core/testing';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { mockPlatform } from 'ionic-angular/util/mock-providers';
-import { Platform } from 'ionic-angular';
+// let fixture: ComponentFixture<TestCenterApp>;
+// let componentInstance: TestCenterApp;
 
-describe('App: TestCenterApp', () => {
+// describe('App: TestCenterApp', () => {
 
-  beforeEach((done) => {
-    TestBed.configureTestingModule({
-      declarations: [TestCenterApp],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      providers: [
-        { provide: Platform, useValue: (<any>new Platform) },
-      ],
-    });
-    TestBed.compileComponents();
-    done();
-  });
+//   beforeEach(async(() => {
+//     TestBed.configureTestingModule({
+//       declarations: [TestCenterApp],
+//       providers: [],
+//       imports: [
+//         IonicModule.forRoot(TestCenterApp)
+//       ]
+//     }).compileComponents();
+//   }));
 
-  it('should load component', async(() => {
-    const fixture: any = TestBed.createComponent(TestCenterApp);
-    fixture.detectChanges();
-    let component: any = fixture.debugElement.componentInstance;
+//   beforeEach(() => {
+//     fixture = TestBed.createComponent(TestCenterApp);
+//     componentInstance = fixture.componentInstance;
 
-    expect(component).toBeTruthy();
-  }));
+//     spyOn(console, 'log');
+//   });
 
-});
+//   afterEach(() => {
+//     fixture.destroy();
+//     componentInstance = null;
+//   });
+
+//   it('should be initialized', () => {
+//     expect(fixture).toBeTruthy();
+//     expect(componentInstance).toBeTruthy();
+//   });
+
+//   it('should be initialized with a root page as TabsPage', () => {
+//     expect(componentInstance['rootPage']).toBe(TabsPage);
+//   });
+
+// });

@@ -15,25 +15,15 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-body {
-  font-family: $font-family;  
+ion-label {
+  font-size: 1.6rem !important;
+  font-weight: 400;
+  color: $label-font-color;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: $font-family;
-}
-
-p {
-  font-family: $font-family;
-  font-size: 1.6rem;
-}
-
-h3 {
-  font-size: 2.0rem !important;
-  font-weight: 600 !important;
-}
-
-.toolbar-title {
-  font-weight: 500;
-  font-family: $font-family;
+ion-input, ion-select, ion-textarea, ion-datetime {
+  background-color: $controls-background-color;
+  padding: 5px 5px 5px 10px;
+  border-radius: $controls-border-radius;
+  border: 1px solid $label-font-color;
 }

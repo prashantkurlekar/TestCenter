@@ -1,21 +1,18 @@
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  ManageAnswerComponent
+} from './';
 import { IonicModule } from 'ionic-angular';
-import { AssessmentListItemComponent } from './assessment-list-item/assessment-list-item.component';
+
+const components = [
+  ManageAnswerComponent,
+];
 
 @NgModule({
-  declarations: [
-    AssessmentListItemComponent,
-  ],
+  declarations: components,
   imports: [
-    FormsModule,
     IonicModule,
-    ReactiveFormsModule,
   ],
-  exports: [
-    AssessmentListItemComponent,
-  ],
-  entryComponents: [],
-  providers: [],
+  entryComponents: components,
 })
 export class ComponentsModule { }

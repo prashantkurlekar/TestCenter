@@ -8,10 +8,11 @@ module.exports = function (config) {
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
+      require('karma-phantomjs-launcher'),
+      require('karma-firefox-launcher'),
       require('karma-remap-istanbul'),
       require('karma-mocha-reporter'),
-      require('angular-cli/plugins/karma'),
-      require('karma-phantomjs-launcher')
+      require('angular-cli/plugins/karma')
     ],
     files: [
       { pattern: './src/test.ts', watched: false }
@@ -40,8 +41,9 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: [
-      // 'Chrome',
-      'PhantomJS'
+      'Chrome',
+      // 'PhantomJS',
+      // "Firefox",
     ],
     singleRun: false
   });

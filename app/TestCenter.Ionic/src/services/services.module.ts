@@ -1,25 +1,13 @@
 import { NgModule } from '@angular/core';
-import { Http } from '@angular/http';
-import { SafeHttp, NetworkService, AssessmentService, LoggerService, StorageService } from './';
-import { AssessmentServiceMock } from './assessment/assessment.service.mock';
-import { TestCenterData } from '../mock-data/testcenter-data';
-import { AppConfig } from '../app/app.config';
+import { IonicModule } from 'ionic-angular';
+import { AssessmentService } from './assessment/assessment.service';
 
 @NgModule({
-  declarations: [],
-  imports: [],
-  exports: [],
-  entryComponents: [],
+  imports: [
+    IonicModule,
+  ],
   providers: [
-    SafeHttp, NetworkService,
-    {
-      provide: AssessmentService, 
-      deps: [ Http, LoggerService, TestCenterData ],
-      useFactory: (http: Http, loggerService: LoggerService, testCenterData: TestCenterData) => {
-        return AppConfig.production ? new AssessmentService(http, loggerService) : new AssessmentServiceMock(http, loggerService, testCenterData);
-      },
-    },
-    LoggerService, StorageService,
+    AssessmentService,
   ],
 })
 export class ServicesModule { }

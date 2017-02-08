@@ -1,62 +1,47 @@
-/* tslint:disable */
-
-import { TestBed, async, inject } from '@angular/core/testing';
+import { Assessment } from './../../models/assessment';
+import { mockAssessment } from './../../mocks';
+import { Logger } from './../../providers/logger';
+import { SafeHttp } from './../../providers/safe-http';
 import { AssessmentService } from './assessment.service';
-import { AssessmentServiceMock } from './assessment.service.mock';
-import { LoggerService } from '../logger/logger.service';
-import { MockBackend, MockConnection } from '@angular/http/testing';
-import { BaseRequestOptions, Http, Response, ResponseOptions } from '@angular/http';
-import { NavController, AlertController, App, Config, Platform } from 'ionic-angular';
-import { TestCenterData } from '../../mock-data/testcenter-data';
+import { TestBed, inject, async } from '@angular/core/testing';
+import { BaseRequestOptions, Http } from '@angular/http';
+import { MockBackend } from '@angular/http/testing';
+import { Storage } from '@ionic/storage';
 
-describe('Service: Assessment', () => {
+describe('Service: AssessmentService', () => {
 
-  let assessmentServiceStub: any;
-
-  beforeEach(() => {
-
-    assessmentServiceStub = {
-      getTop: { name: 'Test User' },
-    };
-
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       providers: [
-        TestCenterData, NavController, LoggerService, AlertController,
-        App, Config, Platform, MockBackend, BaseRequestOptions,
+        AssessmentService, Logger,
+        Storage,
+        MockBackend, BaseRequestOptions,
         {
-          provide: Http,
-          deps: [MockBackend, BaseRequestOptions], 
-          useFactory: (mockBackend: MockBackend, options: BaseRequestOptions) => {
+          provide: SafeHttp, useFactory: (mockBackend: MockBackend, options: BaseRequestOptions) => {
             return new Http(mockBackend, options);
-          },
-        }, { provide: AssessmentService, useClass: AssessmentServiceMock }
-      ],
-    });
-
-    spyOn(console, 'log').and.stub();
-    spyOn(console, 'debug').and.stub();
-
-  });
-
-  it('should initialize', inject([AssessmentService], (service: AssessmentService) => {
-    expect(service).toBeTruthy();
+          }, deps: [MockBackend, BaseRequestOptions]
+        }
+      ]
+    }).compileComponents();
   }));
 
-  it('should return assessments', async(inject([AssessmentService, MockBackend],
-    (service: AssessmentService, backend: MockBackend) => {
-      service.getAssessments().then(assessments => {
-        expect(assessments.length).toBeGreaterThan(0);
-      })
+  beforeEach(() => {
+    spyOn(console, 'log').and.stub();
+  });
+
+  it('should initialize service',
+    async(inject([AssessmentService], (service: AssessmentService) => {
+      expect(service).toBeTruthy();
     }))
   );
 
-  it('should return assessment with questions', async(inject([AssessmentService, MockBackend],
-    (service: AssessmentService, backend: MockBackend) => {
-      service.getAssessments().then(assessments => {
-        expect(assessments.length).toBeGreaterThan(0);
-      })
+  it('should call api and create assessment',
+    async(inject([AssessmentService], (service: AssessmentService) => {
+      const assessment: Assessment = mockAssessment;
+      service.createAssessment(assessment).then(result => {
+        expect(result).toBeDefined();
+      });
     }))
   );
+
 });
-
-/* tslint:enable */

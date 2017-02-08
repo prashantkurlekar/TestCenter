@@ -1,2 +1,3 @@
 export * from './assessment';
-export * from './course';
+export * from './question';
+export * from './answer';

@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
+import {
+  AssessmentDetailPage, ManageAssessmentPage,
+  AssessmentIntroductionPage, AddQuestionPage,
+} from './';
 import { IonicModule } from 'ionic-angular';
-import { ComponentsModule } from '../../components';
-import { AssessmentPage, OptionsPage } from './';
+
+const pages = [
+  AssessmentDetailPage, ManageAssessmentPage, AssessmentIntroductionPage, AddQuestionPage,
+];
 
 @NgModule({
-  declarations: [
-    AssessmentPage, OptionsPage,
+  declarations: pages,
+  imports: [
+    IonicModule,
   ],
-  imports: [IonicModule, ComponentsModule],
-  exports: [
-    AssessmentPage, OptionsPage,
-  ],
-  entryComponents: [],
-  providers: [],
+  entryComponents: pages,
 })
 export class AssessmentModule { }

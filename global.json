@@ -6,14 +6,3 @@
     "app"
   ]
 }
-
-
-// {
-//   "projects": [
-//     "src/TestCenter.Api",
-//     "src/TestCenter.Services",
-//     "src/TestCenter.Web",
-//     "mock/TestCenter.Services.Mock",
-//     "test/TestCenter.Api.Tests"
-//   ]
-// }
