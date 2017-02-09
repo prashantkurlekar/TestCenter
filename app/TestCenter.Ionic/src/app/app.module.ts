@@ -15,7 +15,6 @@ import { ComponentsModule } from '../components/components.module';
 const components = [
   // Autosize,
   TestCenterApp,
-  ComponentsModule,
   AboutPage, ContactPage, HomePage, TabsPage,
 ];
 
@@ -23,7 +22,7 @@ const components = [
   declarations: components,
   imports: [
     IonicModule.forRoot(TestCenterApp),
-    AssessmentModule, ProviderModules, ServicesModule,
+    AssessmentModule, ProviderModules, ServicesModule, ComponentsModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: components,

@@ -13,6 +13,7 @@ const components = [
   imports: [
     IonicModule,
   ],
+  exports: components,
   entryComponents: components,
 })
 export class ComponentsModule { }

@@ -49,6 +49,7 @@ export class AddQuestionPage implements OnInit {
   public ngOnInit() {
     this.logger.log(`ManageAssessmentPage.ngOnInit`);
     this.addQuestionForm = this.createFormGroup();
+    // this.addAnswer();
   }
 
   private createFormGroup(): FormGroup {

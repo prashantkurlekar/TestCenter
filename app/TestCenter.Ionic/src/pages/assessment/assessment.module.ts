@@ -1,3 +1,4 @@
+import { ComponentsModule } from './../../components/components.module';
 import { NgModule } from '@angular/core';
 import {
   AssessmentDetailPage, ManageAssessmentPage,
@@ -12,7 +13,7 @@ const pages = [
 @NgModule({
   declarations: pages,
   imports: [
-    IonicModule,
+    IonicModule, ComponentsModule,
   ],
   entryComponents: pages,
 })
