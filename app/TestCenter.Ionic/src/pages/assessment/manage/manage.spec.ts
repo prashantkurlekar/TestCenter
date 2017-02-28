@@ -9,7 +9,7 @@ import { By } from '@angular/platform-browser';
 import { FormGroup } from '@angular/forms';
 import { IonicModule, NavParams, NavController, App } from 'ionic-angular';
 import { ManageAssessmentPage } from './manage';
-import { NavControllerMock, PlatformMock, mockAssessment } from '../../../mocks';
+import { NavControllerMock, PlatformMock, mockAssessment, spyOnConsole, StorageMock } from '../../../mocks';
 import { Storage } from '@ionic/storage';
 import { AddQuestionPage } from '../';
 
@@ -31,7 +31,7 @@ describe('Page: ManageAssessmentPage', () => {
             return new Http(mockBackend, options);
           }, deps: [MockBackend, BaseRequestOptions]
         },
-        Storage,
+        { provide: Storage, useClass: StorageMock },
         AssessmentService, Logger,
       ],
       imports: [
@@ -44,9 +44,7 @@ describe('Page: ManageAssessmentPage', () => {
   }));
 
   beforeEach(() => {
-    spyOn(console, 'log').and.stub();
-    spyOn(console, 'info').and.stub();
-    spyOn(console, 'debug').and.stub();
+    spyOnConsole();
 
     fixture = TestBed.createComponent(ManageAssessmentPage);
     componentInstance = fixture.componentInstance;
@@ -178,10 +176,3 @@ describe('Page: ManageAssessmentPage', () => {
   );
 
 });
-
-// http://www.pornhub.com/view_video.php?viewkey=ph57704298dbc7d
-// http://www.pornhub.com/view_video.php?viewkey=ph575722cc82663
-// http://www.pornhub.com/view_video.php?viewkey=ph558c3d029aa15
-// http://www.pornhub.com/view_video.php?viewkey=ph5716501e3ebc8
-// http://www.pornhub.com/view_video.php?viewkey=ph559dfca8a9cd4
-// 

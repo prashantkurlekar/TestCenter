@@ -27,3 +27,7 @@ ion-input, ion-select, ion-textarea, ion-datetime {
   border-radius: $controls-border-radius;
   // border: 1px solid $label-font-color;
 }
+
+.no-bottom-margin {
+  margin-bottom: 0;
+}

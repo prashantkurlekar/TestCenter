@@ -14,6 +14,7 @@ export class AddQuestionPage implements OnInit {
   public title: string;
   public assessment: Assessment;
   public addQuestionForm: FormGroup;
+  public minimumOptions: number = 2;
   public formErrors: any = {
     value: '',
     answers: '',
@@ -32,8 +33,8 @@ export class AddQuestionPage implements OnInit {
     }
   };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public logger: Logger,
-    public formBuilder: FormBuilder) { }
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public logger: Logger, public formBuilder: FormBuilder) { ; }
 
   public ionViewDidLoad() {
     this.logger.log(`AddQuestionPage.ionViewDidLoad`);
@@ -49,7 +50,7 @@ export class AddQuestionPage implements OnInit {
   public ngOnInit() {
     this.logger.log(`ManageAssessmentPage.ngOnInit`);
     this.addQuestionForm = this.createFormGroup();
-    // this.addAnswer();
+    this.addMinimumOptions(this.minimumOptions);
   }
 
   private createFormGroup(): FormGroup {
@@ -59,27 +60,34 @@ export class AddQuestionPage implements OnInit {
           Validators.required,
           Validators.maxLength(1000)
         ])),
-      answers: this.formBuilder.array([
-        this.initAnswers(),
-      ]),
+      answers: this.formBuilder.array([]),
       correctAnswersIds: new FormControl([], Validators.compose([Validators.required])),
     });
     formGroup.valueChanges.subscribe(() => Utils.onFormValueChanged(formGroup, this.formErrors, this.validationMessages));
     return formGroup;
   }
 
-  private initAnswers(): any {
-    return this.formBuilder.group({
-      answer: ['', Validators.required],
-    });
+  private addMinimumOptions(minimumOptions: number): void {
+    for (let i = 0; i < minimumOptions; i++) {
+      this.addAnswer();
+    }
   }
+
+  // private initAnswers(): any {
+  //   return this.formBuilder.group({
+  //     answer: ['', Validators.required],
+  //   });
+  // }
 
   public addAnswer() {
-    const control = <FormArray>this.addQuestionForm.controls['answers'];
-    control.push(this.initAnswers());
+    let control = <FormArray>this.addQuestionForm.controls['answers'];
+    control.push(this.formBuilder.group({
+      answer: ['', Validators.required],
+    }));
   }
 
-  removeAnswer(index: number) {
+  public removeAnswer(index: number) {
+    this.logger.debug('AddQuestionPage.removeAnswer');
     const control = <FormArray>this.addQuestionForm.controls['answers'];
     control.removeAt(index);
   }

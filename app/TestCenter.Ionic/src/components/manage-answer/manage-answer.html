@@ -1,19 +1,6 @@
-<div [formGroup]="answerForm">
-  <!--<div class="form-group col-xs-6">
-    <label>street</label>
-    <input type="text" class="form-control" formControlName="street">
-    <small [hidden]="answerForm.controls.street.valid" class="text-danger">
-            Street is required
-        </small>
-  </div>
-  <div class="form-group col-xs-6">
-    <label>postcode</label>
-    <input type="text" class="form-control" formControlName="postcode">
-  </div>-->
-  <ion-item no-lines>
-    <ion-textarea type="text" formControlName="answer" rows="3" ngDefaultControl autosize></ion-textarea>
-    </ion-item>
-    <!--<p ion-text color="danger" class="validation" padding-left no-margin>
-      {{ formErrors.description }}
-    </p>-->
-</div>
+<ion-item no-lines no-padding [formGroup]="answerForm">
+  <ion-textarea type="text" formControlName="answer" rows="3" ngDefaultControl autosize></ion-textarea>
+  <p ion-text color="danger" class="validation" padding-left [hidden]="answerForm.controls.answer.valid">
+    {{ formErrors.value }} Some error
+  </p>
+</ion-item>

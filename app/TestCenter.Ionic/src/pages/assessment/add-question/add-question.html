@@ -9,7 +9,7 @@
 <ion-content no-padding>
   <form [formGroup]="addQuestionForm" (ngSubmit)="onSubmit()">
 
-    <ion-item no-lines>
+    <!--<ion-item no-lines>
       <ion-label stacked>Question</ion-label>
       <ion-textarea type="text" formControlName="value" rows="5" ngDefaultControl></ion-textarea>
     </ion-item>
@@ -18,22 +18,56 @@
     </p>
 
     <div formArrayName="answers">
-      <ion-item no-lines no-padding *ngFor="let answerControl of addQuestionForm.controls.answers.controls; let i=index">
-        <div class="panel-heading">
-          <span>Option {{i + 1}}</span>
-          <ion-icon name="close" *ngIf="addQuestionForm.controls.answers.controls.length > 1" (click)="removeAnswer(i)"></ion-icon>
-        </div>
-        <div class="panel-body" [formGroupName]="i">
+      <div no-padding padding-left *ngFor="let answerControl of addQuestionForm.controls.answers.controls; let i=index">
+        <ion-row>
+          <ion-col width-67>
+            <ion-item no-lines no-padding>
+              <ion-label>Option {{ i + 1 }}</ion-label>
+              <ion-checkbox color="secondary"></ion-checkbox>
+            </ion-item>
+          </ion-col>
+          <ion-col width-33 *ngIf="addQuestionForm.controls.answers.controls.length > minimumOptions">
+            <ion-icon text-center name="close" (click)="removeAnswer(i)"></ion-icon>
+            Remove
+          </ion-col>
+        </ion-row>
+        <ion-item no-lines no-padding no-margin [formGroupName]="i">
           <manage-answer [group]="addQuestionForm.controls.answers.controls[i]"></manage-answer>
+        </ion-item>
+      </div>
+    </div>-->
+
+    <ion-list no-lines class="no-bottom-margin">
+      <ion-item-group>
+        <ion-item-divider color="light">Question</ion-item-divider>
+        <ion-item padding-top>
+          <ion-textarea type="text" formControlName="value" rows="5" ngDefaultControl></ion-textarea>
+        </ion-item>
+        <p ion-text color="danger" class="validation" padding-left>
+          {{ formErrors.value }}
+        </p>
+      </ion-item-group>
+      <ion-item-group formArrayName="answers">
+        <ion-item-divider color="light">Options</ion-item-divider>
+        <div *ngFor="let answerControl of addQuestionForm.controls.answers.controls; let i=index">
+          <ion-item>
+            <ion-label>Option {{ i + 1 }}</ion-label>
+            <ion-checkbox color="secondary"></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <manage-answer [group]="addQuestionForm.controls.answers.controls[i]"></manage-answer>
+          </ion-item>
         </div>
-      </ion-item>
-    </div>
+      </ion-item-group>
+    </ion-list>
 
-    <div>
-      <a (click)="addAnswer()" style="cursor: default">
-        Add another option +
-      </a>
-    </div>
+    <button ion-button icon-left small clear (click)="addAnswer()">
+      <ion-icon name="add"></ion-icon>
+      Option
+    </button>
 
+    <ion-item no-lines>
+      <button ion-button type="submit" [disabled]="!addQuestionForm.valid" color="primary" block large>Add Question</button>
+    </ion-item>
   </form>
 </ion-content>

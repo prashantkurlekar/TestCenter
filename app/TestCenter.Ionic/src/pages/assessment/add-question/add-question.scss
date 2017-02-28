@@ -1,3 +1,11 @@
 page-add-question {
+  .input-wrapper ion-label {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 
+  ion-item-divider ion-label {
+    // color: red;
+    font-size: larger !important;
+  }
 }

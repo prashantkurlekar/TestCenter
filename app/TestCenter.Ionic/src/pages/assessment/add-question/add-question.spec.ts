@@ -84,10 +84,10 @@ describe('Page: AddQuestionPage', () => {
       0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789
       0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789
       MoreThan1000Characters`);
-    fixture.detectChanges();
+    // fixture.detectChanges();
     errors = value.errors || {};
     expect(errors['maxlength']).toBeTruthy();
-    expect(componentInstance.validationMessages.value.maxlength).toBeDefined(); // .toContain('Maximum 1000 characters allowed');
+    expect(componentInstance.validationMessages.value.maxlength).toBeDefined();
 
     value.setValue(`
       0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789

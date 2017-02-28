@@ -1,5 +1,5 @@
 import { Assessment } from './../../models/assessment';
-import { mockAssessment } from './../../mocks';
+import { mockAssessment, spyOnConsole, StorageMock } from './../../mocks';
 import { Logger } from './../../providers/logger';
 import { SafeHttp } from './../../providers/safe-http';
 import { AssessmentService } from './assessment.service';
@@ -14,19 +14,19 @@ describe('Service: AssessmentService', () => {
     TestBed.configureTestingModule({
       providers: [
         AssessmentService, Logger,
-        Storage,
         MockBackend, BaseRequestOptions,
         {
           provide: SafeHttp, useFactory: (mockBackend: MockBackend, options: BaseRequestOptions) => {
             return new Http(mockBackend, options);
           }, deps: [MockBackend, BaseRequestOptions]
-        }
+        },
+        { provide: Storage, useClass: StorageMock },
       ]
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    spyOn(console, 'log').and.stub();
+    spyOnConsole();
   });
 
   it('should initialize service',

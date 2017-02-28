@@ -70,3 +70,17 @@ export const mockAssessment = {
   categories: ['cat 1', 'cat 2'],
   questions: [],
 };
+
+export function spyOnConsole() {
+  spyOn(console, 'log').and.stub();
+  spyOn(console, 'info').and.stub();
+  spyOn(console, 'debug').and.stub();
+};
+
+export class StorageMock {
+  public get() {
+    return {};
+  }
+
+  public set() { ; }
+}
