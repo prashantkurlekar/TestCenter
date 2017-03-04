@@ -33,14 +33,5 @@ $RECYCLE.BIN/
 Thumbs.db
 UserInterfaceState.xcuserstate
 
-resources/
-e2e/
-environments/
-
-app/TestCenter.Xamarin/TestCenter.Xamarin/bin/
-app/TestCenter.Xamarin/TestCenter.Xamarin/obj/
-app/TestCenter.Xamarin/TestCenter.Xamarin.Droid/bin/
-app/TestCenter.Xamarin/TestCenter.Xamarin.Droid/obj/
-app/TestCenter.Xamarin/TestCenter.Xamarin.iOS/bin/
-app/TestCenter.Xamarin/TestCenter.Xamarin.iOS/obj/
-.dotnotcommit
+resources/android/
+resources/ios/

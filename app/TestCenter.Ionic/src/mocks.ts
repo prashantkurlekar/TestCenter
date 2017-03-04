@@ -19,7 +19,7 @@ export class FormMock {
   }
 }
 
-export class NavControllerMock {
+export class NavMock {
 
   public pop(): any {
     return new Promise(function (resolve: Function): void {
@@ -60,27 +60,4 @@ export class MenuMock {
       resolve();
     });
   }
-}
-
-export const mockAssessment = {
-  id: 'some-id',
-  name: 'prashant kurlekar',
-  shortName: 'pk',
-  description: 'this is description on test center',
-  categories: ['cat 1', 'cat 2'],
-  questions: [],
-};
-
-export function spyOnConsole() {
-  spyOn(console, 'log').and.stub();
-  spyOn(console, 'info').and.stub();
-  spyOn(console, 'debug').and.stub();
-};
-
-export class StorageMock {
-  public get() {
-    return {};
-  }
-
-  public set() { ; }
 }

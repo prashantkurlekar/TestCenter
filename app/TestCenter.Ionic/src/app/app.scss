@@ -14,20 +14,3 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-
-ion-label {
-  font-size: 1.6rem !important;
-  font-weight: 400;
-  color: $label-font-color;
-}
-
-ion-input, ion-select, ion-textarea, ion-datetime {
-  background-color: $controls-background-color;
-  padding: 5px 5px 5px 10px;
-  border-radius: $controls-border-radius;
-  // border: 1px solid $label-font-color;
-}
-
-.no-bottom-margin {
-  margin-bottom: 0;
-}

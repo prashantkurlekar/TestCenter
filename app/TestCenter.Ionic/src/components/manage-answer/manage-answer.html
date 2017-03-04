@@ -1,6 +1,0 @@
-<ion-item no-lines no-padding [formGroup]="answerForm">
-  <ion-textarea type="text" formControlName="answer" rows="3" ngDefaultControl autosize></ion-textarea>
-  <p ion-text color="danger" class="validation" padding-left [hidden]="answerForm.controls.answer.valid">
-    {{ formErrors.value }} Some error
-  </p>
-</ion-item>
