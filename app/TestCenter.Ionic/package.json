@@ -3,7 +3,7 @@
   "author": "Prashant Kurlekar",
   "homepage": "http://testcenter.prashantkurlekar.com/",
   "private": true,
-  "version": "3.0.0",
+  "version": "3.0.0-alpha.1",
   "scripts": {
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
