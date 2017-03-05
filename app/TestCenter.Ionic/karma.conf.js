@@ -34,12 +34,13 @@ module.exports = function (config) {
     },
     reporters: config.angularCli && config.angularCli.codeCoverage
       ? [
-        'progress',
-        'coverage-istanbul'
+        'mocha',
+        // 'progress',
+        // 'coverage-istanbul',
       ] : [
         // 'progress',
-        'kjhtml',
-        'mocha'
+        // 'kjhtml',
+        'mocha',
       ],
     port: 9876,
     colors: true,

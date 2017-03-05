@@ -61,3 +61,9 @@ export class MenuMock {
     });
   }
 }
+
+export class NavParamsMock {
+  public get(): any {
+    return {};
+  }
+}
