@@ -1,8 +1,22 @@
 import { Injectable } from '@angular/core';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { Organization } from '../../models/organization';
 
 @Injectable()
 export class FirebaseBackendService {
 
-  constructor() { }
+  public organizations: FirebaseListObservable<any>;
+
+  constructor(public angularFire: AngularFire) {
+    this.organizations = angularFire.database.list('/organizations');
+  }
+
+  public getOrganizations(): any {
+    return this.organizations;
+  }
+
+  public addOrganization(organization: Organization): any {
+    return this.organizations.push(organization);
+  }
 
 }

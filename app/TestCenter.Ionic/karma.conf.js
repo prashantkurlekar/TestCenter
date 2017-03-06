@@ -39,7 +39,7 @@ module.exports = function (config) {
         // 'coverage-istanbul',
       ] : [
         // 'progress',
-        // 'kjhtml',
+        'kjhtml',
         'mocha',
       ],
     port: 9876,

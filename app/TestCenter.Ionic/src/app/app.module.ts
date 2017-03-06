@@ -6,6 +6,8 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
+import { ProvidersModule } from '../providers/providers.module';
+import { ServicesModule } from '../services/services.module';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyAALaX7vTko0j-rfFI0pQVEH1AfOmBnWp8',
@@ -35,6 +37,9 @@ const components = [
   ],
   bootstrap: [IonicApp],
   entryComponents: components,
-  providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }]
+  providers: [
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    ProvidersModule, ServicesModule,
+  ]
 })
 export class AppModule { ; }

@@ -1,3 +1,5 @@
+import { AngularFireAuth, AngularFire, AngularFireDatabase } from "angularfire2";
+
 export class ConfigMock {
 
   public get(): any {
@@ -66,4 +68,25 @@ export class NavParamsMock {
   public get(): any {
     return {};
   }
+}
+
+export class AngularFireAuthMock {
+  public login(): any {
+    return {};
+  }
+
+  public logout(): any {
+    return {};
+  }
+}
+
+export class AngularFireDatabaseMock {
+  public list(): Promise<any> {
+    return Promise.resolve({});
+  }
+}
+
+export class AngularFireMock {
+  public auth = new AngularFireAuthMock();
+  public database = new AngularFireDatabaseMock();
 }
