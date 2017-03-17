@@ -5,17 +5,21 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { OrganizationsPage } from '../pages/organizations/organizations';
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 import { ProvidersModule } from '../providers/providers.module';
 import { ServicesModule } from '../services/services.module';
+import { LoginPage } from '../pages/login/login';
+import { ResetPasswordPage } from '../pages/reset-password/reset-password';
+import { SignupPage } from '../pages/signup/signup';
+import { ProfilePage } from '../pages/profile/profile';
 
 export const firebaseConfig = {
-  apiKey: 'AIzaSyAALaX7vTko0j-rfFI0pQVEH1AfOmBnWp8',
-  authDomain: 'testcenter-c43c2.firebaseapp.com',
-  databaseURL: 'https://testcenter-c43c2.firebaseio.com',
-  storageBucket: 'testcenter-c43c2.appspot.com',
-  // storageBucket: '',
-  messagingSenderId: '103800392102'
+  apiKey: 'AIzaSyBwEUe6x_w_yLFrr--xYLQJLxRT2Rc8vtY',
+  authDomain: 'ionic-firebase-auth-9f555.firebaseapp.com',
+  databaseURL: 'https://ionic-firebase-auth-9f555.firebaseio.com',
+  storageBucket: 'ionic-firebase-auth-9f555.appspot.com',
+  messagingSenderId: '904481277327'
 };
 const firebaseAuthConfig = {
   provider: AuthProviders.Password,
@@ -26,20 +30,22 @@ const components = [
   AboutPage,
   ContactPage,
   HomePage,
-  TabsPage
+  OrganizationsPage,
+  TabsPage,
+  LoginPage, ResetPasswordPage, SignupPage, ProfilePage,
 ];
 
 @NgModule({
   declarations: components,
   imports: [
     IonicModule.forRoot(TestCenterApp),
-    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig)
+    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
+    ProvidersModule, ServicesModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: components,
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    ProvidersModule, ServicesModule,
   ]
 })
 export class AppModule { ; }

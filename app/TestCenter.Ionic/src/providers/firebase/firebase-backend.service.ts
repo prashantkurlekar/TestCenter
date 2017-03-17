@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { Organization } from '../../models/organization';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class FirebaseBackendService {
@@ -11,7 +12,7 @@ export class FirebaseBackendService {
     this.organizations = angularFire.database.list('/organizations');
   }
 
-  public getOrganizations(): any {
+  public getOrganizations(): FirebaseListObservable<any> {
     return this.organizations;
   }
 
