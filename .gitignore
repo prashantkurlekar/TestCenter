@@ -1,13 +1,39 @@
-src/TestCenter.Api/bin/
-src/TestCenter.Api/obj/
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
 
-src/TestCenter.Models/bin/
-src/TestCenter.Models/obj/
+*~
+*.sw[mnpcod]
+*.log
+*.tmp
+*.tmp.*
+log.txt
+*.sublime-project
+*.sublime-workspace
+.vscode/
+npm-debug.log*
 
-src/TestCenter.Services/bin/
-src/TestCenter.Services/obj/
+.idea/
+.sass-cache/
+.tmp/
+.versions/
+coverage/
+dist/
+node_modules/
+tmp/
+temp/
+hooks/
+platforms/
+plugins/
+plugins/android.json
+plugins/ios.json
+www/
+$RECYCLE.BIN/
 
-src/TestCenter.Web/bin/
-src/TestCenter.Web/obj/
+# e2e
+/e2e/*.js
+/e2e/*.map
 
-packages/
+
+.DS_Store
+Thumbs.db
+UserInterfaceState.xcuserstate
