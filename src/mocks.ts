@@ -1,5 +1,4 @@
 /* tslint:disable */
-// IONIC:
 import { EventEmitter } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
@@ -188,6 +187,12 @@ export class AppMock {
 
   public getActiveNav(): NavMock {
     return new NavMock();
+  }
+}
+
+export class BackendProviderMock {
+  public testPost(value: any): Promise<any> {
+    return Promise.resolve(value);
   }
 }
 

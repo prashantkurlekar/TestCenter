@@ -3,11 +3,11 @@ import { TestCenterApp } from './app.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Platform } from 'ionic-angular';
 
-describe('TestCenterApp: TestCenterApp', () => {
+describe('AppComponent: TestCenterApp', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        TestCenterApp
+        TestCenterApp,
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [

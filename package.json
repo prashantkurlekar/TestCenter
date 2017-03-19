@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@angular/cli": "^1.0.0-rc.2",
-    "@ionic/app-scripts": "1.1.4",
+    "@ionic/app-scripts": "^1.1.4",
     "@ionic/cli-build-ionic-angular": "0.0.3",
     "@ionic/cli-plugin-cordova": "0.0.9",
     "@types/jasmine": "^2.5.46",
