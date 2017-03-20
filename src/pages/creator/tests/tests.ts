@@ -9,7 +9,7 @@ export class TestsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) { ; }
 
-  public ionViewDidLoad() {
+  public ionViewDidLoad(): void {
     console.log('ionViewDidLoad TestsPage');
   }
 

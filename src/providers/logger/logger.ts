@@ -40,11 +40,11 @@ export class Logger {
   }
 
   private logErrorToServer(errorMessage: any): void {
-    // this.http.post(`${ConfigurationService.logErrorUrl}/`, { error: errorMessage })
-    //   .catch((error: any): Observable<any> => {
-    //     // TODO: Log error locally, to sync those after server is available
-    //     return Observable.throw(error);
-    //   });
+    this.http.post(`setServerUrlHere/`, { error: errorMessage })
+      .catch((error: any): Observable<any> => {
+        // TODO: Log error locally, to sync those after server is available
+        return Observable.throw(error);
+      });
   }
 
   public trackView(pageTitle: string): void {

@@ -43,7 +43,7 @@
       false
     ],
     "no-construct": false,
-    "no-constructor-vars": true,
+    "no-constructor-vars": false,
     "no-debugger": true,
     "no-duplicate-key": true,
     "no-duplicate-variable": true,
@@ -110,7 +110,7 @@
       }
     ],
     "use-strict": [
-      true,
+      false,
       "check-module",
       "check-function"
     ],

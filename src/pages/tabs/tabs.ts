@@ -8,14 +8,11 @@ import { TestPage } from '../creator';
   templateUrl: 'tabs.html',
 })
 export class TabsPage {
-  // this tells the tabs component which Pages
-  // should be each tab's root Page
-  tab1Root: any = HomePage;
-  tab2Root: any = AboutPage;
-  tab3Root: any = ContactPage;
-  tab4Root: any = TestPage;
 
-  constructor() {
+  public tab1Root: any = HomePage;
+  public tab2Root: any = AboutPage;
+  public tab3Root: any = ContactPage;
+  public tab4Root: any = TestPage;
 
-  }
+  constructor() { ; }
 }

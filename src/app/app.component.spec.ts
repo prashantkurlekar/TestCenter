@@ -1,9 +1,12 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { TestCenterApp } from './app.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Platform } from 'ionic-angular';
 
 describe('AppComponent: TestCenterApp', () => {
+  let appComponent: TestCenterApp;
+  let fixture: ComponentFixture<TestCenterApp>;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
@@ -12,14 +15,18 @@ describe('AppComponent: TestCenterApp', () => {
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [
         Platform,
-      ]
+      ],
     }).compileComponents();
   }));
 
+  beforeEach(() => {
+    fixture = TestBed.createComponent(TestCenterApp);
+    appComponent = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
   it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(TestCenterApp);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+    expect(appComponent).toBeTruthy();
   }));
 
   // it(`should have as title 'app works!'`, async(() => {

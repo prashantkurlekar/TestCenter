@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { TestPage, TestsPage } from './';
 import { IonicModule } from 'ionic-angular';
 
-const pages = [
+const pages: any = [
   TestPage, TestsPage,
 ];
 

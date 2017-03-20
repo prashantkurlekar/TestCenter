@@ -8,13 +8,14 @@ import { Logger } from './logger/logger';
 @Injectable()
 export class UtilService {
 
+  // tslint:disable-next-line
   constructor(private http: Http, private storage: Storage, public logger: Logger) { }
 
   public static Guid(): any {
     return Guid.newGuid();
   }
 
-  public reverseGeocode(latitude, longitude): Promise<any> {
+  public reverseGeocode(latitude: any, longitude: any): Promise<any> {
     this.logger.log(`UtilService.reverseGeocode`);
     return this.http
       .get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=AIzaSyAjfVP8-FirlvFdqS6D6bYTGNOBeryyGKo`)
@@ -28,13 +29,13 @@ export class UtilService {
   }
 
   public static formatDate(stringToFormat: any): string {
-    let pad = s => { return (s < 10) ? '0' + s : s; };
-    const d = new Date(stringToFormat);
+    let pad: any = s => { return (s < 10) ? '0' + s : s; };
+    const d: Date = new Date(stringToFormat);
     return [pad(d.getDate()), pad(d.getMonth() + 1), d.getFullYear()].join('/');
   }
 
   public static requestOptions(): RequestOptions {
-    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let headers: Headers = new Headers({ 'Content-Type': 'application/json' });
     return new RequestOptions({ headers: headers, withCredentials: true });
   }
 
@@ -42,9 +43,9 @@ export class UtilService {
     if (!form) return;
     for (const field in formErrors) {
       formErrors[field] = '';
-      const control = form.get(field);
+      const control: any = form.get(field);
       if (control && control.dirty && !control.valid) {
-        const messages = validationMessages[field];
+        const messages: any = validationMessages[field];
         for (const key in control.errors) {
           formErrors[field] += messages[key] + ' ';
         }
