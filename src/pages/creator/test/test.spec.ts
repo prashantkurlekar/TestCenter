@@ -3,10 +3,11 @@ import { TestPage } from './test';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { NavController, Platform } from 'ionic-angular';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Logger } from '../../../providers';
+import { Logger, BackendProvider } from '../../../providers';
 import { Http, BaseRequestOptions } from '@angular/http';
 import { MockBackend } from '@angular/http/testing';
 import { PlatformMock } from '../../../mocks';
+import { TestService } from '../../../services';
 
 describe('Page: Creator.Test', () => {
   let component: TestPage;
@@ -20,13 +21,14 @@ describe('Page: Creator.Test', () => {
       providers: [
         NavController, FormBuilder,
         { provide: Platform, useClass: PlatformMock },
+        BackendProvider,
         MockBackend, BaseRequestOptions,
         {
           provide: Http, useFactory: (mockBackend: MockBackend, options: BaseRequestOptions) => {
             return new Http(mockBackend, options);
           }, deps: [MockBackend, BaseRequestOptions],
         },
-        Logger,
+        Logger, TestService,
       ],
     }).compileComponents();
   }));

@@ -7,7 +7,7 @@ export class TestService {
 
   constructor(public logger: Logger, public backend: BackendProvider) { ; }
 
-  public post(test: any): Promise<any> {
+  public createTest(test: any): Promise<any> {
     return this.backend.testPost(test);
   }
 

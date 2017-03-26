@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UtilService, Logger } from '../../../providers';
+import { TestService } from '../../../services';
 
 @Component({
   selector: 'page-test',
@@ -26,7 +27,8 @@ export class TestPage implements OnInit {
     },
   };
 
-  constructor(public navCtrl: NavController, public formBuilder: FormBuilder, public logger: Logger) { ; }
+  constructor(public navCtrl: NavController, public formBuilder: FormBuilder,
+    public logger: Logger, public testService: TestService) { ; }
 
   public ionViewDidEnter(): void {
     this.logger.log(`LoginPage.ionViewDidEnter`);
@@ -57,12 +59,17 @@ export class TestPage implements OnInit {
     UtilService.onFormValueChanged(this.testForm, this.formErrors, this.validationMessages);
   }
 
-  public onSave(): void { ; }
+  public onSave(): void {
+    this.logger.info(`TestPage.onSave`);
+    const test: any = {
+      name: this.testForm.value.name,
+      description: this.testForm.value.description,
+    };
+    this.testService.createTest(test).then(value => {
+      this.logger.info(value);
+    });
+  }
 
   public onCancel(): void { ; }
-
-  // public ionViewDidLoad(): void {
-  //   console.log('ionViewDidLoad TestPage');
-  // }
 
 }

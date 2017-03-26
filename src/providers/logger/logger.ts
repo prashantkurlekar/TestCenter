@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { Response, Http } from '@angular/http';
-import { GoogleAnalytics } from 'ionic-native';
-import 'rxjs/add/operator/map';
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class Logger {
 
-  constructor(public http: Http, public platform: Platform) { ; }
+  constructor(public http: Http, public platform: Platform, public googleAnalytics: GoogleAnalytics) { ; }
 
   public log(message: any): void {
     console.log(message);
@@ -40,7 +41,7 @@ export class Logger {
   }
 
   private logErrorToServer(errorMessage: any): void {
-    this.http.post(`setServerUrlHere/`, { error: errorMessage })
+    this.http.post(`setServerUrlHere/`, { error: errorMessage }).toPromise()
       .catch((error: any): Observable<any> => {
         // TODO: Log error locally, to sync those after server is available
         return Observable.throw(error);
@@ -49,13 +50,13 @@ export class Logger {
 
   public trackView(pageTitle: string): void {
     this.platform.ready().then(() => {
-      GoogleAnalytics.trackView(pageTitle);
+      this.googleAnalytics.trackView(pageTitle);
     });
   }
 
   public trackEvent(platform: Platform, category: any, action: any, label: any, value: any): void {
     platform.ready().then(() => {
-      GoogleAnalytics.trackEvent(category, action, label, value);
+      this.googleAnalytics.trackEvent(category, action, label, value);
     });
   }
 

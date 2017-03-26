@@ -24,7 +24,7 @@ $font-path: "../assets/fonts";
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #387ef5,
+  primary:    #1E439C, // #387ef5,
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
@@ -79,3 +79,4 @@ $colors: (
 
 $controls-background-color: #f2f2f2;
 $controls-border-radius: 0.4rem;
+// $toolbar-background: map-get($colors, primary);

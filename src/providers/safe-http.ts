@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Request, RequestOptionsArgs } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/toPromise';
 import { Logger } from './logger/logger';
 import { NetworkService } from './network.service';
 
@@ -18,7 +19,7 @@ export class SafeHttp {
     if (this.networkService.noConnection()) {
       this.networkService.showNetworkAlert();
     } else {
-      return this.http.request(url, options)
+      return this.http.request(url, options).toPromise()
         .catch(this.onCatch);
     }
   }
@@ -27,7 +28,7 @@ export class SafeHttp {
     if (this.networkService.noConnection()) {
       this.networkService.showNetworkAlert();
     } else {
-      return this.http.get(url, options)
+      return this.http.get(url, options).toPromise()
         .catch(this.onCatch);
     }
   }
@@ -36,7 +37,7 @@ export class SafeHttp {
     if (this.networkService.noConnection()) {
       this.networkService.showNetworkAlert();
     } else {
-      return this.http.post(url, body, options)
+      return this.http.post(url, body, options).toPromise()
         .catch(this.onCatch);
     }
   }
@@ -45,7 +46,7 @@ export class SafeHttp {
     if (this.networkService.noConnection()) {
       this.networkService.showNetworkAlert();
     } else {
-      return this.http.put(url, body, options)
+      return this.http.put(url, body, options).toPromise()
         .catch(this.onCatch);
     }
   }
@@ -54,7 +55,7 @@ export class SafeHttp {
     if (this.networkService.noConnection()) {
       this.networkService.showNetworkAlert();
     } else {
-      return this.http.delete(url, options)
+      return this.http.delete(url, options).toPromise()
         .catch(this.onCatch);
     }
   }
@@ -63,7 +64,7 @@ export class SafeHttp {
     if (this.networkService.noConnection()) {
       this.networkService.showNetworkAlert();
     } else {
-      return this.http.patch(url, body, options)
+      return this.http.patch(url, body, options).toPromise()
         .catch(this.onCatch);
     }
   }
@@ -72,7 +73,7 @@ export class SafeHttp {
     if (this.networkService.noConnection()) {
       this.networkService.showNetworkAlert();
     } else {
-      return this.http.head(url, options)
+      return this.http.head(url, options).toPromise()
         .catch(this.onCatch);
     }
   }

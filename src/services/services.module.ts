@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from 'ionic-angular';
-import { TestService } from './';
+import { TestService, AuthenticationService } from './';
 
 @NgModule({
   declarations: [],
@@ -13,7 +13,7 @@ import { TestService } from './';
   exports: [],
   entryComponents: [],
   providers: [
-    TestService,
+    TestService, AuthenticationService,
   ],
 })
 export class ServicesModule { }

@@ -1,17 +1,18 @@
 import { AlertController } from 'ionic-angular';
 import { Injectable } from '@angular/core';
-import { Network, Diagnostic } from 'ionic-native';
+import { Network } from '@ionic-native/network';
+import { Diagnostic } from '@ionic-native/diagnostic';
 
 @Injectable()
 export class NetworkService {
 
   public networkAlert: any;
 
-  constructor(public alertController: AlertController) { }
+  constructor(public alertController: AlertController, public network: Network, public diagnostic: Diagnostic) { ; }
 
   public noConnection(): any {
-    console.debug(Network.type);
-    return (Network.type === 'none');
+    console.debug(this.network.type);
+    return (this.network.type === 'none');
   }
 
   public showNetworkAlert(): void {
@@ -36,10 +37,10 @@ export class NetworkService {
   }
 
   private showSettings(): void {
-    if (Diagnostic.switchToWifiSettings)
-      Diagnostic.switchToWifiSettings();
+    if (this.diagnostic.switchToWifiSettings)
+      this.diagnostic.switchToWifiSettings();
     else
-      Diagnostic.switchToSettings();
+      this.diagnostic.switchToSettings();
   }
 
 }
