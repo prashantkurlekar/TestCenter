@@ -1,8 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>MyApp</name>
-    <description>An awesome Ionic/Cordova app.</description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+<widget id="com.prashantkurlekar.testcenter" version="3.0.0" android-versionCode="10" ios-CFBundleVersion="10"
+    xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Test Center</name>
+    <description>Create your own test.</description>
+    <author email="prashantkurlekar@gmail.com" href="http://testcenter.prashantkurlekar.com/">Prashant Kurlekar</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*"/>
@@ -12,6 +13,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <hook src="scripts/incrementBuildNum.js" type="after_build"/>
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
@@ -24,7 +26,6 @@
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="16" />
     <preference name="BackupWebStorage" value="none" />
-
     <!--
       Change these to configure how the splashscreen displays and fades in/out.
       More info here: https://github.com/apache/cordova-plugin-splashscreen
