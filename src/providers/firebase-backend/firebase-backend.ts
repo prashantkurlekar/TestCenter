@@ -40,13 +40,12 @@ export class FirebaseBackend {
   // --------------- Tests
 
   private getReferenceToTests(organization: string): void {
-    this.tests = firebase.database().ref(`/${organization}/tests`);
+    this.tests = firebase.database().ref(`/organizations/${organization}/tests`);
   }
 
   public getTests(organization: string): firebase.database.Reference {
     console.log(`FirebaseBackend.getTests`);
     if (!this.tests) this.getReferenceToTests(organization);
-    console.log(this.tests);
     return this.tests;
   }
 

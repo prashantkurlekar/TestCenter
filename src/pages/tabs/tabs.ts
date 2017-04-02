@@ -8,9 +8,9 @@ import { TestsPage } from '../creator';
 })
 export class TabsPage {
 
-  public tab1Root: any = HomePage;
-  public tab2Root: any = AboutPage;
-  public tab3Root: any = TestsPage;
+  public tab1Root: any = TestsPage;
+  public tab2Root: any = HomePage;
+  public tab3Root: any = AboutPage;
 
   constructor() { ; }
 
