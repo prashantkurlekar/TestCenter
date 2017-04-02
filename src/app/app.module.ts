@@ -2,7 +2,6 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { TestCenterApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -13,26 +12,25 @@ import { GoogleAnalytics } from '@ionic-native/google-analytics';
 import { AuthenticationModule } from '../pages/authentication/authentication.module';
 import { ProvidersModule } from '../providers/providers.module';
 import { ServicesModule } from '../services/services.module';
+import { CreatorModule } from '../pages/creator/creator.module';
 
 const components: any = [
   TestCenterApp,
-  AboutPage,
-  ContactPage,
-  HomePage,
-  TabsPage,
+  TabsPage, AboutPage, HomePage,
 ];
 
 @NgModule({
   declarations: [...components],
   imports: [
     IonicModule.forRoot(TestCenterApp),
-    AuthenticationModule, ProvidersModule, ServicesModule,
+    AuthenticationModule, CreatorModule,
+    ProvidersModule, ServicesModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [...components],
   providers: [
     StatusBar, SplashScreen, GoogleAnalytics,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
-  ]
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+  ],
 })
 export class AppModule { }

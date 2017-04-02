@@ -1,19 +1,10 @@
 import { NgModule } from '@angular/core';
-// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import { IonicModule } from 'ionic-angular';
-import { AuthenticationService } from './';
+import { AuthenticationService } from './authentication/authentication.service';
+import { TestService } from './test/test.service';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    // FormsModule,
-    // IonicModule,
-    // ReactiveFormsModule,
-  ],
-  exports: [],
-  entryComponents: [],
   providers: [
-    AuthenticationService,
+    AuthenticationService, TestService,
   ],
 })
 export class ServicesModule { }

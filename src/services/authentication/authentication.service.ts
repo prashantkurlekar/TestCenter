@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import firebase from 'firebase';
-import { FirebaseBackend } from "../../providers/firebase-backend/firebase-backend";
+import { FirebaseBackend } from '../../providers/firebase-backend/firebase-backend';
 
 @Injectable()
 export class AuthenticationService {

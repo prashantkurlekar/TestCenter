@@ -1,0 +1,19 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Tests</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="add()">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let test of tests" (click)="goToTest(test)">
+    <h2>{{ test?.name }}</h2>
+    <p>{{ test?.description }}</p>
+  </ion-item>
+</ion-content>

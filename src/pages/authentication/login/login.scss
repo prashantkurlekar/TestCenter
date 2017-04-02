@@ -1,30 +1,31 @@
-page-login {
-  form {
-    margin-bottom: 32px;
-    button {
-      margin-top: 20px;
-    }
-  }
+// page-login {
+//   form {
+//     margin-bottom: 32px;
 
-  p {
-    font-size: 1.2rem;
-    color: #d2d2d2;
-  }
+//     button {
+//       margin-top: 20px;
+//     }
+//   }
 
-  ion-label {
-    margin-left: 5px;
-  }
+//   p {
+//     font-size: 1.2rem;
+//     color: #d2d2d2;
+//   }
 
-  ion-input {
-    padding: 5px;
-  }
+//   ion-label {
+//     margin-left: 5px;
+//   }
 
-  .invalid {
-    border-bottom: 1px solid map-get($colors, danger);
-  }
+//   ion-input {
+//     padding: 5px;
+//   }
 
-  .error-message .item-inner {
-    border-bottom: 0 !important;
-  }
+//   .invalid {
+//     border-bottom: 1px solid map-get($colors, danger);
+//   }
 
-}
+//   .error-message .item-inner {
+//     border-bottom: 0 !important;
+//   }
+
+// }
