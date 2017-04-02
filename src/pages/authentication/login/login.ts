@@ -44,10 +44,11 @@ export class LoginPage {
       console.log(this.loginForm.value);
     } else {
       this.authData.login(this.loginForm.value.email, this.loginForm.value.password)
+        // tslint:disable-next-line:no-unused-variable
         .then((authData) => {
           this.loading.dismiss().then(() => {
             // TODO: Navigate to HomePage
-            this.logger.info(`successful`);
+            // this.logger.info(`successful`);
             this.navCtrl.setRoot(TabsPage);
           });
           // tslint:disable-next-line:align

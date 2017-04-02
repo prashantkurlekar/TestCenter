@@ -1,19 +1,15 @@
 import { Component } from '@angular/core';
+
 import { NavController } from 'ionic-angular';
-import { AuthenticationService } from '../../services';
-import { LoginPage } from '../authentication';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html',
+  templateUrl: 'home.html'
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public authData: AuthenticationService) { ; }
+  constructor(public navCtrl: NavController) {
 
-  public logOut(): void {
-    this.authData.logoutUser().then(() => {
-      this.navCtrl.setRoot(LoginPage);
-    });
   }
+
 }

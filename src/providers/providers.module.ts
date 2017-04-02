@@ -1,13 +1,8 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from 'ionic-angular';
-import { UtilService, SafeHttp, NetworkService, Logger, StorageBackendProvider } from './';
-import { BackendProvider } from './backend/backend';
-import { Storage } from '@ionic/storage';
-
-export function serverFactory(): any {
-  return new StorageBackendProvider(new Storage({}));
-}
+import { Logger } from './logger/logger';
+import { FirebaseBackend } from './firebase-backend/firebase-backend';
 
 @NgModule({
   declarations: [],
@@ -19,8 +14,7 @@ export function serverFactory(): any {
   exports: [],
   entryComponents: [],
   providers: [
-    UtilService, SafeHttp, NetworkService, Logger,
-    { provide: BackendProvider, useFactory: serverFactory },
+    Logger, FirebaseBackend,
   ],
 })
 export class ProvidersModule { }

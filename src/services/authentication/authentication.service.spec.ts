@@ -1,15 +1,16 @@
-import { TestBed, inject } from '@angular/core/testing';
+// import { TestBed, inject } from '@angular/core/testing';
+// import { AuthenticationService } from './authentication.service';
+// // import firebase from 'firebase';
+// let firebase: any = {};
 
-import { AuthenticationService } from './authentication.service';
+// describe('AuthenticationService', () => {
+//   beforeEach(() => {
+//     TestBed.configureTestingModule({
+//       providers: [AuthenticationService],
+//     });
+//   });
 
-describe('AuthenticationService', () => {
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [AuthenticationService],
-    });
-  });
-
-  it('should ...', inject([AuthenticationService], (service: AuthenticationService) => {
-    expect(service).toBeTruthy();
-  }));
-});
+//   it('should ...', inject([AuthenticationService], (service: AuthenticationService) => {
+//     expect(service).toBeTruthy();
+//   }));
+// });

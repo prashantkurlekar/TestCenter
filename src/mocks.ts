@@ -196,4 +196,10 @@ export class BackendProviderMock {
   }
 }
 
+export class GoogleAnalyticsMock {
+  public trackView(): Promise<any> {
+    return Promise.resolve({});
+  }
+}
+
 /* tslint:enable */

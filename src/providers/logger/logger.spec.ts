@@ -4,6 +4,7 @@ import { BaseRequestOptions, Http } from '@angular/http';
 import { MockBackend } from '@angular/http/testing';
 import { PlatformMock } from '../../mocks';
 import { Platform } from 'ionic-angular';
+import { GoogleAnalytics } from "@ionic-native/google-analytics";
 
 describe('Provider: Logger', () => {
 
@@ -18,6 +19,7 @@ describe('Provider: Logger', () => {
           }, deps: [MockBackend, BaseRequestOptions],
         },
         { provide: Platform, useClass: PlatformMock },
+        GoogleAnalytics,
       ],
     });
   });
