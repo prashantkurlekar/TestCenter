@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/authentication';
 import firebase from 'firebase';
+import { Logger } from '../providers';
 
 export const firebaseConfiguration: any = {
   apiKey: 'AIzaSyDzFY8SW6k-iNnLS5MLQ7KnTZ9n0NVffWs',
@@ -22,7 +23,9 @@ export class TestCenterApp {
   private rootPage: any = TabsPage;
   public zone: NgZone;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(platform: Platform, statusBar: StatusBar,
+    splashScreen: SplashScreen, public logger: Logger) {
+    this.logger.log(`TestCenterApp.constructor`);
     this.initializeFirebase();
     platform.ready().then(() => {
       statusBar.styleDefault();
@@ -31,11 +34,13 @@ export class TestCenterApp {
   }
 
   public initializeFirebase(): void {
+    this.logger.log(`TestCenterApp.initializeFirebase`);
     firebase.initializeApp(firebaseConfiguration);
     this.authObserver();
   }
 
   public authObserver(): void {
+    this.logger.log(`TestCenterApp.authObserver`);
     this.zone = new NgZone({});
     const unsubscribe: any = firebase.auth().onAuthStateChanged((user) => {
       this.zone.run(() => {

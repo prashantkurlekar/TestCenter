@@ -46,7 +46,7 @@ export class TestsPage implements OnInit {
   }
 
   public showLoading(): void {
-    this.loading = this.loadingController.create();
+    this.loading = this.loadingController.create({ dismissOnPageChange: true });
     this.loading.present();
   }
 

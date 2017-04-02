@@ -77,7 +77,7 @@ export class LoginPage {
   }
 
   public showLoading(): void {
-    this.loading = this.loadingController.create();
+    this.loading = this.loadingController.create({ dismissOnPageChange: true });
     this.loading.present();
   }
 
