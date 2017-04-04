@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import firebase from 'firebase';
-import { Test } from '../../models';
+import { Test, Question, Category } from '../../models';
 
 @Injectable()
 export class FirebaseBackend {
@@ -9,6 +9,8 @@ export class FirebaseBackend {
   public userProfiles: any;
   public organizations: any;
   public tests: any;
+  public questions: any;
+  public categories: any;
 
   constructor() {
     this.fireAuth = firebase.auth();
@@ -53,6 +55,42 @@ export class FirebaseBackend {
     console.log(`FirebaseBackend.saveTest`);
     if (!this.tests) this.getReferenceToTests(organization);
     return this.tests.push(test);
+  }
+
+  // --------------- Categories
+
+  private getReferenceToCategories(organization: string): void {
+    this.categories = firebase.database().ref(`/organizations/${organization}/categories`);
+  }
+
+  public getCategories(organization: string): firebase.database.Reference {
+    console.log(`FirebaseBackend.getCategories`);
+    if (!this.categories) this.getReferenceToCategories(organization);
+    return this.categories;
+  }
+
+  public saveCategory(organization: string, category: Category): firebase.Promise<any> {
+    console.log(`FirebaseBackend.saveCategory`);
+    if (!this.categories) this.getReferenceToCategories(organization);
+    return this.categories.push(category);
+  }
+
+  // --------------- Questions
+
+  private getReferenceToQuestions(organization: string): void {
+    this.questions = firebase.database().ref(`/organizations/${organization}/questions`);
+  }
+
+  public getQuestions(organization: string): firebase.database.Reference {
+    console.log(`FirebaseBackend.getQuestions`);
+    if (!this.questions) this.getReferenceToQuestions(organization);
+    return this.questions;
+  }
+
+  public saveQuestion(organization: string, question: Question): firebase.Promise<any> {
+    console.log(`FirebaseBackend.saveQuestion`);
+    if (!this.questions) this.getReferenceToQuestions(organization);
+    return this.questions.push(question);
   }
 
 }
