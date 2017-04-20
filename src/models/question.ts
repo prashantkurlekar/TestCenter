@@ -1,5 +1,5 @@
 export interface Question {
-  category: string;
+  // category: string;
   value: string;
   answers: Array<any>;
   correctAnswers: Array<any>;

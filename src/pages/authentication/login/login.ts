@@ -3,9 +3,10 @@ import { NavController, NavParams, Loading, LoadingController, AlertController, 
 import { Logger } from '../../../providers';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthenticationService } from '../../../services';
-import { SignupPage, ResetPasswordPage } from '../';
 import { TabsPage } from '../../tabs/tabs';
+import { IonicPage } from 'ionic-angular';
 
+@IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
@@ -48,7 +49,6 @@ export class LoginPage {
         .then((authData) => {
           this.loading.dismiss().then(() => {
             // TODO: Navigate to HomePage
-            // this.logger.info(`successful`);
             this.navCtrl.setRoot(TabsPage);
           });
           // tslint:disable-next-line:align
@@ -82,11 +82,11 @@ export class LoginPage {
   }
 
   public onSignup(): void {
-    this.navCtrl.push(SignupPage);
+    this.navCtrl.push('SignupPage');
   }
 
   public onResetPassword(): void {
-    this.navCtrl.push(ResetPasswordPage);
+    this.navCtrl.push('ResetPasswordPage');
   }
 
 }

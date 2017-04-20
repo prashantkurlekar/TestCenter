@@ -6,7 +6,7 @@ export class TestService {
 
   constructor(public logger: Logger, public backend: FirebaseBackend) { ; }
 
-  public testList(organization: string): any {
+  public tests(organization: string): any {
     this.logger.log(`TestService.testList`);
     return this.backend.getTests(organization);
   }

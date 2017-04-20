@@ -2,8 +2,8 @@ import { Component, NgZone } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { TabsPage } from '../pages/tabs/tabs';
-import { LoginPage } from '../pages/authentication';
+// import { TabsPage } from '../pages/tabs/tabs';
+// import { LoginPage } from '../pages/authentication';
 import firebase from 'firebase';
 import { Logger } from '../providers';
 
@@ -20,7 +20,7 @@ export const firebaseConfiguration: any = {
   templateUrl: 'app.html',
 })
 export class TestCenterApp {
-  private rootPage: any = TabsPage;
+  private rootPage: any = 'TabsPage';
   public zone: NgZone;
 
   constructor(platform: Platform, statusBar: StatusBar,
@@ -44,7 +44,7 @@ export class TestCenterApp {
     this.zone = new NgZone({});
     const unsubscribe: any = firebase.auth().onAuthStateChanged((user) => {
       this.zone.run(() => {
-        this.rootPage = user ? TabsPage : LoginPage;
+        this.rootPage = user ? 'TabsPage' : 'LoginPage';
         unsubscribe();
       });
     });

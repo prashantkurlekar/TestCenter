@@ -1,33 +1,25 @@
 import { NgModule, ErrorHandler } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { TestCenterApp } from './app.component';
-import { AboutPage } from '../pages/about/about';
-import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
-
-import { AuthenticationModule } from '../pages/authentication/authentication.module';
+import { TestCenterApp } from './app.component';
 import { ProvidersModule } from '../providers/providers.module';
 import { ServicesModule } from '../services/services.module';
-import { CreatorModule } from '../pages/creator/creator.module';
-
-const components: any = [
-  TestCenterApp,
-  TabsPage, AboutPage, HomePage,
-];
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
-  declarations: [...components],
+  declarations: [TestCenterApp],
   imports: [
-    IonicModule.forRoot(TestCenterApp),
-    AuthenticationModule, CreatorModule,
+    BrowserModule, HttpModule,
+    ComponentsModule,
     ProvidersModule, ServicesModule,
+    IonicModule.forRoot(TestCenterApp),
   ],
   bootstrap: [IonicApp],
-  entryComponents: [...components],
+  entryComponents: [TestCenterApp],
   providers: [
     StatusBar, SplashScreen, GoogleAnalytics,
     { provide: ErrorHandler, useClass: IonicErrorHandler },

@@ -17,8 +17,7 @@ export class FirebaseBackend {
     this.userProfiles = firebase.database().ref(`/userProfiles`);
   }
 
-  // --------------- Authentication
-
+  // --------------- Authentication ---------------
   public login(email: string, password: string): firebase.Promise<any> {
     return this.fireAuth.signInWithEmailAndPassword(email, password);
   }
@@ -39,8 +38,7 @@ export class FirebaseBackend {
     return this.fireAuth.signOut();
   }
 
-  // --------------- Tests
-
+  // --------------- Tests ---------------
   private getReferenceToTests(organization: string): void {
     this.tests = firebase.database().ref(`/organizations/${organization}/tests`);
   }
@@ -57,8 +55,7 @@ export class FirebaseBackend {
     return this.tests.push(test);
   }
 
-  // --------------- Categories
-
+  // --------------- Categories ---------------
   private getReferenceToCategories(organization: string): void {
     this.categories = firebase.database().ref(`/organizations/${organization}/categories`);
   }
@@ -75,21 +72,21 @@ export class FirebaseBackend {
     return this.categories.push(category);
   }
 
-  // --------------- Questions
-
-  private getReferenceToQuestions(organization: string): void {
-    this.questions = firebase.database().ref(`/organizations/${organization}/questions`);
+  // --------------- Questions ---------------
+  private getReferenceToQuestions(organization: string, category: Category): void {
+    this.questions = firebase.database().ref(`/organizations/${organization}/questions/${category.value}`);
   }
 
-  public getQuestions(organization: string): firebase.database.Reference {
+  public getQuestions(organization: string, category: Category): firebase.database.Reference {
     console.log(`FirebaseBackend.getQuestions`);
-    if (!this.questions) this.getReferenceToQuestions(organization);
+    if (!this.questions) this.getReferenceToQuestions(organization, category);
     return this.questions;
+    // return this.questions.child(category.value);
   }
 
-  public saveQuestion(organization: string, question: Question): firebase.Promise<any> {
+  public saveQuestion(organization: string, category: Category, question: Question): firebase.Promise<any> {
     console.log(`FirebaseBackend.saveQuestion`);
-    if (!this.questions) this.getReferenceToQuestions(organization);
+    if (!this.questions) this.getReferenceToQuestions(organization, category);
     return this.questions.push(question);
   }
 

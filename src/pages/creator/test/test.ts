@@ -4,7 +4,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Logger, UtilService } from '../../../providers';
 import { TestService } from '../../../services';
 import { Test } from '../../../models';
+import { IonicPage } from 'ionic-angular';
 
+@IonicPage()
 @Component({
   selector: 'page-test',
   templateUrl: 'test.html',
@@ -77,7 +79,9 @@ export class TestPage implements OnInit {
     this.showLoading();
   }
 
-  public onCancel(): void { ; }
+  public onCancel(): void {
+    this.navCtrl.pop();
+  }
 
   public showAlert(message: any): void {
     let alert: Alert = this.alertController.create({

@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams, LoadingController, Loading } from 'ionic-angular';
 import { TestService } from '../../../services';
 import { Logger } from '../../../providers';
-import { TestPage } from '../test/test';
+import { IonicPage } from 'ionic-angular';
 
+@IonicPage()
 @Component({
   selector: 'page-tests',
   templateUrl: 'tests.html',
@@ -21,7 +22,7 @@ export class TestsPage implements OnInit {
 
   public ngOnInit(): void {
     this.logger.log(`TestsPage.ngOnInit`);
-    this.testService.testList(`rms-nsw`).on('value', snapshot => {
+    this.testService.tests(`rms-nsw`).on('value', snapshot => {
       let rawList: any = [];
       snapshot.forEach(snap => {
         rawList.push({
@@ -42,7 +43,7 @@ export class TestsPage implements OnInit {
   }
 
   public add(): void {
-    this.navCtrl.push(TestPage);
+    this.navCtrl.push('TestPage');
   }
 
   public showLoading(): void {

@@ -5,7 +5,7 @@ import { FirebaseBackend } from './firebase-backend';
 describe('FirebaseBackendService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [FirebaseBackend]
+      providers: [FirebaseBackend],
     });
   });
 
