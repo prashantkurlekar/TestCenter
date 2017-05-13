@@ -1,23 +1,19 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
-import { TestCenterApp } from './app.component';
+import { OrganizationsPage } from './organizations';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { Platform } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
 
 describe('Page.Admin.Organizations', () => {
 
-  let component: TestCenterApp;
-  let fixture: ComponentFixture<TestCenterApp>;
+  let component: OrganizationsPage;
+  let fixture: ComponentFixture<OrganizationsPage>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TestCenterApp],
+      declarations: [OrganizationsPage],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      providers: [Platform, StatusBar, SplashScreen],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(TestCenterApp);
+    fixture = TestBed.createComponent(OrganizationsPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
