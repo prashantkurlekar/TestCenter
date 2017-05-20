@@ -10,5 +10,6 @@ export class TabsPage {
   public tab1Root = 'HomePage';
   public tab2Root = 'AboutPage';
   public tab3Root = 'ContactPage';
+  public tab4Root = 'OrganizationsPage';
 
 }

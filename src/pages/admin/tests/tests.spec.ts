@@ -1,24 +1,20 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
-import { OrganizationsPage } from './organizations';
+import { TestsPage } from './tests';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { OrganizationService } from '../../../services/organization/organization.service';
 
-describe('Page.Admin.Organizations', () => {
+describe('Page.Admin.Tests', () => {
 
-  let component: OrganizationsPage;
-  let fixture: ComponentFixture<OrganizationsPage>;
+  let component: TestsPage;
+  let fixture: ComponentFixture<TestsPage>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [OrganizationsPage],
+      declarations: [TestsPage],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      providers: [
-        OrganizationService,
-      ],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(OrganizationsPage);
+    fixture = TestBed.createComponent(TestsPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -30,7 +26,11 @@ describe('Page.Admin.Organizations', () => {
   it('should have title defined', () => {
     const titleHTMLElement = fixture.debugElement.query(By.css('ion-title')).nativeElement;
 
-    expect(titleHTMLElement.innerText).toBe('Organizations');
+    expect(titleHTMLElement.innerText).toBe('Tests');
+  });
+
+  it('should display available tests', () => {
+    expect(true).toBeTruthy();
   });
 
 });

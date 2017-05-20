@@ -1,12 +1,26 @@
 <ion-header>
-
   <ion-navbar>
-    <ion-title>organizations</ion-title>
+    <ion-title>Organizations</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
+  <ion-item>
+    <ion-input type="text" [(ngModel)]="name" placeholder="New Organization"></ion-input>
+  </ion-item>
+  <button ion-button block (click)="addOrganization()" [disabled]="!name">Add</button>
 
+  <ion-list>
+    <ion-item-sliding *ngFor="let organization of organizations | async">
+      <button ion-item (click)="onOrganization(organization)">
+        {{ organization.title }}
+      </button>
+      <ion-item-options side="right">
+        <button ion-button color="danger" icon-only (click)="removeOrganization(organization.$key)"><ion-icon name="trash"></ion-icon></button>
+      </ion-item-options>
+    </ion-item-sliding>
+    <!--<button ion-item *ngFor="let organization of organizations | async" (click)="onOrganization(organization)">
+      {{ organization.title }}
+    </button>-->
+  </ion-list>
 </ion-content>
