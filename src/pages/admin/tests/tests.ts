@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavParams } from 'ionic-angular';
+import { IonicPage, NavParams, NavController } from 'ionic-angular';
 import { TestService } from '../../../services/test/test.service';
 
 @IonicPage()
@@ -14,28 +14,30 @@ export class TestsPage {
   public name: string;
   public title: string;
 
-  constructor(private navParams: NavParams, private testService: TestService) {
+  constructor(private navParams: NavParams, private testService: TestService,
+    private navController: NavController) {
     this.organization = navParams.get('organization') || {};
-    this.title = this.organization.title;
+    this.title = this.organization.name;
   }
 
   public async ionViewDidLoad() {
     console.log('TestsPage.ionViewDidLoad');
-    console.debug(this.organization);
     this.tests = await this.testService.getTests(this.organization.$key);
   }
 
   public async addTest() {
-    let result = await this.testService.addTest(this.organization.$key, {
+    await this.testService.addTest(this.organization.$key, {
       name: this.name,
     });
-    console.debug(result);
     this.name = '';
   }
 
   public async removeTest(key: any) {
-    let result = await this.testService.removeTest(this.organization.$key, key);
-    console.debug(result);
+    await this.testService.removeTest(this.organization.$key, key);
+  }
+
+  public onQuestions(): void {
+    this.navController.push('QuestionsPage', { organization: this.organization });
   }
 
 }

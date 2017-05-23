@@ -5,17 +5,16 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2';
 import { TestCenterApp } from './app.component';
-import { OrganizationService } from '../services/organization/organization.service';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { TestService } from '../services/test/test.service';
+import { OrganizationService, TestService, QuestionService } from '../services';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyCVKRFEOFzAxGsw7CuPsKRXFQWGgTJG3Jk',
-  authDomain: 'groot-4cc76.firebaseapp.com',
-  databaseURL: 'https://groot-4cc76.firebaseio.com',
-  projectId: 'groot-4cc76',
-  storageBucket: 'groot-4cc76.appspot.com',
-  messagingSenderId: '627769475589',
+  apiKey: 'AIzaSyAT0JsPhM6gan3NiUAHHExDKhAB4f4O6SM',
+  authDomain: 'test-center-77120.firebaseapp.com',
+  databaseURL: 'https://test-center-77120.firebaseio.com',
+  projectId: 'test-center-77120',
+  storageBucket: 'test-center-77120.appspot.com',
+  messagingSenderId: '547542425187',
 };
 
 @NgModule({
@@ -34,7 +33,7 @@ const firebaseConfig = {
   providers: [
     StatusBar, SplashScreen, AngularFireDatabase,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    OrganizationService, TestService,
+    OrganizationService, TestService, QuestionService,
   ],
 })
 export class AppModule { }
