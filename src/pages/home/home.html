@@ -3,24 +3,10 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>{{ 'HOME' | translate }}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <!-- basic usage -->
-  <fa-icon name="camera-retro"></fa-icon>
-  <!-- basic usage with color -->
-  <fa-icon name="camera-retro" color="danger"></fa-icon>
-  <!-- larger icons -->
-  <fa-icon name="camera-retro" size="4x" color="alert"></fa-icon>
-  <!-- fixed width icons -->
-  <fa-icon name="camera-retro" fixed-width></fa-icon>
-  <!-- dynamic value -->
-  <fa-icon [name]="icon"></fa-icon>
-  <!-- buttons -->
-  <button ion-button icon-left>
-    <fa-icon name="group"></fa-icon>
-    people
-  </button>
+
 </ion-content>

@@ -19,7 +19,8 @@ export class SettingsPage {
     console.log('ionViewDidLoad SettingsPage');
   }
 
-  public toggleAppTheme = () => this.settings.setActiveTheme(this.selectedTheme === 'dark-theme' ? 'default-theme' : 'dark-theme');
+  // public toggleAppTheme = () => this.settings.setActiveTheme(this.selectedTheme === 'dark-theme' ? 'default-theme' : 'dark-theme');
+  public toggleAppTheme = (theme) => { this.settings.setActiveTheme(theme); console.debug(theme); };
 
 }
 

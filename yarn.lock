@@ -132,6 +132,14 @@
     localforage "~1.4.2"
     localforage-cordovasqlitedriver "~1.5.0"
 
+"@ngx-translate/core@6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@ngx-translate/core/-/core-6.0.0.tgz#823dccefcd82bbe29763949e55d2dc60a1735a66"
+
+"@ngx-translate/http-loader@0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@ngx-translate/http-loader/-/http-loader-0.0.3.tgz#8346c8d2d6f630254601029668f17abe2afe8a9b"
+
 "@types/gulp@^3.8.33":
   version "3.8.33"
   resolved "https://registry.yarnpkg.com/@types/gulp/-/gulp-3.8.33.tgz#b1b076820738c9c4eb7808cd926bff1683e1c2ab"

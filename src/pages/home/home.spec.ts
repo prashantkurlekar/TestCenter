@@ -14,9 +14,9 @@ describe('Page.HomePage', () => {
     TestBed.configureTestingModule({
       declarations: [HomePage],
       imports: [
-        IonicModule.forRoot(HomePage)
+        IonicModule.forRoot(HomePage),
       ],
-      providers: []
+      providers: [],
     });
   }));
 
@@ -27,4 +27,5 @@ describe('Page.HomePage', () => {
   });
 
   it('should create component', () => expect(comp).toBeDefined());
+
 });

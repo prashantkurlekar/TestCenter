@@ -8,9 +8,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class HomePage {
 
+  // tslint:disable-next-line:no-empty
   constructor() { }
 
-  ionViewDidLoad() {
+  public ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
   }
 

@@ -11,6 +11,7 @@ import { TutorialPage } from '../pages/tutorial/tutorial';
 import { HomePage } from '../pages/home/home';
 import { SettingsPage } from '../pages/settings/settings';
 import { SettingsProvider } from '../providers/settings/settings';
+import { TranslateService } from '@ngx-translate/core';
 
 export interface PageInterface {
   title: string;
@@ -31,15 +32,16 @@ export class TestCenterApp {
   @ViewChild(Nav) public nav: Nav;
   public rootPage: any;
   public pages: PageInterface[] = [
-    { title: 'Home', name: 'TabsPage', component: TabsPage, tabComponent: HomePage, index: 0, icon: 'map' },
+    { title: 'Home', name: 'TabsPage', component: TabsPage, tabComponent: HomePage, index: 0, icon: 'home' },
     { title: 'Page 1', name: 'TabsPage', component: TabsPage, tabComponent: Page1, index: 1, icon: 'calendar' },
-    { title: 'Page 2', name: 'TabsPage', component: TabsPage, tabComponent: Page2, index: 2, icon: 'contacts' },
+    { title: 'Page 2', name: 'TabsPage', component: TabsPage, tabComponent: Page2, index: 2, icon: 'bus' },
     { title: 'Settings', name: 'TabsPage', component: TabsPage, tabComponent: SettingsPage, index: 3, icon: 'cog' },
   ];
   public selectedTheme: String;
 
-  constructor(public platform: Platform, public statusBar: StatusBar,
-    public splashScreen: SplashScreen, public storage: Storage, private settings: SettingsProvider) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,
+    public storage: Storage, private settings: SettingsProvider, private translate: TranslateService) {
+    translate.setDefaultLang('en');
     this.settings.getActiveTheme().subscribe(val => this.selectedTheme = val);
     this.selectRootPage();
     this.platformReady();
