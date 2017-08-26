@@ -1,39 +1,52 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicStorageModule } from '@ionic/storage';
+
+import { TestCenterApp } from './app.component';
+
+import { Page1 } from '../pages/page1/page1';
+import { Page2 } from '../pages/page2/page2';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { AngularFireModule } from 'angularfire2';
-import { TestCenterApp } from './app.component';
-import { AngularFireDatabase } from 'angularfire2/database';
-import { OrganizationService, TestService, QuestionService } from '../services';
-
-const firebaseConfig = {
-  apiKey: 'AIzaSyAT0JsPhM6gan3NiUAHHExDKhAB4f4O6SM',
-  authDomain: 'test-center-77120.firebaseapp.com',
-  databaseURL: 'https://test-center-77120.firebaseio.com',
-  projectId: 'test-center-77120',
-  storageBucket: 'test-center-77120.appspot.com',
-  messagingSenderId: '547542425187',
-};
+import { TutorialPage } from '../pages/tutorial/tutorial';
+import { TabsPage } from '../pages/tabs/tabs';
+import { HomePage } from '../pages/home/home';
+import { NavigationProvider } from '../providers/navigation/navigation';
+import { SettingsPage } from '../pages/settings/settings';
+import { SettingsProvider } from '../providers/settings/settings';
 
 @NgModule({
   declarations: [
     TestCenterApp,
+    TabsPage,
+    Page1,
+    Page2,
+    TutorialPage,
+    HomePage,
+    SettingsPage,
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    IonicModule.forRoot(TestCenterApp),
+    IonicModule.forRoot(TestCenterApp, {}, { links: [] }),
+    IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     TestCenterApp,
+    TabsPage,
+    Page1,
+    Page2,
+    TutorialPage,
+    HomePage,
+    SettingsPage,
   ],
   providers: [
-    StatusBar, SplashScreen, AngularFireDatabase,
+    StatusBar,
+    SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    OrganizationService, TestService, QuestionService,
+    SettingsProvider, NavigationProvider,
   ],
 })
 export class AppModule { }

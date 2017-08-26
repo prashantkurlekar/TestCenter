@@ -1,29 +1,47 @@
-import { TestBed, ComponentFixture } from '@angular/core/testing';
-import { TestCenterApp } from './app.component';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { async, TestBed } from '@angular/core/testing';
+import { IonicModule, Platform } from 'ionic-angular';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-describe('App.TestCenterApp', () => {
+import { TestCenterApp } from './app.component';
+import {
+  PlatformMock,
+  StatusBarMock,
+  SplashScreenMock
+} from '../../test-config/mocks-ionic';
+import { IonicStorageModule } from '@ionic/storage';
 
-  let component: TestCenterApp;
-  let fixture: ComponentFixture<TestCenterApp>;
+describe('MyApp Component', () => {
+  let fixture;
+  let component;
 
-  beforeEach(() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [TestCenterApp],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      providers: [Platform, StatusBar, SplashScreen],
-    }).compileComponents();
+      imports: [
+        IonicModule.forRoot(TestCenterApp),
+        IonicStorageModule.forRoot(),
+      ],
+      providers: [
+        { provide: StatusBar, useClass: StatusBarMock },
+        { provide: SplashScreen, useClass: SplashScreenMock },
+        { provide: Platform, useClass: PlatformMock },
+      ]
+    })
+  }));
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(TestCenterApp);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
-  it('should be initialize', () => {
-    expect(component).toBeTruthy();
+  it('should be created', () => {
+    expect(component instanceof TestCenterApp).toBe(true);
+  });
+
+  it('should have two pages', () => {
+    expect(component.pages.length).toBe(3);
   });
 
 });

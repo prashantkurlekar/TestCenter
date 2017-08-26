@@ -1,7 +1,4 @@
 {
-  "extends": [
-    "tslint-eslint-rules"
-  ],
   "rules": {
     "align": [
       false,
@@ -132,5 +129,8 @@
       "check-separator",
       "check-type"
     ]
-  }
+  },
+  "rulesDirectory": [
+    "node_modules/tslint-eslint-rules/dist/rules"
+  ]
 }
