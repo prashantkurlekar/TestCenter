@@ -40,3 +40,5 @@ export class FaIconComponent extends Ion implements OnChanges {
     this.setElementClass('fa-' + change.currentValue, true);
   }
 }
+
+// https://charlouze.github.io/ionic/2017/05/31/Ionic-3-and-Font-Awesome.html

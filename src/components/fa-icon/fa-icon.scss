@@ -1,5 +1,4 @@
 // Color icons
-
 @mixin fa-color($color-name, $color) {
   .fa-ios-#{$color-name} {
     color: $color;
