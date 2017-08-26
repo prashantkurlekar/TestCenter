@@ -1,6 +1,6 @@
 <ion-tabs [selectedIndex]="selectedIndex" name="conference">
-  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home" tabUrlPath="conference-schedule"></ion-tab>
+  <ion-tab [root]="tab1Root" tabTitle="{{ 'HOME' | translate }}" tabIcon="home" tabUrlPath="conference-schedule"></ion-tab>
   <ion-tab [root]="tab2Root" tabTitle="Page 1" tabIcon="contacts"></ion-tab>
   <ion-tab [root]="tab3Root" tabTitle="Page 2" tabIcon="map"></ion-tab>
-  <ion-tab [root]="tab4Root" tabTitle="Settings" tabIcon="cog"></ion-tab>
+  <ion-tab [root]="tab4Root" tabTitle="{{ 'SETTINGS' | translate }}" tabIcon="cog"></ion-tab>
 </ion-tabs>

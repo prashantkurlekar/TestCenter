@@ -41,9 +41,9 @@ export class TestCenterApp {
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,
     public storage: Storage, private settings: SettingsProvider, private translate: TranslateService) {
-    translate.setDefaultLang('en');
+    this.translate.setDefaultLang('en');
     this.settings.getActiveTheme().subscribe(val => this.selectedTheme = val);
-    this.selectRootPage();
+    this.selectRootPageBasedOnTutorialSeen();
     this.platformReady();
   }
 
@@ -56,7 +56,7 @@ export class TestCenterApp {
     });
   }
 
-  public async selectRootPage() {
+  public async selectRootPageBasedOnTutorialSeen() {
     // Check if the user has already seen the tutorial
     const hasSeenTutorial = await this.storage.get('hasSeenTutorial');
     this.rootPage = hasSeenTutorial ? TabsPage : TutorialPage;
