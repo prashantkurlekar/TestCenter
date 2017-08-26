@@ -16,6 +16,7 @@ import { HomePage } from '../pages/home/home';
 import { NavigationProvider } from '../providers/navigation/navigation';
 import { SettingsPage } from '../pages/settings/settings';
 import { SettingsProvider } from '../providers/settings/settings';
+import { FaIconComponent } from '../components/fa-icon/fa-icon';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SettingsProvider } from '../providers/settings/settings';
     TutorialPage,
     HomePage,
     SettingsPage,
+    FaIconComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,7 @@ import { SettingsProvider } from '../providers/settings/settings';
     TutorialPage,
     HomePage,
     SettingsPage,
+    FaIconComponent,
   ],
   providers: [
     StatusBar,
