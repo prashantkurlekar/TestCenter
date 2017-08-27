@@ -7,6 +7,11 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let assessment of assessments" text-wrap>
+      <ion-icon [name]="assessment.icon" col-2></ion-icon>
+      {{ assessment.name }}
+    </ion-item>
+  </ion-list>
 </ion-content>

@@ -16,14 +16,14 @@ describe('Page1', () => {
     TestBed.configureTestingModule({
       declarations: [Page1],
       imports: [
-        IonicModule.forRoot(Page1)
+        IonicModule.forRoot(Page1),
       ],
       providers: [
         NavController,
         { provide: Platform, useClass: PlatformMock },
         { provide: StatusBar, useClass: StatusBarMock },
         { provide: SplashScreen, useClass: SplashScreenMock },
-      ]
+      ],
     });
   }));
 

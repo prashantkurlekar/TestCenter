@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage } from 'ionic-angular';
+import { AssessmentService } from '../../services/assessment/assessment.service';
 
 @IonicPage()
 @Component({
@@ -8,11 +9,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class HomePage {
 
-  // tslint:disable-next-line:no-empty
-  constructor() { }
+  public assessments: any;
 
-  public ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
+  constructor(private assessmentService: AssessmentService) { }
+
+  public async ionViewDidLoad() {
+    this.assessments = await this.assessmentService.getAssessments();
   }
 
 }

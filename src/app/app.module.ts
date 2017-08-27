@@ -20,6 +20,8 @@ import { SettingsPage } from '../pages/settings/settings';
 import { NavigationProvider } from '../providers/navigation/navigation';
 import { SettingsProvider } from '../providers/settings/settings';
 import { FaIconComponent } from '../components/fa-icon/fa-icon';
+import { AssessmentService } from '../services/assessment/assessment.service';
+import { TestCenterData } from '../providers/testcenter-data';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -60,10 +62,10 @@ export function createTranslateLoader(http: Http) {
     FaIconComponent,
   ],
   providers: [
-    StatusBar,
-    SplashScreen,
+    StatusBar, SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    SettingsProvider, NavigationProvider,
+    SettingsProvider, NavigationProvider, TestCenterData,
+    AssessmentService,
   ],
 })
 export class AppModule { }
