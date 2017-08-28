@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { DebugElement, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { HomePage } from './home';
 import { IonicModule } from 'ionic-angular';
@@ -20,6 +20,7 @@ describe('Page.HomePage', () => {
       imports: [
         IonicModule.forRoot(HomePage),
         TranslateModule.forRoot(),
+        CUSTOM_ELEMENTS_SCHEMA,
       ],
       providers: [
         MockBackend, BaseRequestOptions,

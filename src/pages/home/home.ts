@@ -17,4 +17,7 @@ export class HomePage {
     this.assessments = await this.assessmentService.getAssessments();
   }
 
+  public showAssessmentDetails(assessment): void {
+    console.debug(assessment);
+  }
 }

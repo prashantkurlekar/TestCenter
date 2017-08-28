@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { TabsPage } from '../../pages/tabs/tabs';
 import { Page1 } from '../../pages/page1/page1';
@@ -25,6 +24,7 @@ export class NavigationProvider {
     { title: 'Page 2', name: 'TabsPage', component: TabsPage, tabComponent: Page2, index: 1, icon: 'contacts' },
     { title: 'Home', name: 'TabsPage', component: TabsPage, tabComponent: HomePage, index: 2, icon: 'map' },
   ];
+
   // tslint:disable-next-line:no-empty
   constructor() { }
 

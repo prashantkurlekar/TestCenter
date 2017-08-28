@@ -1,8 +1,54 @@
 page-home {
-  ion-icon {
-    font-size: 4.0rem;
-  }
   ion-label {
     font-size: 2.4rem !important;
+  }
+  
+  // $angle: 25deg;  
+  // ion-item:before {
+  //   content:'';
+  //   position:absolute;
+  //   top:0;
+  //   right:65%;
+  //   width:100%; 
+  //   height:100%;
+  //   background-color: rgba(90, 74, 199, .8);
+  //   border-right:40px solid rgba(173, 96, 223, .8);
+    
+  //   -webkit-transform-origin:100% 100%;
+  //   -ms-transform-origin:100% 100%;
+  //   transform-origin:100% 100%;
+    
+  //   -webkit-transform:skewX($angle);
+  //   -ms-transform:skewX($angle);
+  //   transform:skewX($angle);
+  // }
+
+  ion-card {
+    position: relative;
+    text-align: center;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0px 0px 20px black;
+  }
+
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: #fff;
+  }
+
+  fa-icon {
+    font-size: 5.0rem;
   }
 }

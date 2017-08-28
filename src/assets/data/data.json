@@ -48,7 +48,7 @@
       "name": "Car",
       "detail": "Car",
       "icon": "car",
-      "image": "images/car02.jpg",
+      "image": "delorean-back-to-the-future.jpg",
       "active": true,
       "categories": [
         {
@@ -108,8 +108,8 @@
       "organizationId": 2,
       "name": "Motorcycle",
       "detail": "Motorcycle",
-      "icon": "bicycle",
-      "image": "images/motorcycle.png",
+      "icon": "bike-6",
+      "image": "motorcycle.png",
       "active": true,
       "categories": [
         {
@@ -231,7 +231,7 @@
       "name": "Rigid Vehicle",
       "detail": "Rigid Vehicle",
       "icon": "bus",
-      "image": "images/RigidVehicle01.jpg",
+      "image": "optimus-prime.jpg",
       "active": true,
       "categories": [
         {
@@ -296,8 +296,8 @@
       "organizationId": 2,
       "name": "Combination Vehicle",
       "detail": "Combination Vehicle",
-      "icon": "subway",
-      "image": "images/CombinationVehicle01.jpg",
+      "icon": "truck-trailer-3",
+      "image": "optimus-prime.jpg",
       "active": true,
       "categories": [
         {

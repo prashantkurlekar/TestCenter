@@ -8,10 +8,29 @@
 </ion-header>
 
 <ion-content>
+  <!-- Simple list-->
   <ion-list>
-    <ion-item *ngFor="let assessment of assessments" text-wrap>
-      <ion-icon [name]="assessment.icon" col-2></ion-icon>
+    <button ion-item *ngFor="let assessment of assessments" (click)="showAssessmentDetails(assessment)">
       {{ assessment.name }}
-    </ion-item>
+    </button>
+  </ion-list>
+  <!-- ionicons and custom icons-->
+  <ion-list>
+    <button ion-item *ngFor="let assessment of assessments" text-wrap (click)="showAssessmentDetails(assessment)">
+      <ion-icon [name]="assessment.icon"></ion-icon>
+      {{ assessment.name }}
+    </button>
+  </ion-list>
+  <ion-list>
+    <button ion-item *ngFor="let assessment of assessments" text-wrap (click)="showAssessmentDetails(assessment)">
+      <fa-icon [name]="assessment.icon" size="2x" col-2></fa-icon>
+      {{ assessment.name }}
+    </button>
+  </ion-list>
+  <ion-list>
+    <ion-card *ngFor="let assessment of assessments" (click)="showAssessmentDetails(assessment)">
+      <img [src]="'assets/img/' + assessment.image" />
+      <div class="card-title">{{assessment.name}}</div>
+    </ion-card>
   </ion-list>
 </ion-content>
