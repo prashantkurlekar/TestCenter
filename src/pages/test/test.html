@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar>
+    <!-- <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button> -->
+    <ion-title class="title-no-padding">{{ title }}</ion-title>
+    <!-- <ion-buttons end>
+      <button (click)="confirmFinish()" outline small default>
+        {{endTestButton}}
+      </button>
+    </ion-buttons> -->
+  </ion-navbar>
+  <ion-toolbar>
+    <!-- <ion-row [hidden]="!questions"> -->
+    <ion-row>
+      <ion-col text-start padding-left>
+        <span>
+          {{currentQuestion?.category}}
+        </span>
+      </ion-col>
+      <ion-col col-3 text-end>
+        {{ questionIndex }}&nbsp;/&nbsp;{{ questions?.length }}
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <h3 [innerHTML]="currentQuestion?.value" text-wrap text-left padding-left padding-right no-margin margin-top></h3>
+  <div *ngIf="currentQuestion?.mediaList.length > 0">
+    <p *ngFor="let media of currentQuestion?.mediaList" text-center>
+      <img *ngIf="media?.url" [src]="'assets/img/question/' + media?.url" />
+    </p>
+  </div>
+  <ion-list no-margin padding>
+    <div *ngFor="let option of currentQuestion?.options">
+      <ion-item *ngIf="option.isCorrect" no-lines no-padding>
+        <ion-label *ngIf="!option.selected" text-wrap>{{option.value}}</ion-label>
+        <ion-label *ngIf="option.selected" text-wrap secondary>{{option.value}}</ion-label>
+        <ion-checkbox [(ngModel)]="option.selected" [checked]="option.selected" (click)="onOptionSelected(currentQuestion, option)"
+          secondary></ion-checkbox>
+      </ion-item>
+      <ion-item *ngIf="!option.isCorrect" no-lines no-padding>
+        <ion-label *ngIf="!option.selected" text-wrap>{{option.value}}</ion-label>
+        <ion-label *ngIf="option.selected" text-wrap danger>{{option.value}}</ion-label>
+        <ion-checkbox [(ngModel)]="option.selected" [checked]="option.selected" (click)="onOptionSelected(currentQuestion, option)"
+          danger></ion-checkbox>
+      </ion-item>
+    </div>
+  </ion-list>
+  <button (click)="nextQuestion()">
+    Skip<ion-icon name="skip-forward"></ion-icon>
+  </button>
+  <ion-row [hidden]="!questions" padding>
+    <ion-col>
+      <button (click)="nextQuestion()">
+        Skip<ion-icon name="skip-forward"></ion-icon>
+      </button>
+      <!-- <button (click)="nextQuestion()" *ngIf="!showNextOption" small default>
+        Skip<ion-icon name="skip-forward"></ion-icon>
+      </button>
+      <button (click)="nextQuestion()" *ngIf="showNextOption" small default>
+        Next<ion-icon name='arrow-forward'></ion-icon>
+      </button> -->
+    </ion-col>
+  </ion-row>
+</ion-content>

@@ -4,7 +4,7 @@ import { NavigationProvider } from './navigation';
 describe('Providers.NavigationProvider', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [NavigationProvider]
+      providers: [NavigationProvider],
     });
   });
 

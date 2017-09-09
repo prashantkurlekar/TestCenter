@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title class="title-no-padding">{{ assessment?.name }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+
+    <button ion-item (click)="onMockTest()">
+      <h2>Mock test</h2>
+      <p text-wrap>
+        Based on DKT format by selecting random questions.
+      </p>
+    </button>
+
+    <ion-item-group>
+      <ion-item-divider sticky>Categories</ion-item-divider>
+      <button ion-item *ngFor="let category of assessment?.categories" (click)="onCategory(category)">
+        <h2 text-wrap>{{ category.value }}</h2>
+      </button>
+    </ion-item-group>
+
+  </ion-list>
+
+</ion-content>

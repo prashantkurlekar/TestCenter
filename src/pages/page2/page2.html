@@ -16,8 +16,15 @@
         {{item.note}}
       </div>
     </button>
+    <button ion-item (click)="redirectToCardList()">
+      Responsive Card list
+    </button>
+    <button ion-item (click)="responsiveAppleProducts()">
+      Responsive Apple Products
+    </button>
   </ion-list>
   <div *ngIf="selectedItem" padding>
     You navigated here from <b>{{selectedItem.title}}</b>
   </div>
+
 </ion-content>

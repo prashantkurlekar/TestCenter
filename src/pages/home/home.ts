@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { AssessmentService } from '../../services/assessment/assessment.service';
+import { IonicPage, NavController } from 'ionic-angular';
+import { AssessmentService } from '../../services';
+import { AssessmentDetailsPage } from '../assessment-details/assessment-details';
 
 @IonicPage()
 @Component({
@@ -9,15 +10,16 @@ import { AssessmentService } from '../../services/assessment/assessment.service'
 })
 export class HomePage {
 
-  public assessments: any;
+  public assessments: Array<any>;
 
-  constructor(private assessmentService: AssessmentService) { }
+  constructor(private navCtrl: NavController, private assessmentService: AssessmentService) { }
 
   public async ionViewDidLoad() {
     this.assessments = await this.assessmentService.getAssessments();
   }
 
-  public showAssessmentDetails(assessment): void {
-    console.debug(assessment);
+  public onAssessment(assessment) {
+    this.navCtrl.push(AssessmentDetailsPage, { assessment: assessment });
   }
+
 }

@@ -77,3 +77,16 @@
 }
 
 @import "../theme/custom-icons";
+
+body {
+  font-family: $font-family !important;
+}
+
+ion-app {
+  font-family: $font-family !important;
+}
+
+.title-no-padding {
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}

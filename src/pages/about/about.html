@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <ion-title>About</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="about-header" no-padding>
+    <img src="assets/img/about-logo.png">
+  </div>
+  <div padding class="about-info">
+    <h2>NSW DKT</h2>
+    <div *ngFor="let about of aboutItems">
+      <h4 *ngIf="about.heading" [innerHTML]="about.heading"></h4>
+      <p *ngIf="about.paragraph" class="wrap-text align-left">{{about.paragraph}}</p>
+      <a *ngIf="about.url" [href]="about.url">
+        <ion-label class="wrap-text">{{about.value}}</ion-label>
+      </a>
+      <ul *ngIf="about.listItems" class="list-item padding-left-20">
+        <li *ngFor="let item of about.listItems">
+          <a *ngIf="item.url" [href]="item.url">{{item.value}}</a>
+          <span *ngIf="!item.url">{{item.value}}</span>
+        </li>
+      </ul>
+    </div>
+    <h4>Help</h4>
+    <p>Email me if you need <a href="mailto:prashantkurlekar@gmail.com?subject=NSW DKT Help/Suggestions">help</a> or have suggestions.</p>
+  </div>
+</ion-content>

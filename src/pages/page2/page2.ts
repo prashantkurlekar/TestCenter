@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { ResponsiveCardListPage } from '../responsive-card-list/responsive-card-list';
+import { ResponsiveAppleProductsPage } from '../responsive-apple-products/responsive-apple-products';
 
 @Component({
   selector: 'page-page2',
@@ -15,8 +17,7 @@ export class Page2 {
     this.selectedItem = navParams.get('item');
 
     // Let's populate this page with some filler content for funzies
-    this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
-      'american-football', 'boat', 'bluetooth', 'build'];
+    this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane', 'american-football', 'boat', 'bluetooth', 'build'];
 
     this.items = [];
     for (let i = 1; i < 11; i++) {
@@ -28,8 +29,16 @@ export class Page2 {
     }
   }
 
-  public itemTapped(event, item) {
-    // That's right, we're pushing to ourselves!
-    this.navCtrl.push(Page2, { item: item });
+  // public itemTapped(event, item) {
+  //   // That's right, we're pushing to ourselves!
+  //   this.navCtrl.push(Page2, { item: item });
+  // }
+
+  public redirectToCardList() {
+    this.navCtrl.push(ResponsiveCardListPage);
+  }
+
+  public responsiveAppleProducts() {
+    this.navCtrl.push(ResponsiveAppleProductsPage);
   }
 }

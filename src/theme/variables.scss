@@ -85,6 +85,7 @@ $headings-font-weight: 300;
 // default are overridden.
 
 @import "ionic.theme.default";
+// @import "ionic.theme.dark";
 
 
 // Ionicons
@@ -111,3 +112,12 @@ $fa-font-path: $font-path;
 ion-label {
   font-weight: 400 !important;
 }
+
+$font-color: #fff;
+// $font-family: 'Source Sans Pro', sans-serif;
+// $font-family: 'Raleway', sans-serif;
+// $font-family: 'Josefin Sans', sans-serif;
+// $font-family: 'Open Sans', sans-serif;
+// $font-family: 'Nunito', sans-serif;
+// $font-family: 'Work Sans', sans-serif;
+$font-family: 'Maven Pro', sans-serif;

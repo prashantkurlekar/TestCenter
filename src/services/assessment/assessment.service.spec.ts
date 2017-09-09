@@ -28,7 +28,7 @@ describe('AssessmentService', () => {
 
     const assessments = service.getAssessments();
 
-    expect(assessments.length).toBeGreaterThan(0);
+    expect(assessments).toBeDefined();
   }));
 
 });

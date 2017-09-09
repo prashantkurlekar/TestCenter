@@ -10,7 +10,7 @@ export class TestCenterData {
 
   public load(): any {
     if (this.data) return Promise.resolve(this.data);
-    return new Promise(resolve => this.http.get('assets/data/data.json').subscribe((response) => {
+    return new Promise(resolve => this.http.get('assets/data/data.json').subscribe(response => {
       this.data = response.json();
       resolve(this.data);
     }));
@@ -21,9 +21,9 @@ export class TestCenterData {
     return data.organizations;
   }
 
-  public async getTopicsByOrganization(organizationId: number) {
+  public async getAssessmentsByOrganization(organizationId: number) {
     const data = await this.load();
-    return _.filter(data.topics, { organizationId: organizationId, active: true });
+    return _.filter(data.assessments, { organizationId: organizationId, active: true });
   }
 
   public async getTestOptionsByTopic() {
@@ -31,7 +31,7 @@ export class TestCenterData {
     return data.testOptions;
   }
 
-  public async getQuestionsByTopic(topicId: number) {
+  public async getQuestionsByAssessment(topicId: number) {
     const data = await this.load();
     return _.filter(data.questions, { topicIds: [topicId] });
   }

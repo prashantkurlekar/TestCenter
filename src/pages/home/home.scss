@@ -1,9 +1,7 @@
 page-home {
   ion-label {
     font-size: 2.4rem !important;
-  }
-  
-  // $angle: 25deg;  
+  } // $angle: 25deg;  
   // ion-item:before {
   //   content:'';
   //   position:absolute;
@@ -13,42 +11,106 @@ page-home {
   //   height:100%;
   //   background-color: rgba(90, 74, 199, .8);
   //   border-right:40px solid rgba(173, 96, 223, .8);
-    
   //   -webkit-transform-origin:100% 100%;
   //   -ms-transform-origin:100% 100%;
   //   transform-origin:100% 100%;
-    
   //   -webkit-transform:skewX($angle);
   //   -ms-transform:skewX($angle);
   //   transform:skewX($angle);
   // }
-
   ion-card {
     position: relative;
     text-align: center;
     width: 100% !important;
     margin: 0 !important;
   }
-
   .card-title {
     position: absolute;
     top: 36%;
     font-size: 2.0em;
     width: 100%;
     font-weight: bold;
-    color: #fff;
+    color: $font-color;
     text-shadow: 0px 0px 20px black;
   }
-
   .card-subtitle {
     font-size: 1.0em;
     position: absolute;
     top: 52%;
     width: 100%;
-    color: #fff;
+    color: $font-color;
   }
-
   fa-icon {
     font-size: 5.0rem;
+  }
+  img {
+    border-radius: 0.3rem;
+  } // img {
+  //   padding: 64px 0 0 0;
+  //   border: 3px solid #fff;
+  //   outline: 1px solid #000;
+  //   margin: 1px;
+  //   width: 64px;
+  //   height: 0px;
+  //   display: block;
+  // }
+  .img-fluid {
+    width: 100%;
+    height: auto; // top: -100px;
+    // left: -100px;
+  }
+  ion-content ion-card ion-item.advanced-trans p {
+    color: #fff;
+    margin: 0 !important;
+  }
+  ion-card p.advanced-background-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 48%;
+    width: 100% !important;
+    color: #fff !important;
+  }
+  .advanced-background {
+    position: relative;
+    text-align: center !important;
+    font-size: large;
+  }
+  ion-card ion-item.advanced-trans.item {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 12px 20px !important;
+    background: transparent;
+  }
+  ion-card ion-item.advanced-trans.item p {
+    font-size: 12px;
+    letter-spacing: 1.7px;
+    font-weight: 500;
+    opacity: 0.7;
+  }
+  ion-card p.advanced-background-title {
+    position: absolute;
+    top: 36%;
+    font-size: 1.4em;
+    text-shadow: 0px 0px 20px black;
+    width: 100%;
+    color: $font-color !important;
+  }
+  ion-card p.advanced-background-title-large {
+    top: 29%;
+    font-weight: normal;
+    font-size: 4.4em;
+    color: $font-color !important;
+  }
+  ion-card p.advanced-background-title-large span {
+    vertical-align: top;
+    padding-top: 5px;
+    font-size: 72px;
+    height: 74px;
+    line-height: 1;
+    display: inline-block;
+  }
+  .app-background {
+    background-image: url('../assets/img/sydney-city-lights-australia-harbour-bridge.jpg');
   }
 }

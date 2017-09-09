@@ -1,15 +1,15 @@
-// import { TestBed, inject } from '@angular/core/testing';
-// import { NavigationProvider } from './navigation';
+import { TestBed, inject } from '@angular/core/testing';
+import { SettingsProvider } from './settings';
 
-// describe('Providers.NavigationProvider', () => {
-//   beforeEach(() => {
-//     TestBed.configureTestingModule({
-//       providers: [NavigationProvider]
-//     });
-//   });
+describe('Providers.NavigationProvider', () => {
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [SettingsProvider],
+    });
+  });
 
-//   it('should be created', inject([NavigationProvider], (service: NavigationProvider) => {
-//     expect(service).toBeTruthy();
-//   }));
+  it('should be created', inject([SettingsProvider], (service: SettingsProvider) => {
+    expect(service).toBeTruthy();
+  }));
 
-// });
+});
